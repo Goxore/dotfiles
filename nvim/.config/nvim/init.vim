@@ -243,4 +243,3 @@ nnoremap <SPACE> :tabnext<CR>
 "use ':CocInstall coc-...' to install
 "
 "end--------------------------------------------------------------------------
-
