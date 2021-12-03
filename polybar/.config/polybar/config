@@ -75,10 +75,10 @@ font-5 = "FontAwesome5:pixelsize=23;5"
 
 modules-left = i3
 modules-center = 
-modules-right = xkeyboard temperature battery pulseaudio-control date
+modules-right = xkeyboard temperature battery mute_mic pulseaudio-control date
 tray-position = right
 tray-padding = 2
-;mute-mic
+
 
 ;tray-background = #0063ff
 
