@@ -304,6 +304,7 @@ client.background       $bg
 
 bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
 bindsym $mod+Shift+x exec --no-startup-id rofi -show power-menu -modi power-menu:~/.local/bin/rofi-power-menu
+bindsym $mod+p exec --no-startup-id /usr/bin/rofi-pass
 
 
 exec_always wal -R

@@ -49,7 +49,9 @@ echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 
-
+# pushd popd alias
+alias pd=pushd
+alias ppd=popd
 
 
 # Basic auto/tab complete:

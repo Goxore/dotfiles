@@ -92,7 +92,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " themes
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'tyrannicaltoucan/vim-quantum'
-
+Plug 'catppuccin/nvim'
 
 " line at the bottom
 Plug 'itchyny/lightline.vim'
@@ -174,7 +174,13 @@ let g:quantum_black=1
 colorscheme quantum
 let g:lightline = {'colorscheme': 'quantum',}
 
+"colorscheme catppuccin
+"let g:lightline = {'colorscheme': 'catppuccin'}
+
+hi Normal guibg=#1E1E1E
+
 hi Directory guifg=#909090 ctermfg=red
+
 autocmd FileType nerdtree syntax match NERDTreeDirSlash #/$# containedin=NERDTreeDir conceal contained
 
 
