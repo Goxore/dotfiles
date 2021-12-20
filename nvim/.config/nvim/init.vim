@@ -117,6 +117,11 @@ Plug 'ryanoasis/vim-devicons'
 " autoclose tag in html
 Plug 'alvan/vim-closetag'
 
+" Startup menu and dependencies
+Plug 'startup-nvim/startup.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-lua/plenary.nvim'
+
 " ReactJS plugin
 " Plug 'maxmellon/vim-jsx-pretty'
 
@@ -242,6 +247,9 @@ map <A-6> 6gt
 map <A-7> 7gt
 map <A-8> 8gt
 map <A-9> 9gt
+
+"-----------------------------------------------------------
+
 
 "Coc extensions to install ---------------------------------------------------
 "
