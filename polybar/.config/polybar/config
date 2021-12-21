@@ -42,7 +42,7 @@ height = 27
 ;offset-x = 1%
 ;offset-y = 1%
 ;radius = 6.0
-fixed-center = false
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -66,77 +66,16 @@ module-margin-right = 1
 ;font-Y = Font Awesome 5 Brands: pixelsize=11
 ;font-Z = hack Nerd Font:style=Medium:size=11;3
 font-0 = "Hack Nerd Font:pixelsize=9;3"
-font-1 = "Iosevka Nerd Font:pixelsize=10;3"
 font-2 = "FontAwesome5:pixelsize=10;3"
+font-1 = "Iosevka Nerd Font:pixelsize=10;3"
 
 font-3 = "Hack Nerd Font:pixelsize=23;5"
 font-4 = "Iosevka Nerd Font:pixelsize=23;5"
 font-5 = "FontAwesome5:pixelsize=23;5"
 
 modules-left = i3
-modules-center = 
-modules-right = xkeyboard temperature battery mute_mic pulseaudio-control date
-tray-position = right
-tray-padding = 2
-
-
-;tray-background = #0063ff
-
-;wm-restack = bspwm
-;wm-restack = i3
-
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-[bar/right]
-monitor = ${env:MONITOR:DVI-D-0}
-width = 100%
-height = 27
-;offset-x = 1%
-;offset-y = 1%
-;radius = 6.0
-fixed-center = false
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 3
-line-color = #f00
-
-border-size = 0
-border-color = #00000000
-
-padding-left = 0
-padding-right = 2
-
-module-margin-left = 1
-module-margin-right = 2
-
-;font-0 = fixed:pixelsize=10;1
-;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-;font-2 = siji:pixelsize=10;1
-;font-X = Font Awesome 5 Free: style=Solid: pixelsize=11
-;font-Y = Font Awesome 5 Brands: pixelsize=11
-;font-Z = hack Nerd Font:style=Medium:size=11;3
-font-0 = "Hack Nerd Font:pixelsize=9;3"
-font-1 = "Iosevka Nerd Font:pixelsize=10;3"
-font-2 = "FontAwesome5:pixelsize=10;3"
-
-font-3 = "Hack Nerd Font:pixelsize=23;5"
-font-4 = "Iosevka Nerd Font:pixelsize=23;5"
-font-5 = "FontAwesome5:pixelsize=23;5"
-
-modules-left = i3
-modules-center = 
-modules-right = 
+modules-center = date
+modules-right = xkeyboard temperature battery mute_mic pulseaudio-control
 tray-position = right
 tray-padding = 2
 
