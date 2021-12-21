@@ -92,7 +92,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " themes
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'tyrannicaltoucan/vim-quantum'
-
+Plug 'catppuccin/nvim'
 
 " line at the bottom
 Plug 'itchyny/lightline.vim'
@@ -116,6 +116,11 @@ Plug 'ryanoasis/vim-devicons'
 
 " autoclose tag in html
 Plug 'alvan/vim-closetag'
+
+" Startup menu and dependencies
+Plug 'startup-nvim/startup.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-lua/plenary.nvim'
 
 " ReactJS plugin
 " Plug 'maxmellon/vim-jsx-pretty'
@@ -174,7 +179,13 @@ let g:quantum_black=1
 colorscheme quantum
 let g:lightline = {'colorscheme': 'quantum',}
 
+"colorscheme catppuccin
+"let g:lightline = {'colorscheme': 'catppuccin'}
+
+hi Normal guibg=#1E1E1E
+
 hi Directory guifg=#909090 ctermfg=red
+
 autocmd FileType nerdtree syntax match NERDTreeDirSlash #/$# containedin=NERDTreeDir conceal contained
 
 
@@ -236,6 +247,9 @@ map <A-6> 6gt
 map <A-7> 7gt
 map <A-8> 8gt
 map <A-9> 9gt
+
+"-----------------------------------------------------------
+
 
 "Coc extensions to install ---------------------------------------------------
 "

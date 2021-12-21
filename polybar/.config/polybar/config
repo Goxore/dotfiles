@@ -281,6 +281,9 @@ strip-wsnumbers = true
 
 [module/mute_mic]
 type = custom/script
+
+label-underline= ${colors.primary}
+
 exec = ~/myscripts/micscript.sh interactive
 click-left = ~/myscripts/micscript.sh toggle
 format-background = ${colors.background-alt}

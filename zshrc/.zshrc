@@ -6,10 +6,11 @@ fi
 # Path to oh-my-zsh installation.
 export ZSH="/home/yurii/.oh-my-zsh"
 
+
 #theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-plugins=(git)
+plugins=(git zsh-syntax-highlighting)
 
 #ohmyzsh
 source $ZSH/oh-my-zsh.sh
@@ -49,7 +50,9 @@ echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 
-
+# pushd popd alias
+alias pd=pushd
+alias ppd=popd
 
 
 # Basic auto/tab complete:
@@ -72,3 +75,9 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 #(cat ~/.cache/wal/sequences &)
+
+# quickly kill polybar
+alias kp='killall polybar'
+
+
+
