@@ -190,7 +190,9 @@ hi Directory guifg=#909090 ctermfg=red
 
 autocmd FileType nerdtree syntax match NERDTreeDirSlash #/$# containedin=NERDTreeDir conceal contained
 
-
+"emmet settings
+let g:user_emmet_mode='n'
+let g:user_emmet_leader_key=','
 
 " remove 'press ? for help' in NERDTree
 let NERDTreeMinimalUI=1
@@ -265,6 +267,7 @@ map <A-9> 9gt
 "coc-css              for css
 "coc-tsserver         for js/Typescript
 "coc-snippets         for snippets
+"coc-emmet            for html emmet
 "
 "use ':CocInstall coc-...' to install
 "
