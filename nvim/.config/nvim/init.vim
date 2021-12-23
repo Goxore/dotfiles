@@ -125,7 +125,13 @@ Plug 'nvim-lua/plenary.nvim'
 " ReactJS plugin
 " Plug 'maxmellon/vim-jsx-pretty'
 
+"html helper
 Plug 'mattn/emmet-vim'
+
+"snippets
+Plug 'SirVer/ultisnips'
+Plug 'mlaursen/vim-react-snippets'
+
 
 call plug#end()	
 "use ':PlugInstall' to install Plugins
