@@ -274,6 +274,7 @@ map <A-9> 9gt
 "coc-tsserver         for js/Typescript
 "coc-snippets         for snippets
 "coc-emmet            for html emmet
+"coc-pairs            for autopairs
 "
 "use ':CocInstall coc-...' to install
 "
