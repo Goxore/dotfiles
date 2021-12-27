@@ -1,3 +1,4 @@
+"
 "_________________________________________________________________________________________
 "_____/\\\\\\\\\\\\________________________________________________________________________        
 " ___/\\\//////////_________________________________________________________________________       
@@ -132,6 +133,10 @@ Plug 'mattn/emmet-vim'
 Plug 'SirVer/ultisnips'
 Plug 'mlaursen/vim-react-snippets'
 
+" VimTeX
+Plug 'lervag/vimtex'
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+
 
 call plug#end()	
 "use ':PlugInstall' to install Plugins
@@ -169,6 +174,12 @@ let g:coc_snippet_next = '<tab>'
 
 
 nnoremap <C-n> :NERDTreeTabsToggle<CR>
+
+"LATEX
+let g:livepreview_previewer = 'zathura'
+
+filetype plugin indent on
+syntax enable
 
 
 
