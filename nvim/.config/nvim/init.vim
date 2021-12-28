@@ -93,7 +93,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " themes
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'tyrannicaltoucan/vim-quantum'
-Plug 'catppuccin/nvim'
+Plug 'gruvbox-community/gruvbox'
+
 
 " line at the bottom
 Plug 'itchyny/lightline.vim'
@@ -194,14 +195,18 @@ set mouse=a
 
 set background=dark
 set termguicolors
-let g:quantum_black=1
-colorscheme quantum
-let g:lightline = {'colorscheme': 'quantum',}
+"let g:quantum_black=1
+"colorscheme quantum
+"let g:lightline = {'colorscheme': 'quantum',}
+
+colorscheme gruvbox
+let g:lightline = {'colorscheme': 'gruvbox',}
+
 
 "colorscheme catppuccin
 "let g:lightline = {'colorscheme': 'catppuccin'}
 
-hi Normal guibg=#1E1E1E
+"hi Normal guibg=#1E1E1E
 
 hi Directory guifg=#909090 ctermfg=red
 
