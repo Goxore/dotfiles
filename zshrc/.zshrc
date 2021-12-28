@@ -78,6 +78,6 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 # quickly kill polybar
 alias kp='killall polybar'
-
+alias dev='devour'
 
 
