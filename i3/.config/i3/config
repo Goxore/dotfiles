@@ -96,7 +96,7 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+# bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -119,8 +119,10 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 
-bindsym $mod+m exec "~/myscripts/mic-check.sh"
-
+bindsym $mod+v exec "~/myscripts/mic-check.sh"
+#bindsym $mod+menu exec "~/myscripts/mic-check.sh"
+#bindsym $mod+0xff67 exec "~/myscripts/mic-check.sh"
+#bindsym $mod+135 exec "~/myscripts/mic-check.sh"
 
 set $monitor_left "HDMI-0"
 set $monitor_right "DVI-D-0"

@@ -74,12 +74,15 @@ set clipboard=unnamedplus
 "better moving cursor up and down
 set scrolloff=5
 
+
 nnoremap <esc><esc> :noh<return>
 
 
 call plug#begin()				
 " nerdtree file explorer
 Plug 'scrooloose/nerdtree'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
 
 " nerdtree tabs
 Plug 'jistr/vim-nerdtree-tabs'
@@ -152,10 +155,24 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 let g:OmniSharp_server_use_mono = 1
 
 
-" Enable NERDtree at start
+"NERDTree--------------------
 "autocmd VimEnter * NERDTree | wincmd p
 " let g:nerdtree_tabs_open_on_console_startup = 1
+nnoremap <C-n> :NERDTreeTabsToggle<CR>
 
+" Background colors for active vs inactive windows
+hi TreeWindow guibg=#242424
+
+" Call method on window enter
+augroup WindowManagement
+  autocmd!
+  autocmd WinEnter * call Handle_Win_Enter()
+augroup END
+
+" Change highlight group of active/inactive windows
+function! Handle_Win_Enter()
+  setlocal winhighlight=Normal:TreeWindow
+endfunction
 
 
 " map leader to Space
@@ -174,7 +191,6 @@ map <C-w> <C-w>w
 let g:coc_snippet_next = '<tab>'
 
 
-nnoremap <C-n> :NERDTreeTabsToggle<CR>
 
 "LATEX
 let g:livepreview_previewer = 'zathura'
@@ -240,6 +256,8 @@ function! TermToggle(height)
             set nonumber
             set norelativenumber
             set signcolumn=no
+            hi termin ctermbg=#FF0000
+            set winhl=Normal:termin,NormalNC:termin
         endtry
         startinsert!
         let g:term_win = win_getid()
