@@ -1,0 +1,52 @@
+.panel-menu {
+  .calendar,
+  .message-list-sections,
+  .datemenu-today-button,
+  .world-clocks-button,
+  .weather-button,
+  .events-section-title {
+    color: $button_fg_color;
+    background-color: $button_bg_color;
+
+    StLabel {
+      color: $button_fg_color;
+    }
+  }
+
+  .datemenu-today-button,
+  .world-clocks-button,
+  .weather-button,
+  .events-section-title {
+    &:active,
+    &:focus,
+    &:hover {
+      color: $selected_fg_color;
+      background-color: $selected_bg_color;
+    }
+  }
+
+  .calendar {
+    border: 1px solid $borders_color;
+  }
+
+  .calendar-day-base {
+    background-color: $base_color;
+    color: $text_color;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: $selected_fg_color;
+      background-color: $selected_bg_color;
+    }
+  }
+
+  .events-button {
+    color: $fg_color;
+    background-color: $bg_color;
+
+    StLabel {
+      color: $fg_color;
+    }
+  }
+}

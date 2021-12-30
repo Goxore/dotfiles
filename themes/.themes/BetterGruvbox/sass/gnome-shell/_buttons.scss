@@ -1,0 +1,29 @@
+.button {
+  @include button(normal);
+  &:focus {
+    @include button(focus);
+  }
+  &:hover {
+    @include button(hover);
+  }
+  &:insensitive {
+    @include button(insensitive);
+  }
+  &:active {
+    @include button(active);
+  }
+}
+
+.candidate-page-button,
+.notification-button,
+.notification-icon-button,
+.hotplug-notification-item,
+.hotplug-resident-eject-button,
+.modal-dialog-button,
+.app-view-control {
+  @include button(normal);
+  &:focus { @include button(focus);}
+  &:hover { @include button(hover);}
+  &:insensitive { @include button(insensitive);}
+  &:active { @include button(active);}
+}
