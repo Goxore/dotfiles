@@ -83,3 +83,8 @@ pfetch
 
 #plugins------------------------------
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+
+#other--------------------
+HISTSIZE=1000000
+SAVEHIST=1000000
+HISTFILE=~/.zsh_history

@@ -75,7 +75,7 @@ font-5 = "FontAwesome5:pixelsize=23;5"
 
 modules-left = i3
 modules-center = 
-modules-right = xkeyboard temperature battery pulseaudio mute_mic date
+modules-right = xkeyboard amd nvidia temperature battery pulseaudio mute_mic date
 tray-position = right
 tray-padding = 2
 
@@ -125,6 +125,22 @@ scroll-down = pulseaudio-control --volume-max 130 down
 [module/rofipowermenu]
 exec = echo "power"
 click-left = rofi -show power-menu -modi power-menu:rofi-power-menu
+
+[module/nvidia]
+type = custom/script
+exec = ~/myscripts/nvidiagputemp.sh
+internal = 10
+
+format-prefix = "g糖 "
+
+
+[module/amd]
+type = custom/script
+exec = ~/myscripts/amdcputemp.sh
+internal = 10
+
+format-prefix = "c糖 "
+
 
 [module/xkeyboard]
 type = internal/xkeyboard
