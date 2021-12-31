@@ -82,9 +82,6 @@ call plug#begin()
 " nerdtree file explorer
 Plug 'scrooloose/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
-
-" nerdtree tabs
 Plug 'jistr/vim-nerdtree-tabs'
 
 
@@ -159,6 +156,10 @@ let g:OmniSharp_server_use_mono = 1
 "autocmd VimEnter * NERDTree | wincmd p
 " let g:nerdtree_tabs_open_on_console_startup = 1
 nnoremap <C-n> :NERDTreeTabsToggle<CR>
+
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
+
 
 " Background colors for active vs inactive windows
 hi TreeWindow guibg=#242424
@@ -313,3 +314,11 @@ map <A-9> 9gt
 "use ':CocInstall coc-...' to install
 "
 "end--------------------------------------------------------------------------
+
+
+
+
+
+
+
+
