@@ -39,6 +39,7 @@ _comp_options+=(globdots)
 
 #exports--------------------
 export EDITOR='nvim'
+export PATH=$HOME/myscripts/:$PATH
 
 #alias--------------------
 alias kp='killall polybar'
@@ -46,7 +47,7 @@ alias dev='devour'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-
+alias open='handlr open'
 #extractor ex <file>
 ex ()
 {
@@ -81,10 +82,10 @@ PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magent
 
 pfetch
 
-#plugins------------------------------
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-
 #other--------------------
 HISTSIZE=1000000
 SAVEHIST=1000000
 HISTFILE=~/.zsh_history
+
+#plugins
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null

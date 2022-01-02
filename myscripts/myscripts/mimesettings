@@ -1,0 +1,7 @@
+inode/directory 	ranger.desktop
+'text/*' 					nvim.desktop
+.png 							img.desktop
+.jpeg 						img.desktop
+.jpg 							img.desktop
+.mp4 							mpv.desktop
+.pdf							pdf.desktop
