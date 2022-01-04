@@ -64,7 +64,7 @@ font-4 = "Iosevka Nerd Font:pixelsize=23;5"
 font-5 = "FontAwesome5:pixelsize=23;5"
 
 modules-left = i3
-modules-center = 
+modules-center = mpd
 modules-right = xkeyboard amd nvidia temperature battery pulseaudio mute_mic date
 tray-position = right
 tray-padding = 2
