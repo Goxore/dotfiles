@@ -47,7 +47,10 @@ alias dev='devour'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-alias open='handlr open'
+alias open='xdg-open'
+alias dopen='devour xdg-open'
+alias devopen='devour xdg-open'
+alias lf='lfrun'
 #extractor ex <file>
 ex ()
 {
