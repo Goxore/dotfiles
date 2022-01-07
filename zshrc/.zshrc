@@ -77,6 +77,11 @@ ex ()
   fi
 }
 
+ytmp3()
+{
+    [ -f $1 ] && youtube-dl -x --audio-format mp3 --prefer-ffmpeg "$1"
+}
+
 #Prompt customization--------------------
 
 autoload -U colors && colors

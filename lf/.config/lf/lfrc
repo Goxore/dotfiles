@@ -14,6 +14,8 @@ cmd open ${{
     esac
 }}
 
+cmd bulkrename $vidir
+
 cmd mkdir ${{
   printf "Directory Name: "
   read ans
@@ -127,6 +129,7 @@ map md mkdir
 map ms $mkscript
 map ch chmod
 map a rename
+map A bulkrename
 map R reload
 map C clear
 map U unselect
