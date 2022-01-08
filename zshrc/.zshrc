@@ -51,6 +51,8 @@ alias open='xdg-open'
 alias dopen='devour xdg-open'
 alias devopen='devour xdg-open'
 alias lf='lfrun'
+alias dragout='dragon-drag-and-drop -a -x'
+alias dout='dragon-drag-and-drop -a -x'
 #extractor ex <file>
 ex ()
 {
@@ -79,7 +81,7 @@ ex ()
 
 ytmp3()
 {
-    [ -f $1 ] && youtube-dl -x --audio-format mp3 --prefer-ffmpeg "$1"
+    youtube-dl -x --audio-format mp3 --prefer-ffmpeg "$1"
 }
 
 #Prompt customization--------------------

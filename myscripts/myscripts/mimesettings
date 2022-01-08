@@ -1,4 +1,4 @@
-inode/directory 	ranger.desktop
+inode/directory 	file.desktop
 'text/*' 					nvim.desktop
 .png 							img.desktop
 .jpeg 						img.desktop

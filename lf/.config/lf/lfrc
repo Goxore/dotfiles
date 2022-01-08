@@ -6,6 +6,10 @@ set drawbox true
 set icons true
 set ignorecase true
 
+cmd dragon-out %dragon-drag-and-drop -a -x $fx
+cmd dragon-multiple %dragon-drag-and-drop -a $fx
+
+
 # Custom Functions
 cmd open ${{
     case $(file --mime-type "$f" -bL) in
@@ -134,6 +138,8 @@ map R reload
 map C clear
 map U unselect
 
+map do dragon-out
+map dm dragon-multiple
 
 map gg cd
 map gv cd ~/.config/nvim
