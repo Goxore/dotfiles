@@ -53,6 +53,7 @@ alias devopen='devour xdg-open'
 alias lf='lfrun'
 alias dragout='dragon-drag-and-drop -a -x'
 alias dout='dragon-drag-and-drop -a -x'
+alias cal="cal -m"
 #extractor ex <file>
 ex ()
 {
@@ -97,5 +98,22 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 HISTFILE=~/.zsh_history
 
+#lfcd
+LFCD="$HOME/.config/lf/lfcd.sh"
+#LFCD="$HOME/myscripts/lfrun"
+if [ -f "$LFCD" ]; then
+    source "$LFCD"
+fi
+
+alias lf="lfcd"
+
+#bind '"\C-o":"lfcd\C-m"'
+
+
 #plugins
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+
+
+
+
+

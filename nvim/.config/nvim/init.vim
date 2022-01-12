@@ -74,6 +74,9 @@ set clipboard=unnamedplus
 "better moving cursor up and down
 set scrolloff=5
 
+set nocompatible
+filetype plugin on
+syntax on
 
 nnoremap <esc><esc> :noh<return>
 
@@ -138,6 +141,7 @@ Plug 'mlaursen/vim-react-snippets'
 Plug 'lervag/vimtex'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 
+Plug 'vimwiki/vimwiki'
 
 call plug#end()	
 "use ':PlugInstall' to install Plugins
@@ -177,7 +181,8 @@ endfunction
 
 
 " map leader to Space
-" let mapleader =
+let mapleader=" "
+
 " map <leader>h :wincmd h<CR>
 " map <leader>l :wincmd l<CR>
 
@@ -281,7 +286,7 @@ nnoremap <C-Left>  :vertical resize -2<CR>
 nnoremap <C-Right> :vertical resize +2<CR>
 
 " fast tab navigation
-nnoremap <SPACE> :tabnext<CR>
+" nnoremap <SPACE> :tabnext<CR>
 
 map <A-1> 1gt
 map <A-2> 2gt
