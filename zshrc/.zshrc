@@ -54,6 +54,7 @@ alias lf='lfrun'
 alias dragout='dragon-drag-and-drop -a -x'
 alias dout='dragon-drag-and-drop -a -x'
 alias cal="cal -m"
+alias wiki="nvim $HOME/vimwiki/index.wiki"
 #extractor ex <file>
 ex ()
 {
@@ -94,8 +95,8 @@ PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magent
 pfetch
 
 #other--------------------
-HISTSIZE=1000000
-SAVEHIST=1000000
+HISTSIZE=10000
+SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
 #lfcd
