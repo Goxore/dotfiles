@@ -62,6 +62,7 @@ alias dragout='dragon-drag-and-drop -a -x'
 alias dout='dragon-drag-and-drop -a -x'
 alias cal="cal -m"
 alias wiki="nvim $HOME/vimwiki/index.wiki"
+alias v="nvim"
 #extractor ex <file>
 ex ()
 {
