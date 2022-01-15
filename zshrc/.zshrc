@@ -28,7 +28,14 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
+# Yank to the system clipboard
+function vi-yank-xclip {
+    zle vi-yank
+   echo "$CUTBUFFER" | xclip -i
+}
 
+zle -N vi-yank-xclip
+bindkey -M vicmd 'y' vi-yank-xclip
 
 # Basic auto/tab complete:
 autoload -U compinit
@@ -112,6 +119,9 @@ alias lf="lfcd"
 
 
 #plugins
+
+source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 
 
