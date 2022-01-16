@@ -298,6 +298,10 @@ map <A-7> 7gt
 map <A-8> 8gt
 map <A-9> 9gt
 
+" moving text in visual mode
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
 "-----------------------------------------------------------
 
 

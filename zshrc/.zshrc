@@ -63,6 +63,8 @@ alias dout='dragon-drag-and-drop -a -x'
 alias cal="cal -m"
 alias wiki="nvim $HOME/vimwiki/index.wiki"
 alias v="nvim"
+alias ls="exa --icons -a --group-directories-first"
+alias l="exa --icons -a --group-directories-first"
 #extractor ex <file>
 ex ()
 {
@@ -128,4 +130,12 @@ source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.
 
 
 
+# Yank to the system clipboard
+function vi-yank-xclip {
+    zle vi-yank
+   echo "$CUTBUFFER" | xclip -i
+}
+
+zle -N vi-yank-xclip
+bindkey -M vicmd 'y' vi-yank-xclip
 
