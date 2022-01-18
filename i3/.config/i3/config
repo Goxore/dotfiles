@@ -103,7 +103,8 @@ bindsym $mod+h split h
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+#bindsym $mod+s layout stacking
+bindsym $mod+s exec ~/myscripts/sb -r
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
