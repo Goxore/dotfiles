@@ -15,7 +15,7 @@
 set relativenumber
 
 " Automatically wrap to next line
-set wrap
+set nowrap
 
 " Encoding
 set encoding=utf-8
@@ -118,6 +118,7 @@ Plug 'omnisharp/omnisharp-vim'
 
 " vim developer icons
 Plug 'ryanoasis/vim-devicons'
+"Plug 'https://github.com/adelarsq/vim-devicons-emoji'
 
 " autoclose tag in html
 Plug 'alvan/vim-closetag'
@@ -133,6 +134,11 @@ Plug 'nvim-lua/plenary.nvim'
 "html helper
 Plug 'mattn/emmet-vim'
 
+" Prettier code formatter
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install --frozen-lockfile --production',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+
 "snippets
 Plug 'SirVer/ultisnips'
 Plug 'mlaursen/vim-react-snippets'
@@ -141,7 +147,12 @@ Plug 'mlaursen/vim-react-snippets'
 Plug 'lervag/vimtex'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 
+" wiki
 Plug 'vimwiki/vimwiki'
+
+" Emoji
+Plug 'junegunn/vim-emoji'
+
 
 call plug#end()	
 "use ':PlugInstall' to install Plugins
@@ -301,6 +312,10 @@ map <A-9> 9gt
 " moving text in visual mode
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+
+
+
+
 
 "-----------------------------------------------------------
 

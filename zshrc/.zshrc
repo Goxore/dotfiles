@@ -220,7 +220,6 @@ export PATH=$HOME/myscripts/:$PATH
 #alias--------------------
 alias kp='killall polybar'
 alias dev='devour'
-alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias open='xdg-open'
@@ -232,9 +231,10 @@ alias dout='dragon-drag-and-drop -a -x'
 alias cal="cal -m"
 alias wiki="nvim $HOME/vimwiki/index.wiki"
 alias v="nvim"
+alias hst="history 1 | cut -c 8- | sort | uniq | fzf | tr -d '\n' | xclip -selection c"
 if command -v exa &> /dev/null
 then
-  alias ls="exa --icons -a --group-directories-first"
+  #alias ls="exa --icons -a --group-directories-first"
   alias l="exa --icons -a --group-directories-first"
 fi
 #extractor ex <file>
@@ -261,11 +261,6 @@ ex ()
   else
     echo "'$1' is not a valid file"
   fi
-}
-
-ytmp3()
-{
-    youtube-dl -x --audio-format mp3 --prefer-ffmpeg "$1"
 }
 
 #Prompt customization--------------------

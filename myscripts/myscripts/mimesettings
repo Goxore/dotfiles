@@ -3,5 +3,9 @@ inode/directory 	file.desktop
 .png 							img.desktop
 .jpeg 						img.desktop
 .jpg 							img.desktop
+.gif							img.desktop
 .mp4 							mpv.desktop
 .pdf							pdf.desktop
+.webp							img.desktop
+.mp3							mpv.desktop
+.wav							mpv.desktop

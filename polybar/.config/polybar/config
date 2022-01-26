@@ -218,13 +218,14 @@ interval = 10
 
 [module/mpd]
 type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+label-song = %title%
+format-online = <icon-prev> <label-song> <toggle> <icon-next>
 
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
+icon-prev = 玲
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 怜
 
 label-song-maxlen = 25
 label-song-ellipsis = true
