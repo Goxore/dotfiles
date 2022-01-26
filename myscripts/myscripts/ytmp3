@@ -1,0 +1,66 @@
+#!/bin/sh
+
+REQUIREMENTS=('mpv' 'ffmpeg' 'youtube-dl')
+
+artist=none
+album=none
+
+while test $# -gt 0; do
+  case "$1" in
+    -h|--help)
+      echo "this is a tool to download mp3 files"
+      echo ""
+      echo "Please put your flags before input links"
+      echo ""
+      echo "Flags:"
+      echo ""
+      echo "-o Output file name"
+      echo "-a Album name of the output file"
+      echo "-r Artist name of the output file"
+      echo ""
+      exit 0
+      ;;
+    -o)
+      shift
+      output=$1
+      shift
+      ;;
+    -a)
+      shift
+			album=$1
+      shift
+      ;;
+		-r)
+      shift
+			artist=$1
+      shift
+			;;
+    *)
+      break
+      ;;
+  esac
+done
+
+
+if command -v yt-dlp &> /dev/null
+then
+  if [ -n "$output" ]; then
+	  yt-dlp -x --audio-format mp3 --prefer-ffmpeg $1 -o "$output"
+    file=$output
+  else
+    yt-dlp -x --audio-format mp3 --prefer-ffmpeg $1 -o "%(title)s.mp3"
+    file=$(yt-dlp -o "%(title)s.mp3" --get-filename $1)
+  fi
+else
+  if [ -n "$output" ]; then
+	  youtube-dl -x --audio-format mp3 --prefer-ffmpeg $1 -o "$output"
+    file=$output
+  else
+	  youtube-dl -x --audio-format mp3 --prefer-ffmpeg $1 -o "%(title)s.mp3"
+    file=$(youtube-dl -o "%(title)s.mp3" --get-filename $1)
+  fi
+fi
+
+id3tool -a "$album" -r "$artist" "$file"
+
+echo $file
