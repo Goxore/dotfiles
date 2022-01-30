@@ -241,9 +241,9 @@ let g:lightline = {'colorscheme': 'gruvbox',}
 
 "hi Normal guibg=#1E1E1E
 
-hi Directory guifg=#909090 ctermfg=red
+"hi Directory guifg=#909090 ctermfg=red
 
-autocmd FileType nerdtree syntax match NERDTreeDirSlash #/$# containedin=NERDTreeDir conceal contained
+"autocmd FileType nerdtree syntax match NERDTreeDirSlash #/$# containedin=NERDTreeDir conceal contained
 
 "emmet settings
 let g:user_emmet_mode='n'
@@ -273,8 +273,8 @@ function! TermToggle(height)
             set nonumber
             set norelativenumber
             set signcolumn=no
-            hi termin ctermbg=#FF0000
-            set winhl=Normal:termin,NormalNC:termin
+            "hi termin ctermbg=#FF0000
+            "set winhl=Normal:termin,NormalNC:termin
         endtry
         startinsert!
         let g:term_win = win_getid()
