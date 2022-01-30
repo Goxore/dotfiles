@@ -20,8 +20,10 @@ progressbar_color = "white"
 progressbar_elapsed_color = "red"
 
 ## Song List ##
-song_columns_list_format = "(10)[blue]{l} (70)[green]{t} (10)[white]{a} (10)[white]{b}"
-song_list_format = "{$7%a - $9}{$5%t$9}|{$5%f$9}$R{$6%b $9}{$3%l$9}"
+#song_columns_list_format = "(10)[blue]{l} (70)[green]{t} (10)[white]{a} (10)[white]{b}"
+#song_list_format = "{$7%a - $9}{$5%t$9}|{$5%f$9}$R{$6%b $9}{$3%l$9}"
+song_columns_list_format = "(50)[green]{t} (5)[blue]{l}"
+song_list_format = "$6{%a »$4 %t$/r$R}|{%f}"
 
 ## Current Item ##
 current_item_prefix = "$(blue)$r"
@@ -67,3 +69,4 @@ centered_cursor = "yes"
 display_bitrate = "yes"
 enable_window_title = "yes"
 empty_tag_marker = ""
+execute_on_song_change="~/.config/ncmpcpp/ncmpcpp-ueberzug/ncmpcpp_cover_art.sh"
