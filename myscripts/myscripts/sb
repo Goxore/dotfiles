@@ -13,7 +13,7 @@ rofifunc()
 		exit
 	fi
 	
-	volume=$(printf '40\n100\n20\n60' | rofi -dmenu)
+	volume=$(printf '40\n100\n20\n60\n200\n300\n500\n1000' | rofi -dmenu)
 
 	mpv --audio-device='pulse/sink_mix' --volume=$volume $HOME/Soundboard/$rfile
 }
