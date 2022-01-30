@@ -72,6 +72,9 @@ case "$(printf "%s\n" "$(readlink -f "$1")" | awk '{print tolower($0)}')" in
 	*.md) 
 		glow -s dark "$1"
 		;;
+	*.json)
+		cat "$1" | jq
+		;;
 	*)
 		batorcat "$1"
 		;;

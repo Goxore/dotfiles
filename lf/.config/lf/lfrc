@@ -19,6 +19,13 @@ cmd open ${{
     esac
 }}
 
+cmd devopen ${{
+    case $(file --mime-type "$f" -bL) in
+        text/*|application/json) $EDITOR "$f";;
+        *)devour xdg-open "$f" ;;
+    esac
+}}
+
 cmd bulkrename $vidir
 
 cmd mkdir ${{
@@ -127,7 +134,8 @@ map DD delete
 map p paste
 map dd cut
 map y copy
-map <enter> open
+# map <enter> open
+map <enter> devopen
 map mf mkfile
 map mr sudomkfile
 map md mkdir
