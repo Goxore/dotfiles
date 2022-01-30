@@ -156,3 +156,4 @@ map gg cd
 map gv cd ~/.config/nvim
 map gd cd ~/Downloads
 map gc cd ~/.config
+
