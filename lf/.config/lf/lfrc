@@ -134,8 +134,8 @@ map DD delete
 map p paste
 map dd cut
 map y copy
-# map <enter> open
-map <enter> devopen
+map <enter> open
+map d<enter> devopen
 map mf mkfile
 map mr sudomkfile
 map md mkdir
@@ -152,8 +152,12 @@ map dM dragon-multiple
 map dc dragon-copy
 map di dragon-in 
 
-map gg cd
+map g~ cd
+map gh cd
 map gv cd ~/.config/nvim
 map gd cd ~/Downloads
 map gc cd ~/.config
-
+map g. cd ~/dotfiles
+map gm cd ~/Music
+map g/ cd /
+map gp cd ~/Projects

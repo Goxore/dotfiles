@@ -251,8 +251,10 @@ bindsym button3 exec --no-startup-id jgmenu --at-pointer
 
 
 exec --no-startup-id alacritty --class math -e qalc
+exec --no-startup-id alacritty --class music -e ./.config/ncmpcpp/ncmpcpp-ueberzug/ncmpcpp-ueberzug
 
 set $term [instance="math"] 
+set $tmusic [instance="music"]
 
 for_window [instance="math"] floating enable
 for_window [instance="math"] resize set 625 400
@@ -260,6 +262,11 @@ for_window [instance="math"] move scratchpad
 for_window [instance="math"] border pixel 5
 bindsym $mod+c [instance="math"] scratchpad show; [instance="math"] move position center
 
+for_window [instance="music"] floating enable
+for_window [instance="music"] resize set 825 600
+for_window [instance="music"] move scratchpad
+for_window [instance="music"] border pixel 5
+bindsym $mod+m [instance="music"] scratchpad show; [instance="music"] move position center
 
 
 #polybar
