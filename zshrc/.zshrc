@@ -295,12 +295,10 @@ source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 
 
-
-
 # Yank to the system clipboard
 function vi-yank-xclip {
     zle vi-yank
-   echo "$CUTBUFFER" | xclip -i
+   echo "$CUTBUFFER" | xclip -selection clipboard
 }
 
 zle -N vi-yank-xclip

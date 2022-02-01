@@ -298,6 +298,8 @@ nnoremap <C-Right> :vertical resize +2<CR>
 
 " fast tab navigation
 " nnoremap <SPACE> :tabnext<CR>
+nnoremap <A-j> :tabprevious<CR>
+nnoremap <A-k> :tabnext<CR>
 
 map <A-1> 1gt
 map <A-2> 2gt
