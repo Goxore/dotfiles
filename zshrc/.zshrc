@@ -220,6 +220,8 @@ export PATH=$HOME/myscripts/:$PATH
 #alias--------------------
 alias kp='killall polybar'
 alias dev='devour'
+alias d='devour'
+alias dz='devour zathura'
 alias grep='grep --color=auto'
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias open='xdg-open'

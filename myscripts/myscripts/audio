@@ -1,0 +1,16 @@
+#!/bin/sh
+#mpv --audio-device='pulse/SoundBoard' ~/Soundboard/SHCUM.mp3
+
+#mpv --audio-device=help
+
+#alsa_input.usb-C-Media_Electronics_Inc._USB_Audio_Device-00.mono-fallback
+
+#alsa_output.usb-C-Media_Electronics_Inc._USB_Audio_Device-00.analog-stereo
+
+#alsa_output.usb-C-Media_Electronics_Inc._USB_Audio_Device-00.analog-stereo
+
+pactl load-module module-null-sink sink_name=sink_mix sink_properties=device.description=sink_mix
+
+pactl load-module module-loopback latency_msec=10 adjust_time=6 source=alsa_input.usb-C-Media_Electronics_Inc._USB_Audio_Device-00.mono-fallback sink=sink_mix
+
+pactl load-module module-combine-sink slaves=alsa_output.usb-C-Media_Electronics_Inc._USB_Audio_Device-00.analog-stereo,sink_mix
