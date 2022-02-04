@@ -232,6 +232,7 @@ alias dragout='dragon-drag-and-drop -a -x'
 alias dout='dragon-drag-and-drop -a -x'
 alias cal="cal -m"
 alias wiki="nvim $HOME/vimwiki/index.wiki"
+alias vw="nvim $HOME/vimwiki/index.wiki"
 alias v="nvim"
 alias hst="history 1 | cut -c 8- | sort | uniq | fzf | tr -d '\n' | xclip -selection c"
 if command -v exa &> /dev/null
