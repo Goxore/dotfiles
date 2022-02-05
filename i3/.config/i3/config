@@ -106,6 +106,7 @@ bindsym $mod+f fullscreen toggle
 #bindsym $mod+s layout stacking
 bindsym $mod+s exec ~/myscripts/sb -r
 bindsym $mod+Shift+s exec sel=$(ls ~/myscripts | rofi -dmenu) && bash ~/myscripts/$sel
+bindsym $mod+a exec bash $HOME/myscripts/fastaccess.sh
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -115,7 +116,7 @@ bindsym $mod+e layout toggle split
 #bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+# bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
