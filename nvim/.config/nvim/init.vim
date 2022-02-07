@@ -150,9 +150,8 @@ Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 " wiki
 Plug 'vimwiki/vimwiki'
 
-" Emoji
-Plug 'junegunn/vim-emoji'
-
+" git integration
+Plug 'tpope/vim-fugitive'
 
 call plug#end()	
 "use ':PlugInstall' to install Plugins
