@@ -230,6 +230,7 @@ alias devopen='devour xdg-open'
 alias lf='lfrun'
 alias dragout='dragon-drag-and-drop -a -x'
 alias dout='dragon-drag-and-drop -a -x'
+alias din='dragonmove'
 alias cal="cal -m"
 alias wiki="nvim $HOME/vimwiki/index.wiki"
 alias vw="nvim $HOME/vimwiki/index.wiki"
