@@ -133,14 +133,14 @@ set $monitor_left "HDMI-0"
 set $monitor_right "DVI-D-0"
 
 
-set $ws1 "1:"
+set $ws1 "1:"
 set $ws2 "2:"
-set $ws3 "3:"
-set $ws4 "4:"
-set $ws5 "5"
-set $ws6 "6"
+set $ws3 "3:"
+set $ws4 "4:"
+set $ws5 "5:"
+set $ws6 "6:"
 set $ws7 "7"
-set $ws8 "8"
+set $ws8 "8:"
 set $ws9 "9"
 set $ws10 "10:"
 
@@ -148,11 +148,11 @@ set $ws10 "10:"
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
+bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace $ws10
 
@@ -175,8 +175,8 @@ workspace $ws2 output $monitor_left
 workspace $ws3 output $monitor_left
 workspace $ws4 output $monitor_left
 workspace $ws5 output $monitor_left
-workspace $ws6 output $monitor_right
-workspace $ws7 output $monitor_right
+workspace $ws6 output $monitor_left
+workspace $ws7 output $monitor_left
 workspace $ws8 output $monitor_right
 workspace $ws9 output $monitor_right
 workspace $ws10 output $monitor_right
@@ -187,11 +187,14 @@ workspace $ws10 output $monitor_right
 assign [class="terminator"] $ws1
 assign [class="konsole"] $ws1
 assign [class="firefox"] $ws2
+assign [class="Brave-browser"] $ws2
 assign [class="telegram-desktop"] $ws10
 assign [class="discord"] $ws10
+assign [class="teams"] $ws5
+assign [class="zoom"] $ws5
 
-for_window [instance="lutris"] move to workspace $ws3
-for_window [instance="Steam"] move to workspace $ws3
+for_window [instance="lutris"] move to workspace $ws4
+for_window [instance="Steam"] move to workspace $ws4
 for_window [instance="telegram-desktop"] move to workspace $ws10
 for_window [instance="discord"] move to workspace $ws10
 
