@@ -107,6 +107,7 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+s exec ~/myscripts/sb -r
 bindsym $mod+Shift+s exec sel=$(ls ~/myscripts | rofi -dmenu) && bash ~/myscripts/$sel
 bindsym $mod+a exec bash $HOME/myscripts/fastaccess.sh
+bindsym $mod+Shift+c exec alacritty -e $HOME/myscripts/editconfig.sh
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -191,6 +192,7 @@ assign [class="Brave-browser"] $ws2
 assign [class="telegram-desktop"] $ws10
 assign [class="discord"] $ws10
 assign [class="teams"] $ws5
+assign [class="microsoft teams - preview"] $ws5
 assign [class="zoom"] $ws5
 
 for_window [instance="lutris"] move to workspace $ws4
@@ -204,7 +206,7 @@ for_window [instance="pavucontrol"] resize set 800 600
 for_window [instance="pavucontrol"] move position right
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Alt+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
