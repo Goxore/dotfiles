@@ -307,15 +307,15 @@ bindsym $mod+z exec jgmenu_run
 
 
 
-
+set_from_resource $bl i3wm.color0
 set_from_resource $fg i3wm.color7 #f0f0f0
 set_from_resource $bg i3wm.color2 #f0f0f0
 set_from_resource $ur i3wm.color1 #f0f0f0
 
 # class                 border  backgr. text indicator child_border
 client.focused          $bg     $bg     $fg  $bg       $bg
-#client.focused_inactive $bg     $bg     $fg  $bg       $bg
-#client.unfocused        $bg     $bg     $fg  $bg       $bg
+#client.focused_inactive $bl     $bl     $fg  $bl       $bl
+#client.unfocused        $bl     $bl     $fg  $bl       $bl
 client.urgent           $ur     $ur     $ur  $ur       $ur
 #client.placeholder      $bg     $bg     $fg  $bg       $bg
 
@@ -325,8 +325,11 @@ client.background       $bg
 bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
 bindsym $mod+Shift+x exec --no-startup-id rofi -show power-menu -modi power-menu:~/.local/bin/rofi-power-menu
 bindsym $mod+p exec --no-startup-id /usr/bin/rofi-pass
-
+bindsym $mod+Ctrl+v exec --no-startup-id "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
 
 exec_always wal -R
 
 exec_always --no-startup-id autotiling
+exec_always --no-startup-id "greenclip daemon"
+exec_always --mo-startup-id "feh --bg-fill ~/dotfiles/wallpaper.jpg"
+
