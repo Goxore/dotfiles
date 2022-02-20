@@ -104,7 +104,7 @@ click-left = rofi -show power-menu -modi power-menu:rofi-power-menu
 
 [module/nvidia]
 type = custom/script
-exec = ~/myscripts/nvidiagputemp.sh
+exec = ~/scripts/nvidiagputemp.sh
 internal = 10
 
 format-prefix = "g糖 "
@@ -112,7 +112,7 @@ format-prefix = "g糖 "
 
 [module/amd]
 type = custom/script
-exec = ~/myscripts/amdcputemp.sh
+exec = ~/scripts/amdcputemp.sh
 internal = 10
 
 format-prefix = "c糖 "
@@ -206,8 +206,8 @@ type = custom/script
 
 ;label-underline= ${colors.primary}
 
-exec = ~/myscripts/micscript.sh interactive
-click-left = ~/myscripts/micscript.sh toggle
+exec = ~/scripts/micscript.sh interactive
+click-left = ~/scripts/micscript.sh toggle
 format-background = ${colors.background-alt}
 format-foreground = ${colors.foreground}
 format-overline = ${colors.line}

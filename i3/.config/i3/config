@@ -104,12 +104,12 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 #bindsym $mod+s layout stacking
-bindsym $mod+s exec ~/myscripts/sb -r
-bindsym $mod+Shift+s exec sel=$(ls ~/myscripts | rofi -dmenu) && bash ~/myscripts/$sel
-bindsym $mod+a exec bash $HOME/myscripts/fastaccess.sh
-bindsym $mod+Shift+c exec alacritty -e $HOME/myscripts/editconfig.sh
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+#bindsym $mod+s exec ~/scripts/sb -r
+#bindsym $mod+Shift+s exec sel=$(ls ~/scripts | rofi -dmenu) && bash ~/scripts/$sel
+#bindsym $mod+a exec bash $HOME/scripts/fastaccess.sh
+#bindsym $mod+Shift+c exec alacritty -e $HOME/scripts/editconfig.sh
+#bindsym $mod+w layout tabbed
+#bindsym $mod+e layout toggle split
 
 
 
@@ -125,10 +125,10 @@ bindsym $mod+e layout toggle split
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 
-bindsym $mod+v exec "~/myscripts/mic-check.sh"
-#bindsym $mod+menu exec "~/myscripts/mic-check.sh"
-#bindsym $mod+0xff67 exec "~/myscripts/mic-check.sh"
-#bindsym $mod+135 exec "~/myscripts/mic-check.sh"
+#bindsym $mod+v exec "~/scripts/mic-check.sh"
+#bindsym $mod+menu exec "~/scripts/mic-check.sh"
+#bindsym $mod+0xff67 exec "~/scripts/mic-check.sh"
+#bindsym $mod+135 exec "~/scripts/mic-check.sh"
 
 set $monitor_left "HDMI-0"
 set $monitor_right "DVI-D-0"
@@ -278,7 +278,6 @@ bindsym $mod+m [instance="music"] scratchpad show; [instance="music"] move posit
 
 
 #polybar
-exec_always polybar example
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 #monitors
@@ -324,12 +323,14 @@ client.background       $bg
 
 bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
 bindsym $mod+Shift+x exec --no-startup-id rofi -show power-menu -modi power-menu:~/.local/bin/rofi-power-menu
-bindsym $mod+p exec --no-startup-id /usr/bin/rofi-pass
-bindsym $mod+Ctrl+v exec --no-startup-id "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
+#bindsym $mod+p exec --no-startup-id /usr/bin/rofi-pass
+#bindsym $mod+Ctrl+c exec --no-startup-id "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
 
 exec_always wal -R
 
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id "greenclip daemon"
-exec_always --mo-startup-id "feh --bg-fill ~/dotfiles/wallpaper.jpg"
-
+exec_always --no-startup-id sxhkd
+exec_always --no-startup-id "feh --bg-fill ~/dotfiles/wallpaper.jpg"
+exec_always --no-startup-id mopidy
+exec_always --no-startup-id $HOME/scripts/polybarlaunch.sh

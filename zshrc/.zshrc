@@ -215,7 +215,7 @@ _comp_options+=(globdots)
 
 #exports--------------------
 export EDITOR='nvim'
-export PATH=$HOME/myscripts/:$PATH
+export PATH=$HOME/scripts/:$PATH
 
 #alias--------------------
 alias kp='killall polybar'
@@ -236,6 +236,7 @@ alias wiki="nvim $HOME/vimwiki/index.wiki"
 alias vw="nvim $HOME/vimwiki/index.wiki"
 alias v="nvim"
 alias hst="history 1 | cut -c 8- | sort | uniq | fzf | tr -d '\n' | xclip -selection c"
+alias pimg="xclip -se c -t image/png -o > out.png"
 if command -v exa &> /dev/null
 then
   #alias ls="exa --icons -a --group-directories-first"
@@ -282,7 +283,7 @@ HISTFILE=~/.zsh_history
 
 #lfcd
 LFCD="$HOME/.config/lf/lfcd.sh"
-#LFCD="$HOME/myscripts/lfrun"
+#LFCD="$HOME/scripts/lfrun"
 if [ -f "$LFCD" ]; then
     source "$LFCD"
 fi
