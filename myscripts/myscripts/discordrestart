@@ -1,7 +1,0 @@
-#!/bin/sh
-
-killall Discord
-sleep 1
-killall Discord
-sleep 1
-discord
