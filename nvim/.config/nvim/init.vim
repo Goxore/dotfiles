@@ -153,6 +153,13 @@ Plug 'vimwiki/vimwiki'
 " git integration
 Plug 'tpope/vim-fugitive'
 
+" Colorize parentheses
+Plug 'junegunn/rainbow_parentheses.vim'
+
+" Paste image LaTeX/md
+Plug 'ferrine/md-img-paste.vim'
+
+
 call plug#end()	
 "use ':PlugInstall' to install Plugins
 
@@ -315,7 +322,13 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 
+function! SetUsLayout()
+    silent !setxkbmap -model pc105 -layout us
+    silent !setxkbmap -model pc105 -layout us,ru,ua -option grp:win_space_toggle
+endfunction
 
+autocmd VimEnter * call SetUsLayout()
+autocmd InsertLeave,CmdlineLeave * call SetUsLayout()
 
 
 "-----------------------------------------------------------
@@ -339,3 +352,22 @@ vnoremap K :m '<-2<CR>gv=gv
 "use ':CocInstall coc-...' to install
 "
 "end--------------------------------------------------------------------------
+
+let g:livepreview_cursorhold_recompile = 0
+
+set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
+
+
+function! g:LatexPasteImage(relpath)
+    execute "normal! i\\includegraphics{" . a:relpath . "}\r\\caption{I"
+    let ipos = getcurpos()
+    execute "normal! a" . "mage}"
+    call setpos('.', ipos)
+    execute "normal! ve\<C-g>"
+endfunction
+
+
+autocmd FileType markdown let g:PasteImageFunction = 'g:MarkdownPasteImage'
+autocmd FileType tex let g:PasteImageFunction = 'g:LatexPasteImage'
+
+autocmd FileType markdown,tex nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
