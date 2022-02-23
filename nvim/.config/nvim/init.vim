@@ -87,17 +87,15 @@ Plug 'scrooloose/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'jistr/vim-nerdtree-tabs'
 
-
-
+" autopairs
+Plug 'Raimondi/delimitMate'
 
 " Conqueror of completion autocomplete engine
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " themes
-Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
-Plug 'tyrannicaltoucan/vim-quantum'
-Plug 'gruvbox-community/gruvbox'
-
+" Plug 'gruvbox-community/gruvbox'
+Plug 'lifepillar/vim-gruvbox8'
 
 " line at the bottom
 Plug 'itchyny/lightline.vim'
@@ -120,11 +118,14 @@ Plug 'omnisharp/omnisharp-vim'
 Plug 'ryanoasis/vim-devicons'
 "Plug 'https://github.com/adelarsq/vim-devicons-emoji'
 
+" Tabs
+"Plug 'kyazdani42/nvim-web-devicons'
+"Plug 'romgrk/barbar.nvim'
+
 " autoclose tag in html
-Plug 'alvan/vim-closetag'
+" Plug 'alvan/vim-closetag'
 
 " Startup menu and dependencies
-Plug 'startup-nvim/startup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lua/plenary.nvim'
 
@@ -153,12 +154,17 @@ Plug 'vimwiki/vimwiki'
 " git integration
 Plug 'tpope/vim-fugitive'
 
-" Colorize parentheses
-Plug 'junegunn/rainbow_parentheses.vim'
-
 " Paste image LaTeX/md
 Plug 'ferrine/md-img-paste.vim'
 
+" better comment
+Plug 'tpope/vim-commentary'
+
+" Dashboard
+Plug 'glepnir/dashboard-nvim'
+
+
+"-------------------------------------
 
 call plug#end()	
 "use ':PlugInstall' to install Plugins
@@ -198,6 +204,7 @@ endfunction
 
 
 " map leader to Space
+nnoremap <SPACE> <Nop>
 let mapleader=" "
 
 " map <leader>h :wincmd h<CR>
@@ -238,8 +245,8 @@ set termguicolors
 "colorscheme quantum
 "let g:lightline = {'colorscheme': 'quantum',}
 
-colorscheme gruvbox
-let g:lightline = {'colorscheme': 'gruvbox',}
+colorscheme gruvbox8
+let g:lightline = {'colorscheme': 'gruvbox8',}
 
 
 "colorscheme catppuccin
@@ -304,31 +311,24 @@ nnoremap <C-Right> :vertical resize +2<CR>
 
 " fast tab navigation
 " nnoremap <SPACE> :tabnext<CR>
-nnoremap <A-j> :tabprevious<CR>
-nnoremap <A-k> :tabnext<CR>
+" nnoremap <A-j> :tabprevious<CR>
+" nnoremap <A-k> :tabnext<CR>
 
-map <A-1> 1gt
-map <A-2> 2gt
-map <A-3> 3gt
-map <A-4> 4gt
-map <A-5> 5gt
-map <A-6> 6gt
-map <A-7> 7gt
-map <A-8> 8gt
-map <A-9> 9gt
+" map <A-1> 1gt
+" map <A-2> 2gt
+" map <A-3> 3gt
+" map <A-4> 4gt
+" map <A-5> 5gt
+" map <A-6> 6gt
+" map <A-7> 7gt
+" map <A-8> 8gt
+" map <A-9> 9gt
 
 " moving text in visual mode
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 
-function! SetUsLayout()
-    silent !setxkbmap -model pc105 -layout us
-    silent !setxkbmap -model pc105 -layout us,ru,ua -option grp:win_space_toggle
-endfunction
-
-autocmd VimEnter * call SetUsLayout()
-autocmd InsertLeave,CmdlineLeave * call SetUsLayout()
 
 
 "-----------------------------------------------------------
@@ -358,16 +358,23 @@ let g:livepreview_cursorhold_recompile = 0
 set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
 
 
-function! g:LatexPasteImage(relpath)
-    execute "normal! i\\includegraphics{" . a:relpath . "}\r\\caption{I"
-    let ipos = getcurpos()
-    execute "normal! a" . "mage}"
-    call setpos('.', ipos)
-    execute "normal! ve\<C-g>"
+function! g:LatexPasteImage2(relpath)
+   execute "normal! i\\includegraphics[width=1\\linewidth]{" . a:relpath . "}"
+   "let ipos = getcurpos()
+   "execute "normal! a" . "mage}"
+   "call setpos('.', ipos)
+   "execute "normal! ve\<C-g>"
 endfunction
 
 
 autocmd FileType markdown let g:PasteImageFunction = 'g:MarkdownPasteImage'
-autocmd FileType tex let g:PasteImageFunction = 'g:LatexPasteImage'
+autocmd FileType tex let g:PasteImageFunction = 'g:LatexPasteImage2'
 
 autocmd FileType markdown,tex nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
+
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
+
