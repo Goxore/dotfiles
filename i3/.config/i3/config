@@ -334,3 +334,4 @@ exec_always --no-startup-id sxhkd
 exec_always --no-startup-id "feh --bg-fill ~/dotfiles/wallpaper.jpg"
 exec_always --no-startup-id mopidy
 exec_always --no-startup-id $HOME/scripts/polybarlaunch.sh
+exec_always --no-startup-id xmodmap $HOME/.xmodmaprc
