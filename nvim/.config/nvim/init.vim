@@ -1,15 +1,15 @@
 "
 "_________________________________________________________________________________________
-"_____/\\\\\\\\\\\\________________________________________________________________________        
-" ___/\\\//////////_________________________________________________________________________       
-"  __/\\\____________________________________________________________________________________      
-"   _\/\\\____/\\\\\\\_____/\\\\\_____/\\\____/\\\_____/\\\\\_____/\\/\\\\\\\______/\\\\\\\\__     
-"    _\/\\\___\/////\\\___/\\\///\\\__\///\\\/\\\/____/\\\///\\\__\/\\\/////\\\___/\\\/////\\\_    
-"     _\/\\\_______\/\\\__/\\\__\//\\\___\///\\\/_____/\\\__\//\\\_\/\\\___\///___/\\\\\\\\\\\__   
-"      _\/\\\_______\/\\\_\//\\\__/\\\_____/\\\/\\\___\//\\\__/\\\__\/\\\_________\//\\///////___  
-"       _\//\\\\\\\\\\\\/___\///\\\\\/____/\\\/\///\\\__\///\\\\\/___\/\\\__________\//\\\\\\\\\\_ 
+"_____/\\\\\\\\\\\\________________________________________________________________________
+" ___/\\\//////////_________________________________________________________________________
+"  __/\\\____________________________________________________________________________________
+"   _\/\\\____/\\\\\\\_____/\\\\\_____/\\\____/\\\_____/\\\\\_____/\\/\\\\\\\______/\\\\\\\\__
+"    _\/\\\___\/////\\\___/\\\///\\\__\///\\\/\\\/____/\\\///\\\__\/\\\/////\\\___/\\\/////\\\_
+"     _\/\\\_______\/\\\__/\\\__\//\\\___\///\\\/_____/\\\__\//\\\_\/\\\___\///___/\\\\\\\\\\\__
+"      _\/\\\_______\/\\\_\//\\\__/\\\_____/\\\/\\\___\//\\\__/\\\__\/\\\_________\//\\///////___
+"       _\//\\\\\\\\\\\\/___\///\\\\\/____/\\\/\///\\\__\///\\\\\/___\/\\\__________\//\\\\\\\\\\_
 "        __\////////////_______\/////_____\///____\///_____\/////_____\///____________\//////////__
-"         __________________________________________________________________________________________  
+"         __________________________________________________________________________________________
 
 "Show line numbers
 set relativenumber
@@ -23,13 +23,11 @@ set encoding=utf-8
 " Text Edit might fail if hidden is not set.
 set hidden
 
-
 " Insert 2 spaces for a tab
 set tabstop=2
 
 " Having longer update time (default is 4000 ms = 4 s) leads to noticeable delays
 set updatetime=300
-
 
 " true color
 if has('nvim') || has('termguicolors')
@@ -58,15 +56,12 @@ else
   set signcolumn=yes
 endif
 
-
 " remove backups
 set nobackup
 set nowritebackup
 
-
 " make splits below
 set splitbelow
-
 
 " ctrl+c ctrl+v to yank paste
 set clipboard=unnamedplus
@@ -79,7 +74,6 @@ filetype plugin on
 syntax on
 
 nnoremap <esc><esc> :noh<return>
-
 
 call plug#begin()				
 " nerdtree file explorer
@@ -100,10 +94,8 @@ Plug 'lifepillar/vim-gruvbox8'
 " line at the bottom
 Plug 'itchyny/lightline.vim'
 
-
 " wide language support
 Plug 'sheerun/vim-polyglot'
-
 
 " autocomplete option1
 Plug 'dense-analysis/ale'
@@ -162,7 +154,7 @@ Plug 'tpope/vim-commentary'
 
 " Dashboard
 Plug 'glepnir/dashboard-nvim'
-
+Plug 'liuchengxu/vim-clap'
 
 "-------------------------------------
 
@@ -173,11 +165,8 @@ call plug#end()
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"                        
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-
-
 " use mono with c#
 let g:OmniSharp_server_use_mono = 1
-
 
 "NERDTree--------------------
 "autocmd VimEnter * NERDTree | wincmd p
@@ -186,7 +175,6 @@ nnoremap <C-n> :NERDTreeTabsToggle<CR>
 
 let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
-
 
 " Background colors for active vs inactive windows
 hi TreeWindow guibg=#242424
@@ -202,15 +190,12 @@ function! Handle_Win_Enter()
   setlocal winhighlight=Normal:TreeWindow
 endfunction
 
-
 " map leader to Space
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 
 " map <leader>h :wincmd h<CR>
 " map <leader>l :wincmd l<CR>
-
-
 
 " change splits 
 map <C-h> <C-w>h
@@ -220,20 +205,14 @@ map <C-w> <C-w>w
 " tab to go to next snippet
 let g:coc_snippet_next = '<tab>'
 
-
-
 "LATEX
 let g:livepreview_previewer = 'zathura'
 
 filetype plugin indent on
 syntax enable
 
-
-
 " enable mouse
 set mouse=a
-
-
 
 " Themes
 "colorscheme challenger_deep
@@ -247,7 +226,6 @@ set termguicolors
 
 colorscheme gruvbox8
 let g:lightline = {'colorscheme': 'gruvbox8',}
-
 
 "colorscheme catppuccin
 "let g:lightline = {'colorscheme': 'catppuccin'}
@@ -266,8 +244,6 @@ let g:user_emmet_leader_key=','
 let NERDTreeMinimalUI=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-
-
 " Terminal function
 let g:term_buf = 0
 let g:term_win = 0
@@ -275,7 +251,6 @@ function! TermToggle(height)
     if win_gotoid(g:term_win)
         hide
     else
-        
         new
         exec "resize " . a:height
         try
@@ -293,7 +268,6 @@ function! TermToggle(height)
         let g:term_win = win_getid()
     endif
 endfunction
-
 
 nnoremap <C-t> :call TermToggle(12)<CR>
 inoremap <C-t> <Esc>:call TermToggle(12)<CR>
@@ -328,11 +302,66 @@ nnoremap <C-Right> :vertical resize +2<CR>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
+" latex section
 
+let g:livepreview_cursorhold_recompile = 0
+set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
 
+function! g:LatexPasteImage2(relpath)
+   execute "normal! i\\includegraphics[width=1\\linewidth]{" . a:relpath . "}"
+   "let ipos = getcurpos()
+   "execute "normal! a" . "mage}"
+   "call setpos('.', ipos)
+   "execute "normal! ve\<C-g>"
+endfunction
+
+autocmd FileType markdown let g:PasteImageFunction = 'g:MarkdownPasteImage'
+autocmd FileType tex let g:PasteImageFunction = 'g:LatexPasteImage2'
+autocmd FileType markdown,tex nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
+
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
+
+" Vim dashboard
+
+let g:mapleader="\<Space>"
+let g:dashboard_default_executive='telescope'
+nmap <Leader>ss :<C-u>SessionSave<CR>
+nmap <Leader>sl :<C-u>SessionLoad<CR>
+nnoremap <silent> <Leader>fh :DashboardFindHistory<CR>
+nnoremap <silent> <Leader>ff :DashboardFindFile<CR>
+" nnoremap <silent> <Leader>tc :DashboardChangeColorscheme<CR>
+" nnoremap <silent> <Leader>fa :DashboardFindWord<CR>
+" nnoremap <silent> <Leader>fb :DashboardJumpMark<CR>
+nnoremap <silent> <Leader>n :DashboardNewFile<CR>
+
+" let g:dashboard_preview_file_height = 16
+" let g:dashboard_preview_file_width = 24
+" let g:dashboard_preview_file ="~/Documents/herbascii.cat"
+
+let g:dashboard_custom_header = [
+\'         ██         ',
+\'██      ████      ██',
+\'████    ████    ████',
+\'██ ██    ██    ██ ██',
+\'██ ██    ██    ██ ██',
+\'██  ██   ██   ██  ██',
+\'██  ██   ██   ██  ██',
+\'██  ██  ████  ██  ██',
+\'█████   ████   █████',
+\'██  █  ██  ██  █  ██',
+\'██  █████  █████  ██',
+\'██   ██ ████ ██   ██',
+\'████████████████████',
+\'     ███ ██ ███     ',
+\'       ██████       ',
+\'         ██         ',
+\]
 
 "-----------------------------------------------------------
-
 
 "Coc extensions to install ---------------------------------------------------
 "
@@ -352,29 +381,3 @@ vnoremap K :m '<-2<CR>gv=gv
 "use ':CocInstall coc-...' to install
 "
 "end--------------------------------------------------------------------------
-
-let g:livepreview_cursorhold_recompile = 0
-
-set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
-
-
-function! g:LatexPasteImage2(relpath)
-   execute "normal! i\\includegraphics[width=1\\linewidth]{" . a:relpath . "}"
-   "let ipos = getcurpos()
-   "execute "normal! a" . "mage}"
-   "call setpos('.', ipos)
-   "execute "normal! ve\<C-g>"
-endfunction
-
-
-autocmd FileType markdown let g:PasteImageFunction = 'g:MarkdownPasteImage'
-autocmd FileType tex let g:PasteImageFunction = 'g:LatexPasteImage2'
-
-autocmd FileType markdown,tex nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
-
-let g:tex_flavor='latex'
-let g:vimtex_view_method='zathura'
-let g:vimtex_quickfix_mode=0
-set conceallevel=1
-let g:tex_conceal='abdmg'
-

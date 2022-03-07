@@ -3,7 +3,7 @@ super + a
 	$HOME/scripts/fastaccess.sh
 
 super + shift + c
-	alacritty -e $HOME/scripts/editconfig.sh
+	$HOME/scripts/editconfig.sh
 
 super + s
 	$HOME/scripts/sb -r
@@ -34,5 +34,6 @@ super + u
 	rofi-rbw
 super + Delete
 	$HOME/scripts/holdwork.sh
+
 super + Insert
 	$HOME/scripts/continuework.sh
