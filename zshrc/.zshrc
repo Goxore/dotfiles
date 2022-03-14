@@ -52,7 +52,6 @@ export PATH=$HOME/scripts/:$PATH
 #alias--------------------
 alias kp='killall polybar'
 alias dev='devour'
-alias d='devour'
 alias dz='devour zathura'
 alias grep='grep --color=auto'
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
@@ -69,6 +68,7 @@ alias vw="nvim $HOME/vimwiki/index.wiki"
 alias v="nvim"
 alias hst="history 1 | cut -c 8- | sort | uniq | fzf | tr -d '\n' | xclip -selection c"
 alias pimg="xclip -se c -t image/png -o > out.png"
+alias :q="exit"
 if command -v exa &> /dev/null
 then
   #alias ls="exa --icons -a --group-directories-first"

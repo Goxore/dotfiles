@@ -1,8 +1,9 @@
 configlist
-nvim 					nvim init.vim
+nvim 					nvim lua/..
 i3 						i3 config
 polybar				polybar config
 ncmpcpp				ncmpcpp config
 alacritty			alacritty alacritty.yml
 lf						lf lfrc
 sxhkd					sxhkd sxhkdrc
+picom					picom picom.conf

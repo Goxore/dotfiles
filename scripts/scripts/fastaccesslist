@@ -1,5 +1,5 @@
 discordrestart
 fastaccesslist
-ytmp3 -n -c
+ytmp3 -c -n
 polybarlaunch.sh
 sxhkdreload.sh

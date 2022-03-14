@@ -1,15 +1,15 @@
 # scripts
 super + a
-	$HOME/scripts/fastaccess.sh
+	bash $HOME/scripts/fastaccess.sh
 
 super + shift + c
-	$HOME/scripts/editconfig.sh
+	bash $HOME/scripts/editconfig.sh
 
 super + s
-	$HOME/scripts/sb -r
+	bash $HOME/scripts/sb -r
 
 super + v
-	$HOME/scripts/mictoggle.sh
+	bash $HOME/scripts/mictoggle.sh
 
 super + ctrl + c
 	rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'

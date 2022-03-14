@@ -65,10 +65,20 @@ cmd q ${{
 
 cmd ex ${{
   case "$f" in
-      *.zip) unzip "$f" ;;
-      *.tar.gz) tar -xzvf "$f" ;;
-      *.tar.bz2) tar -xjvf "$f" ;;
-      *.tar) tar -xvf "$f" ;;
+      *.zip)      unzip "$f" ;;
+      *.tar.gz)   tar -xzvf "$f" ;;
+      *.tar.bz2)  tar -xjvf "$f" ;;
+      *.tar)      tar -xvf "$f" ;;
+      *.bz2)       bunzip2 "$f" ;;
+      *.rar)       unrar x "$f" ;;
+      *.gz)        gunzip "$f" ;;
+      *.tbz2)      tar xjf "$f" ;;
+      *.tgz)       tar xzf "$f" ;;
+      *.Z)         uncompress "$f" ;;
+      *.7z)        7z x "$f" ;;
+      *.deb)       ar x "$f" ;;
+      *.tar.xz)    tar xf "$f" ;;
+      *.tar.zst)   tar xf "$f" ;;
       *) echo "Unsupported format" ;;
   esac
 }}
@@ -135,7 +145,7 @@ map p paste
 map dd cut
 map y copy
 map <enter> open
-map d<enter> devopen
+map g<enter> devopen
 map mf mkfile
 map mr sudomkfile
 map md mkdir
