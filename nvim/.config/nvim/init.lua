@@ -1,5 +1,6 @@
 -- init.lua
 -- requirements
+require('packinit')
 require('nvim-treeconf')
 require('lspconf')
 require('plugins')

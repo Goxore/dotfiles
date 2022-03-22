@@ -3,6 +3,7 @@ export BROWSER="brave"
 export VIDEO="mpv"
 export IMAGE="sxiv"
 export OPENER="xdg-open"
+export SCRIPTS="$HOME/scripts"
 
 export LF_ICONS="\
 tw=:\

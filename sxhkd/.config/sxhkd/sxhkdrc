@@ -1,15 +1,15 @@
 # scripts
 super + a
-	bash $HOME/scripts/fastaccess.sh
+	bash $SCRIPTS/fastaccess.sh
 
 super + shift + c
-	bash $HOME/scripts/editconfig.sh
+	bash $SCRIPTS/editconfig.sh
 
 super + s
-	bash $HOME/scripts/sb -r
+	bash $SCRIPTS/sb -r
 
 super + v
-	bash $HOME/scripts/mictoggle.sh
+	bash $SCRIPTS/mictoggle.sh
 
 super + ctrl + c
 	rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'
@@ -33,7 +33,7 @@ super + bracketleft
 super + u
 	rofi-rbw
 super + Delete
-	$HOME/scripts/holdwork.sh
+	$SCRIPTS/holdwork.sh
 
 super + Insert
-	$HOME/scripts/continuework.sh
+	$SCRIPTS/continuework.sh

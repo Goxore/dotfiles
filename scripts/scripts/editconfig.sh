@@ -1,7 +1,7 @@
 #!/bin/zsh
 listpath=$HOME/scripts/configlist
 
-select=$(awk '{print $1}' ~/dotfiles/scripts/scripts/configlist | rofi -dmenu)
+select=$(awk '{print $1}' $SCRIPTS/configlist | rofi -dmenu)
 
 if [ $select = "configlist" ]; then
  alacritty -e nvim ~/scripts/configlist
