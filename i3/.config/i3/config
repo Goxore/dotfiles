@@ -179,7 +179,7 @@ bindsym $mod+Alt+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -262,7 +262,7 @@ for_window [class=".*"] border pixel 3
 gaps inner 10
 
 
-exec --no-startup-id "setxkbmap -model pc105 -layout us,ru,ua -option grp:win_space_toggle"
+# exec --no-startup-id "setxkbmap -model pc105 -layout us,ru,ua -option grp:win_space_toggle"
 
 #background
 #exec_always feh --bg-fill ~/Downloads/Arch-Linux-Wallpaper-04-1920x1080.jpg
@@ -294,18 +294,18 @@ client.urgent           $ur     $ur     $ur  $ur       $ur
 client.background       $bg
 
 
-bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
-bindsym $mod+Shift+x exec --no-startup-id rofi -show power-menu -modi power-menu:~/.local/bin/rofi-power-menu
+# bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
+# bindsym $mod+Shift+x exec --no-startup-id rofi -show power-menu -modi power-menu:~/.local/bin/rofi-power-menu
 #bindsym $mod+p exec --no-startup-id /usr/bin/rofi-pass
 #bindsym $mod+Ctrl+c exec --no-startup-id "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
 
 exec_always wal -n -R
 
 exec_always --no-startup-id autotiling
-exec_always --no-startup-id "greenclip daemon"
-exec_always --no-startup-id sxhkd
+# exec_always --no-startup-id "greenclip daemon"
+# exec_always --no-startup-id sxhkd
 exec_always --no-startup-id "feh --bg-fill ~/dotfiles/wallpaper.jpg"
-exec_always --no-startup-id mopidy
+# exec_always --no-startup-id mopidy
 exec_always --no-startup-id $HOME/scripts/polybarlaunch.sh
-exec_always --no-startup-id xmodmap $HOME/.xmodmaprc
-exec_always --no-startup-id picom
+# exec_always --no-startup-id xmodmap $HOME/.xmodmaprc
+# exec_always --no-startup-id picom

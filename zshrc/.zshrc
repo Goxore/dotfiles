@@ -48,6 +48,7 @@ _comp_options+=(globdots)
 #exports--------------------
 export EDITOR='nvim'
 export PATH=$HOME/scripts/:$PATH
+export PATH=$HOME/.bin/:$PATH
 
 #alias--------------------
 alias kp='killall polybar'
@@ -131,6 +132,12 @@ source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 
+#autosuggestions
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#909090,bg=#282828"
+bindkey '^ ' autosuggest-accept
+
+# source /usr/share/zsh/plugins/manual/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # Yank to the system clipboard
 function vi-yank-xclip {

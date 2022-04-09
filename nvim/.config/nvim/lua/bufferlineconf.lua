@@ -12,7 +12,7 @@ require('bufferline').setup {
     -- diagnostics = "coc"
   -- }
    options = {
-      offsets = { { filetype = "NvimTree", text = "File Explorer", padding = 0 } },
+      offsets = { { filetype = "NvimTree", text = "File Explorer", padding = 1 } },
       buffer_close_icon = "",
       modified_icon = "",
       close_icon = "",

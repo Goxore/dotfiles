@@ -20,3 +20,5 @@ This will create a symlink from the repo folder to your ~/.config/i3/config so t
 Most of the scripts from /myscripts are <s>stolen</s> borrowed from other people's dotfiles, so feel free to take anything you like.
 
 Without additional editing scripts will not work unless installed using symlink, because all apps will look for ~/myscripts
+
+wallpaper.jpg

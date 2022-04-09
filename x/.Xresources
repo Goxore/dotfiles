@@ -83,3 +83,4 @@ XTerm*foreground     : _foreground
 XTerm*background     : _background
 XTerm*cursorColor    : _cursorColor
 
+#include ".cache/wal/colors.Xresources"

@@ -20,6 +20,11 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
+keymap("n", "<C-Left>",  "<cmd>wincmd h <CR>", opts)
+keymap("n", "<C-Right>", "<cmd>wincmd l <CR>", opts)
+keymap("n", "<C-Up>",    "<cmd>wincmd k <CR>", opts)
+keymap("n", "<C-Down>",  "<cmd>wincmd j <CR>", opts)
+
 keymap("n", "<esc><esc>", "<cmd>:noh<return>", opts)
 
 -- Tab navigation
@@ -49,10 +54,11 @@ keymap("n", "<A-9>", "<cmd>BufferLineGoToBuffer 9<CR>", opts)
 keymap("n", "<C-w>", "<cmd>bd<CR>", opts)
 
 -- Resize windows
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)
+keymap("n", "<A-Left>", ":vertical resize -2<CR>", opts)
+keymap("n", "<A-Right>", ":vertical resize +2<CR>", opts)
+keymap("n", "<A-Up>", ":resize -2<CR>", opts)
+keymap("n", "<A-Down>", ":resize +2<CR>", opts)
+
 
 -- Nvim Tree
 keymap("n", "<C-n>", ":NvimTreeToggle<CR>", opts)

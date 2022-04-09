@@ -43,6 +43,7 @@ local function button(sc, txt, keybind)
       width = 36,
       align_shortcut = "right",
       hl = "AlphaButtons",
+      hl_shortcut = "AlphaButtonsShortcut",
    }
 
    if keybind then
@@ -63,11 +64,11 @@ end
 local buttons = {
    type = "group",
    val = {
-      button("SPC n", "  New file" , ":ene <BAR> startinsert <CR>"),
-      button("SPC r", "  Recent File  ", ":Telescope oldfiles<CR>"),
-      button("SPC f", "  Find File  ", ":Telescope find_files<CR>"),
-      button("SPC w", "  Find Word  ", ":Telescope live_grep<CR>"),
-      button("SPC b", "  Bookmarks  ", ":Telescope marks<CR>"),
+      button(" n ", "  New file" , ":ene <BAR> startinsert <CR>"),
+      button(" r ", "  Recent File  ", ":Telescope oldfiles<CR>"),
+      button(" f ", "  Find File  ", ":Telescope find_files<CR>"),
+      button(" w ", "  Find Word  ", ":Telescope live_grep<CR>"),
+      button(" b ", "  Bookmarks  ", ":Telescope marks<CR>"),
 --    button("SPC c", "  Colorschemes  ", ":Telescope colorscheme<CR>"),
       -- button("SPC s", "  Settings", ":e $MYVIMRC | :cd %:p:h <CR>"),
    },

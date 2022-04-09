@@ -10,7 +10,7 @@ local api = vim.api
 o.swapfile = true
 o.dir = '/tmp'
 o.smartcase = true
-o.laststatus = 2
+o.laststatus = 3
 o.hlsearch = true
 o.incsearch = true
 o.ignorecase = true
@@ -28,24 +28,23 @@ o.termguicolors = true
 o.mouse = "a"
 o.splitbelow = true
 o.scrolloff = 5
-o.langmap = [[ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>]]
-g.OmniSharp_server_use_mono = 1
+-- o.langmap = [[ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>]]
+-- g.laststatus = 3
+
 --o.invspell spelllang = ru_ru,en_us,uk_ua
 --o.nospell = true
 
 vim.cmd [[
+set laststatus=3
 colorscheme gruvbox8
 set nobackup
 set nowritebackup
 vnoremap < <gv
 vnoremap > >gv
 set clipboard=unnamedplus
+nnoremap gx <CMD>execute '!xdg-open ' .. shellescape(expand('<cfile>'), v:true)<CR>
 
-"nvim tree color
-hi NvimTreeNormal guibg=#222222
-hi AlphaHeader guifg=#fabd2f
-hi AlphaButton guibg=#ebdbb2
-set fillchars+=vert:\ 
+" set fillchars+=vert:\ 
 ]]
 
 -- g.coc_snippet_next = '<tab>'

@@ -1,8 +1,18 @@
+# main
+Print
+  maim -s --format=png /dev/stdout | xclip -selection clipboard -t image/png -i
+
+super + d
+  rofi -show drun -show-icons
+
+super + shift + x 
+  rofi -show power-menu -modi power-menu:~/.local/bin/rofi-power-menu
+
 # scripts
 super + a
 	bash $SCRIPTS/fastaccess.sh
 
-super + shift + c
+super + shift + e
 	bash $SCRIPTS/editconfig.sh
 
 super + s
@@ -11,7 +21,7 @@ super + s
 super + v
 	bash $SCRIPTS/mictoggle.sh
 
-super + ctrl + c
+super + shift + c
 	rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'
 
 #music

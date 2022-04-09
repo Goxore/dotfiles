@@ -65,7 +65,7 @@ font-5 = "FontAwesome5:pixelsize=23;5"
 
 modules-left = i3
 modules-center = mpd
-modules-right = xkeyboard amd nvidia temperature battery pulseaudio mute_mic date
+modules-right = xkeyboard amd nvidia temperature battery pulseaudio mute_mic date calendar
 tray-position = right
 tray-padding = 2
 
@@ -473,4 +473,10 @@ screenchange-reload = true
 margin-top = 5
 margin-bottom = 5
 
-;
+[module/calendar]
+type = custom/script
+label = ""
+exec = echo Calendar
+click-left = . $SCRIPTS/calendar.sh curr
+scroll-up = . $SCRIPTS/calendar.sh next
+scroll-down = . $SCRIPTS/calendar.sh prev

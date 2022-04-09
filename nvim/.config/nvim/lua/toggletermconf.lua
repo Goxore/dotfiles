@@ -53,16 +53,4 @@ vim.api.nvim_set_keymap(
     opts
 )
 
-vim.api.nvim_set_keymap(
-    "t",
-    "<leader>t",
-    "<cmd>lua _MYTERM_TOGGLE()<CR>",
-    opts
-)
-vim.api.nvim_set_keymap(
-    "n",
-    "<leader>t",
-    "<cmd>lua _MYTERM_TOGGLE()<CR>",
-    opts
-)
 

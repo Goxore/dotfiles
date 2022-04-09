@@ -38,7 +38,7 @@ return require('packer').startup(function(use)
   --use("scrooloose/syntastic")
   
   -- c# support
-  use("omnisharp/omnisharp-vim")
+  -- use("omnisharp/omnisharp-vim")
   
   -- vim developer icons
   use("ryanoasis/vim-devicons")
@@ -59,12 +59,13 @@ return require('packer').startup(function(use)
   use("mattn/emmet-vim")
   
   --snippets
-  use("SirVer/ultisnips")
-  use("mlaursen/vim-react-snippets")
+  -- use("SirVer/ultisnips")
+  -- use("mlaursen/vim-react-snippets")
   
   -- VimTeX
   use("lervag/vimtex")
-  use({"xuhdev/vim-latex-live-preview",  ft = {'tex'}})
+  -- use({"xuhdev/vim-latex-live-preview",  ft = {'tex'}})
+  use("xuhdev/vim-latex-live-preview")
   
   -- wiki
   use("vimwiki/vimwiki")
@@ -105,11 +106,33 @@ return require('packer').startup(function(use)
 
   use ("neovim/nvim-lspconfig")
 
-  use ("hrsh7th/nvim-cmp")
+  use({
+    "hrsh7th/nvim-cmp",
+    requires = {
+      { "kdheepak/cmp-latex-symbols" },
+      { "L3MON4D3/LuaSnip" }
+    },
+    sources = {
+      { name = "latex_symbols" },
+    },
+  })
+
+
+  use ("rafamadriz/friendly-snippets")
+  use ("saadparwaiz1/cmp_luasnip")
   use ("hrsh7th/cmp-nvim-lsp")
+  use ("hrsh7th/cmp-nvim-lua")
   use ("hrsh7th/cmp-buffer")
   use ("hrsh7th/cmp-path")
   use ("hrsh7th/cmp-cmdline")
-  use ("quangnguyen30192/cmp-nvim-ultisnips")
+  -- use ("quangnguyen30192/cmp-nvim-ultisnips")
   use ("williamboman/nvim-lsp-installer")
+
+  --yuck lang
+  use("https://github.com/elkowar/yuck.vim")
+  
+  -- faster loading
+  use 'lewis6991/impatient.nvim'
+  
 end)
+
