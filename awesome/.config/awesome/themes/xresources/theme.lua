@@ -23,11 +23,6 @@ theme.bg_urgent     = xrdb.color9
 theme.bg_minimize   = xrdb.color8
 theme.bg_systray    = theme.bg_normal
 
-theme.taglist_fg_empty = "#353535"
-theme.taglist_fg_focus = xrdb.color4
-theme.taglist_bg_focus = xrdb.background
-theme.taglist_fg_urgent = xrdb.color1
-theme.taglist_bg_urgent = xrdb.background
 
 theme.tasklist_bg_focus = xrdb.background
 theme.tasklist_bg_normal = xrdb.background
@@ -49,6 +44,14 @@ theme.border_marked = xrdb.color4
 theme.rounded_corners = true
 theme.border_radius = dpi(6)
 
+theme.wibar_bg = "#242424"
+
+theme.taglist_fg_empty = "#353535"
+theme.taglist_fg_focus = xrdb.color4
+theme.taglist_bg_focus = theme.wibar_bg
+theme.taglist_fg_urgent = xrdb.color1
+theme.taglist_bg_urgent = theme.wibar_bg
+
 theme.red   = xrdb.color1 
 theme.green = xrdb.color2
 theme.yellow = xrdb.color3 
@@ -56,7 +59,6 @@ theme.blue   = xrdb.color4
 theme.magenta = xrdb.color5
 theme.cyan = xrdb.color6
 
-theme.wibar_bg = "#242424"
 
 -- There are other variable sets
 -- overriding the default one when

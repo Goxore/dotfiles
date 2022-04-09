@@ -1,7 +1,10 @@
 #/bin/bash
 
-UNMUTE_ICON=" 100%"
-MUTED_ICON=" 0%"
+# UNMUTE_ICON=" 100%"
+# MUTED_ICON=" 0%"
+
+UNMUTE_ICON="on"
+MUTED_ICON="off"
 
 # return pulseaudio default source index
 get_default_source_index() { INDEX=$(pacmd list-sources | grep "*" | awk '{ print $3 }' | tr '\n' '\0'); }

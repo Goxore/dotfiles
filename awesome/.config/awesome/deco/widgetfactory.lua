@@ -103,4 +103,53 @@ M.makewidget2 = function (value, value2,fgcolor, icon, textleftmargin,textrightm
   
   return returned.widget
 end
+
+
+M.makewidgetdouble = function (value, value2, fgcolor, textleftmargin,textrightmargin,iconleftmargin, textbotmargin)
+  local returned = {}
+  
+  returned.widget = wibox.widget{
+    {
+      {
+        {
+          {
+            widget = value,
+            align = "center",
+          },
+          top = 10,
+          bottom = textbotmargin,
+          left = textleftmargin,
+          right = textrightmargin,
+          align = "center",
+          widget = wibox.container.margin
+        },
+        {
+          {
+            widget = value2,
+            align = "center",
+          },
+          top = -10,
+          bottom = textbotmargin,
+          left = textleftmargin,
+          right = 0,
+          align = "center",
+          widget = wibox.container.margin
+        },
+        layout = wibox.layout.fixed.vertical,
+      },
+      bg = '#303030', -- basic
+      fg = fgcolor,
+      -- shape_border_width = 1, shape_border_color = '#4C566A', -- outline
+      shape = function(cr, width, height) 
+          gears.shape.rounded_rect(cr, width, height, 4) 
+      end,
+      widget = wibox.container.background
+    },
+    top = 0, bottom = 10, left = 8, right = 8,
+    widget = wibox.container.margin,
+  }
+  
+  return returned.widget
+end
+
 return M

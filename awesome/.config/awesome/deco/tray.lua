@@ -9,9 +9,13 @@ local tray = {}
 -- For checking if cursor is around tray
 local scr_g = screen.primary.geometry
 -- Coordinates of upper right corner (where the widget should be)
+-- local corner = {
+--     x = scr_g.x + scr_g.width,
+--     y = scr_g.y
+-- }
 local corner = {
-    x = scr_g.x + scr_g.width,
-    y = scr_g.y
+    x = scr_g.x,
+    y = scr_g.y + scr_g.height
 }
 local max_dist = (scr_g.width^2 + scr_g.height^2) ^ 0.5 / 5
 
