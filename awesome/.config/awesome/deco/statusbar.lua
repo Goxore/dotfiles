@@ -10,7 +10,7 @@ local tray2 = require("deco.tray")
 
 local wf = require("deco.widgetfactory")
 
-local bp = require("deco.bigpanel")
+-- local bp = require("deco.bigpanel")
 
 -- Custom Local Library: Common Functional Decoration
 local deco = {
@@ -53,7 +53,6 @@ awful.screen.connect_for_each_screen(function(s)
 
   s.batval = awful.widget.watch('bash -c "/home/yurii/scripts/battery.sh"', 15)
   s.bat = wf.makewidget(s.batval,theme.green, "",0,0, 0, -15)
-  
 
   s.keybval = awful.widget.keyboardlayout
   s.keylay = wf.makewidget(s.keybval,theme.magenta, "",-5,-10, -9, 15)
@@ -61,13 +60,21 @@ awful.screen.connect_for_each_screen(function(s)
   s.tempval = awful.widget.watch('bash -c "/home/yurii/scripts/cputemp.sh"', 5)
   s.temp = wf.makewidget(s.tempval,theme.blue, "", 0,0,0, -15)
 
-  s.hours = awful.widget.watch('bash -c "date +%H"', 15)
-  s.minutes = awful.widget.watch('bash -c "date +%M"', 15)
-  
+  s.hours = wibox.widget{
+    format = "%H",
+    valign = "center",
+    widget = wibox.widget.textclock
+  }
 
-  s.clock = wf.makewidget2(s.hours, s.minutes,theme.yellow, "",0,0 ,-5 , -15)
+  s.minutes = wibox.widget{
+    format = "%M",
+    valign = "center",
+    widget = wibox.widget.textclock
+  }
 
-  s.clock:connect_signal("button::press", function() bp.bigpanel.visible = not bp.bigpanel.visible end)
+  s.clock = wf.makewidget2(s.hours, s.minutes,theme.yellow, "",0,0 ,-5 , 10)
+
+  -- s.clock:connect_signal("button::press", function() bp.bigpanel.visible = not bp.bigpanel.visible end)
   -- s.battery = wibox.widget {
   --   -- widget = awful.widget.watch('sensors | grep Package | awk "{print $4}"', 5),
   --   widget = awful.widget.watch('bash -c "/home/yurii/scripts/battery.sh"', 15),

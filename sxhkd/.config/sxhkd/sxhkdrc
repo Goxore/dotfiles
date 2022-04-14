@@ -28,6 +28,9 @@ super + shift + c
 super + plus
 	mpc volume +5
 
+super + equal
+	mpc volume +5
+
 super + minus
 	mpc volume -5
 

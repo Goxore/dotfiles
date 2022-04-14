@@ -26,7 +26,8 @@ M.makewidget = function (value, fgcolor , icon, textleftmargin, textrightmargin,
           {
             align = "center",
             text = icon,
-            widget = wibox.widget.textbox
+            widget = wibox.widget.textbox,
+            -- font = "Hack Nerd Font 25"
           },
           top = 0, bottom = 10, left = iconleftmargin, right = 0,
           widget = wibox.container.margin

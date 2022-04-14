@@ -11,6 +11,8 @@ local bling = require("bling")
 local modkey = RC.vars.modkey
 local terminal = RC.vars.terminal
 
+local bp = require("deco.bigpanel")
+
 local _M = {}
 
 -- reading
@@ -203,7 +205,11 @@ function _M.get()
     awful.key({ }, "XF86MonBrightnessDown", function () os.execute("xbacklight -dec 10") end,
       {description = "-10%", group = "hotkeys"}),
 
-    
+    -- Left panel
+    awful.key({"Mod4"}, "Tab", function()
+      bp.bigpanel.visible = not bp.bigpanel.visible
+    end, {description = "left panel", group = "Widgets"}),
+
     -- Move
     awful.key({ modkey, "Shift"   }, "Down",  
               function () awful.client.moveresize(  0,  20,   0,   0) end),
