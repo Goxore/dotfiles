@@ -1,3 +1,4 @@
+--vim.cmd "source ~/.config/nvim/vim_colors/default.vim"
 -- init.lua
 -- requirements
 require('plugins')
@@ -7,12 +8,16 @@ require('nvim-treeconf')
 require('lspconf')
 require('settings')
 require('keymaps')
-require('latex')
 require('toggletermconf')
 require('lualineconf')
 require('bufferlineconf')
+require('luasnipconf')
 require('cmpconf')
 require('alphaconf')
 require('colors')
 require('treesitterconf')
+require('latex')
+require('lspsagaconf')
+
+require('Comment').setup()
 vim.cmd "set laststatus=3"

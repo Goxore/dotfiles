@@ -77,7 +77,13 @@ return require('packer').startup(function(use)
   use("ferrine/md-img-paste.vim")
   
   -- better comment
-  use("tpope/vim-commentary")
+  -- use("tpope/vim-commentary")
+  use {
+      'numToStr/Comment.nvim',
+      config = function()
+          require('Comment').setup()
+      end
+  }
   
   -- Dashboard
   --use("glepnir/dashboard-nvim")
@@ -134,5 +140,16 @@ return require('packer').startup(function(use)
   -- faster loading
   use 'lewis6991/impatient.nvim'
   
+  -- use 'chriskempson/base16-vim'
+  -- use("Soares/base16.nvim")
+  -- use("jubnzv/virtual-types.nvim")
+
+  use ("ray-x/lsp_signature.nvim")
+  use ("glepnir/lspsaga.nvim")
+
+  use ("mfussenegger/nvim-dap")
+
+  use ("simrat39/rust-tools.nvim")
+  use ("shurizzle/inlay-hints.nvim")
 end)
 

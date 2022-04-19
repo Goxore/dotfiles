@@ -14,48 +14,62 @@ local themes_path = gfs.get_themes_dir()
 local theme = dofile(themes_path.."default/theme.lua")
 -- load vector assets' generators for this theme
 
+local function darker(color_value, darker_n)
+    local result = "#"
+    for s in color_value:gmatch("[a-fA-F0-9][a-fA-F0-9]") do
+        local bg_numeric_value = tonumber("0x"..s) - darker_n
+        if bg_numeric_value < 0 then bg_numeric_value = 0 end
+        if bg_numeric_value > 255 then bg_numeric_value = 255 end
+        result = result .. string.format("%2.2x", bg_numeric_value)
+    end
+    return result
+end
+
 theme.font          = "Hack Nerd Font 16"
 theme.taglist_font  = "Hack Nerd Font 20"
+theme.wibar_bg = darker(xrdb.color0, 5)
+theme.lighter = darker(xrdb.color0, -3)
+theme.darker = darker(xrdb.color0, 2)
 
-theme.bg_normal     = xrdb.background
+theme.bg_normal     = xrdb.color0
 theme.bg_focus      = xrdb.color12
 theme.bg_urgent     = xrdb.color9
 theme.bg_minimize   = xrdb.color8
-theme.bg_systray    = theme.bg_normal
+theme.bg_systray    = theme.wibar_bg
 
 
-theme.tasklist_bg_focus = xrdb.background
-theme.tasklist_bg_normal = xrdb.background
-theme.tasklist_fg_focus = xrdb.foreground
-theme.tasklist_fg_normal = xrdb.foreground
+theme.tasklist_bg_focus = xrdb.color0
+theme.tasklist_bg_normal = xrdb.color0
+theme.tasklist_fg_focus = xrdb.color15
+theme.tasklist_fg_normal = xrdb.color15
 
-theme.fg_normal     = xrdb.foreground
-theme.fg_focus      = theme.bg_normal
-theme.fg_urgent     = theme.bg_normal
-theme.fg_minimize   = theme.bg_normal
+theme.fg_normal     = xrdb.color15
+theme.fg_focus      = xrdb.color0
+theme.fg_urgent     = xrdb.color0
+theme.fg_minimize   = xrdb.color0
 
 theme.useless_gap   = dpi(3)
 theme.border_width  = dpi(2)
-theme.border_normal = xrdb.background
+theme.border_normal = xrdb.color0
 -- theme.border_focus  = theme.bg_focus
-theme.border_focus  = xrdb.foreground
+theme.border_focus  = xrdb.color15
 theme.border_marked = xrdb.color4
 
 theme.rounded_corners = true
 theme.border_radius = dpi(6)
 
-theme.wibar_bg = "#242424"
 
-theme.taglist_fg_empty = "#353535"
+theme.taglist_fg_empty = darker(xrdb.color0, -5)
+theme.taglist_fg_occupied = xrdb.color15
 theme.taglist_fg_focus = xrdb.color4
 theme.taglist_bg_focus = theme.wibar_bg
 theme.taglist_fg_urgent = xrdb.color1
 theme.taglist_bg_urgent = theme.wibar_bg
 
-theme.red   = xrdb.color1 
+theme.red   = xrdb.color1
 theme.green = xrdb.color2
-theme.yellow = xrdb.color3 
-theme.blue   = xrdb.color4 
+theme.yellow = xrdb.color3
+theme.blue   = xrdb.color4
 theme.magenta = xrdb.color5
 theme.cyan = xrdb.color6
 
@@ -91,16 +105,6 @@ theme = theme_assets.recolor_layout(theme, theme.fg_normal)
 
 -- Recolor titlebar icons:
 --
-local function darker(color_value, darker_n)
-    local result = "#"
-    for s in color_value:gmatch("[a-fA-F0-9][a-fA-F0-9]") do
-        local bg_numeric_value = tonumber("0x"..s) - darker_n
-        if bg_numeric_value < 0 then bg_numeric_value = 0 end
-        if bg_numeric_value > 255 then bg_numeric_value = 255 end
-        result = result .. string.format("%2.2x", bg_numeric_value)
-    end
-    return result
-end
 theme = theme_assets.recolor_titlebar(
     theme, theme.fg_normal, "normal"
 )

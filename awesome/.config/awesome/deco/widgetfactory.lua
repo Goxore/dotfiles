@@ -1,6 +1,7 @@
 local gears = require("gears")
 local awful = require("awful")
 local wibox = require("wibox")
+local theme = require("themes.xresources.theme")
 
 local M = {}
 
@@ -34,7 +35,7 @@ M.makewidget = function (value, fgcolor , icon, textleftmargin, textrightmargin,
         },
         layout = wibox.layout.fixed.vertical,
       },
-      bg = '#303030', -- basic
+      bg = theme.lighter, -- basic
       fg = fgcolor,
       -- shape_border_width = 1, shape_border_color = '#4C566A', -- outline
       shape = function(cr, width, height) 
@@ -90,7 +91,7 @@ M.makewidget2 = function (value, value2,fgcolor, icon, textleftmargin,textrightm
         },
         layout = wibox.layout.fixed.vertical,
       },
-      bg = '#303030', -- basic
+      bg = theme.lighter, -- basic
       fg = fgcolor,
       -- shape_border_width = 1, shape_border_color = '#4C566A', -- outline
       shape = function(cr, width, height) 
@@ -138,7 +139,7 @@ M.makewidgetdouble = function (value, value2, fgcolor, textleftmargin,textrightm
         },
         layout = wibox.layout.fixed.vertical,
       },
-      bg = '#303030', -- basic
+      bg = theme.lighter, -- basic
       fg = fgcolor,
       -- shape_border_width = 1, shape_border_color = '#4C566A', -- outline
       shape = function(cr, width, height) 

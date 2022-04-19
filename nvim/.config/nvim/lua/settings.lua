@@ -28,6 +28,7 @@ o.termguicolors = true
 o.mouse = "a"
 o.splitbelow = true
 o.scrolloff = 5
+o.signcolumn = "yes"
 -- o.langmap = [[ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>]]
 -- g.laststatus = 3
 
@@ -37,6 +38,7 @@ o.scrolloff = 5
 vim.cmd [[
 set laststatus=3
 colorscheme gruvbox8
+" source ~/.config/nvim/vim_colors/default.vim
 set nobackup
 set nowritebackup
 vnoremap < <gv

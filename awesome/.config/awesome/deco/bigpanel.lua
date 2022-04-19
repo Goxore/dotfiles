@@ -14,8 +14,7 @@ local scr_g = screen.primary.geometry
 local M = {}
 
 local noisy = [[bash -c '
--- while mpc status "%percenttime%" | rev | cut -b 2- | rev | xargs; do sleep 5; done
-echo 50
+while mpc status "%percenttime%" | rev | cut -b 2- | rev | xargs; do sleep 5; done
 ']]
 
 M.tempval = awful.widget.watch('bash -c "/home/yurii/scripts/cputemp.sh"', 5)
@@ -29,7 +28,7 @@ M.bigpanel = wibox {
     height = scr_g.height,
     width = 400,
     shape = function(cr, width, height)
-        gears.shape.rounded_rect(cr, width, height, 9)
+        gears.shape.rounded_rect(cr, width, height, 0)
     end
 }
 

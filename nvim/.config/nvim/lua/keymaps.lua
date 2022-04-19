@@ -75,3 +75,5 @@ keymap('t', '<esc>', [[<C-\><C-n>]], opts)
 keymap('t', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
 keymap('t', '<C-j>', [[<C-\><C-n><C-W>j]], opts)
 keymap('t', '<C-k>', [[<C-\><C-n><C-W>k]], opts)
+
+keymap('n', "<leader><leader>s", "<cmd>source ~/.config/nvim/lua/luasnipconf.lua<CR>", opts)

@@ -30,6 +30,7 @@ fg("CmpItemKindUnit", pink)
 
 
 bg("NvimTreeNormal", "#222222")
+bg("SignColumn", "transparent")
 
 fg("AlphaHeader", yellow)
 fg("AlphaButtons", green)

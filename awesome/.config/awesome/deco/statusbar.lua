@@ -7,6 +7,7 @@ local theme = require("themes.xresources.theme")
 local wibox = require("wibox")
 
 local tray2 = require("deco.tray")
+local scr_g = screen.primary.geometry
 
 local wf = require("deco.widgetfactory")
 
@@ -125,24 +126,24 @@ awful.screen.connect_for_each_screen(function(s)
   }
 
   -- Create the wibox
-  s.mywibox = awful.wibar({ position = "left", screen = s, width = 60, valign = "center"})
-  -- local buttons_example = wibox {
+  s.mywibox = awful.wibar({
+    position = "left",
+    screen = s,
+    width = 60,
+    height = scr_g.height,
+    valign = "center",
+    type = "dock"
+  })
+
+  -- s.bar = wibox {
   --     visible = true,
-  --     bg = '#2E3440',
+  --     bg = theme.wibar_bg,
   --     ontop = true,
-  --     height = 250,
-  --     width = 50,
+  --     height = scr_g.height,
+  --     width = 60,
   --     shape = function(cr, width, height)
   --         gears.shape.rounded_rect(cr, width, height, 9)
   --     end
-  -- }
-
-  -- buttons_example:setup {
-  --     -- temperaturewidget,
-  --     -- makegoodwidget(gettemp,""),
-  --     concat,
-  --     valigh = 'center',
-  --     layout = wibox.container.place
   -- }
 
   -- Add widgets to the wibox
