@@ -87,5 +87,17 @@ fg("AlphaButtons", green)
 fg("AlphaButtonsShortcut", bgcolor)
 bg("AlphaButtonsShortcut", blue)
 
-fg("Search", "#454545")
-bg("Search", "#ebdbb2")
+fg("Search", fgcolor)
+bg("Search", darker(bgcolor, -20))
+
+fg("DiagnosticWarn", darker(orange, 5))
+fg("DiagnosticHint", darker(fgcolor, -5))
+fg("DiagnosticError", darker(red, -5))
+fg("DiagnosticInfo", darker(blue, -5))
+
+require("lsp-colors").setup({
+  Error = red,
+  Warning = yellow,
+  Information = darker(fgcolor, 5),
+  Hint = fgcolor
+})

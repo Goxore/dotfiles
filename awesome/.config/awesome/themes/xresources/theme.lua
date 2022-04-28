@@ -30,6 +30,9 @@ theme.taglist_font  = "Hack Nerd Font 20"
 theme.wibar_bg = darker(xrdb.color0, 5)
 theme.lighter = darker(xrdb.color0, -3)
 theme.darker = darker(xrdb.color0, 2)
+theme.dark20 = darker(xrdb.color0, 20)
+theme.dark15 = darker(xrdb.color0, 15)
+theme.dark10 = darker(xrdb.color0, 10)
 
 theme.bg_normal     = xrdb.color0
 theme.bg_focus      = xrdb.color12

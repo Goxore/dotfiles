@@ -59,8 +59,8 @@ shell = "sh -c '{}'"
 file = "~/.Xresources"
 template = "1xresources"
 subtemplate = "default-256"
-start= "# start flavours"
-end = "# end flavours"
+start= "! start flavours"
+end = "! end flavours"
 hook = "xrdb ~/.Xresources"
 
 [[item]]
@@ -84,3 +84,9 @@ template = "1dunst"
 subtemplate = "default"
 start= "# start flavours"
 end = "# end flavours"
+
+[[items]]
+file= "~/.config/wal/colorscheme.json"
+template="pywal"
+rewrite = true
+hook="wal -s --theme ~/.config/wal/colorscheme.json"

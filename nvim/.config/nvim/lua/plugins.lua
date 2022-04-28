@@ -151,5 +151,7 @@ return require('packer').startup(function(use)
 
   use ("simrat39/rust-tools.nvim")
   use ("shurizzle/inlay-hints.nvim")
+
+  use ('folke/lsp-colors.nvim')
 end)
 

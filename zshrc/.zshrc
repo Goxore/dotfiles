@@ -2,6 +2,7 @@
 
 # to switch shell - sudo chsh $USER -s /bin/zsh
 
+xrdb ~/.Xresources
 
 # vi mode
 bindkey -v
@@ -134,8 +135,13 @@ source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 
 #autosuggestions
+
+bgcolor=$(xrdb -get color0)
+autohg=$(xrdb -get color19)
+
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#909090,bg=#282828"
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#909090,bg=#282828"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=$autohg,bg=$bgcolor"
 bindkey '^ ' autosuggest-accept
 
 # source /usr/share/zsh/plugins/manual/zsh-autocomplete/zsh-autocomplete.plugin.zsh

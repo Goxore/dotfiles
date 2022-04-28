@@ -1,6 +1,7 @@
 --vim.cmd "source ~/.config/nvim/vim_colors/default.vim"
 -- init.lua
 -- requirements
+vim.cmd "source ~/.config/nvim/vim_colors/default.vim"
 require('plugins')
 require('impatient')
 require('packinit')

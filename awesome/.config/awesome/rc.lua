@@ -121,8 +121,8 @@ require("main.signals")
 
 awful.screen.connect_for_each_screen(function(s) -- that way the wallpaper is applied to every screen
     bling.module.tiled_wallpaper("", s, {       -- call the actual function ("x" is the string that will be tiled)
-        fg = theme.lighter, -- define the foreground color
-        bg = theme.darker, -- define the background color
+        fg = theme.dark10, -- define the foreground color
+        bg = theme.dark15, -- define the background color
         offset_y = 85,  -- set a y offset
         offset_x = 85,  -- set a x offset
         font = "Hack Nerd Font",  -- set the font (without the size)
