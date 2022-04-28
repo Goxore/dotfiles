@@ -1,0 +1,86 @@
+# Configuration for flavours
+# https://github.com/Misterio77/flavours
+#
+# This file should contain a [[items]] section for each application you want themed
+# You can also set a shell (outside items) on which to run hooks
+# Check flavours repository for more information and examples
+
+
+# Explanation and default values for keys:
+
+# # Through which shell command hooks will run. The command will be replaced in '{}'
+shell = "sh -c '{}'"
+#
+# [[items]]
+# # File to inject to, supports tilde and env var expansion. required
+# file = "~/.config/example"
+# # Template to use. required
+# template = "example"
+#
+# # Subtemplate to use
+# subtemplate = "default"
+# # If not rewriting, on which line (usually a comment) to start replacing
+# start = "# Start flavours"
+# # If not rewriting, on which line (usually a comment) to stop replacing
+# end = "# End flavours"
+# # Should we rewrite the entire file, instead of using the above delimiters?
+# rewrite = false
+# # Command to execute after injecting (goes through shell)
+# hook = ""
+# # Whether this hook should be executed when flavours is ran with lightweight flag
+# light = true
+
+
+# Example file. For sway, waybar and (beautiful)discord. Runs hooks through bash:
+
+# shell = "bash -c '{}'"
+#
+# [[items]]
+# file = "~/.config/sway/config"
+# template = "sway"
+# subtemplate = "colors"
+# hook = "swaymsg reload"
+# light = false
+#
+# [[items]]
+# file = "~/.config/waybar/colors.css"
+# template = "waybar"
+# rewrite = true
+# 
+# [[items]]
+# file = "~/.config/beautifuldiscord/style.css"
+# template = "styles"
+# subtemplate = "css-variables"
+# start= "/* Start flavours */"
+# end = "/* End flavours */"
+
+
+[[item]]
+file = "~/.Xresources"
+template = "xresources"
+subtemplate = "default-256"
+start= "# start flavours"
+end = "# end flavours"
+hook = "xrdb ~/.Xresources"
+
+[[item]]
+file = "~/.config/alacritty/alacritty.yml"
+template = "alacritty"
+subtemplate = "default"
+
+[[item]]
+file= "~/.config/zathura/zathurarc"
+template = "zathura"
+
+[[item]]
+file= "~/.config/nvim/vim_colors/default.vim"
+template = "vim"
+start= "\" start flavours"
+end = "\" end flavours"
+
+[[item]]
+file= "~/.config/dunst/dunstrc"
+template = "dunst"
+subtemplate = "default"
+start= "# start flavours"
+end = "# end flavours"

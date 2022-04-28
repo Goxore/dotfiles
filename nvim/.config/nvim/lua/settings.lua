@@ -36,17 +36,12 @@ o.signcolumn = "yes"
 --o.nospell = true
 
 vim.cmd [[
-set laststatus=3
-colorscheme gruvbox8
-" source ~/.config/nvim/vim_colors/default.vim
 set nobackup
 set nowritebackup
 vnoremap < <gv
 vnoremap > >gv
 set clipboard=unnamedplus
 nnoremap gx <CMD>execute '!xdg-open ' .. shellescape(expand('<cfile>'), v:true)<CR>
-
-" set fillchars+=vert:\ 
 ]]
 
 -- g.coc_snippet_next = '<tab>'

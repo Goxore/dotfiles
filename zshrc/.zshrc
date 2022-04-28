@@ -149,3 +149,4 @@ function vi-yank-xclip {
 zle -N vi-yank-xclip
 bindkey -M vicmd 'y' vi-yank-xclip
 
+eval "$(starship init zsh)"

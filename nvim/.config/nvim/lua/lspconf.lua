@@ -42,9 +42,14 @@ vim.cmd [[autocmd! CursorHold * lua vim.diagnostic.open_float(nil, { focusable =
 
 local lsp_installer = require("nvim-lsp-installer")
 
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = { textDocument = { completion = { completionItem = { snippetSupport = true } } } }
+
 lsp_installer.on_server_ready(function(server)
     local servopts = {
       on_attach=on_attach,
+      capabilities = capabilities,
       flags = {
         debounce_text_changes = 150,
       }
@@ -87,6 +92,7 @@ lsp_installer.on_server_ready(function(server)
 
         require("rust-tools").setup(rust_opts)
         keymap('n', '<space>t', '<cmd>RustHoverActions<CR>', opts)
+        keymap('n', '<space>f', '<cmd>!cargo fmt<CR>', opts)
         server:attach_buffers()
     else
         server:setup(servopts)

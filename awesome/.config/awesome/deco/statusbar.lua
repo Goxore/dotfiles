@@ -56,7 +56,7 @@ awful.screen.connect_for_each_screen(function(s)
   s.bat = wf.makewidget(s.batval,theme.green, "",0,0, 0, -15)
 
   s.keybval = awful.widget.keyboardlayout
-  s.keylay = wf.makewidget(s.keybval,theme.magenta, "",-5,-10, -9, 15)
+  s.keylay = wf.makewidget(s.keybval,theme.magenta, "",-5,-10, -9, 15)
 
   s.tempval = awful.widget.watch('bash -c "/home/yurii/scripts/cputemp.sh"', 5)
   s.temp = wf.makewidget(s.tempval,theme.blue, "", 0,0,0, -15)

@@ -59,7 +59,7 @@ cmd bulk-rename ${{
 cmd mkdir ${{
   printf "Directory Name: "
   read ans
-  mkdir $ans
+  mkdir -p $ans
 }}
 
 cmd mkfile ${{
@@ -174,9 +174,9 @@ map dd cut
 map y copy
 map <enter> open
 map g<enter> devopen
-map + mkfile
+map c mkfile
 map mr sudomkfile
-map g+ mkdir
+map md mkdir
 map ms $mkscript
 map ch chmod
 map a rename
