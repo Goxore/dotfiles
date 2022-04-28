@@ -57,7 +57,7 @@ shell = "sh -c '{}'"
 
 [[item]]
 file = "~/.Xresources"
-template = "xresources"
+template = "1xresources"
 subtemplate = "default-256"
 start= "# start flavours"
 end = "# end flavours"
@@ -65,7 +65,7 @@ hook = "xrdb ~/.Xresources"
 
 [[item]]
 file = "~/.config/alacritty/alacritty.yml"
-template = "alacritty"
+template = "1alacritty"
 subtemplate = "default"
 
 [[item]]
@@ -74,13 +74,13 @@ template = "zathura"
 
 [[item]]
 file= "~/.config/nvim/vim_colors/default.vim"
-template = "vim"
+template = "1vim"
 start= "\" start flavours"
 end = "\" end flavours"
 
 [[item]]
 file= "~/.config/dunst/dunstrc"
-template = "dunst"
+template = "1dunst"
 subtemplate = "default"
 start= "# start flavours"
 end = "# end flavours"
