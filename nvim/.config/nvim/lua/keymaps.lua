@@ -27,6 +27,10 @@ keymap("n", "<C-Down>",  "<cmd>wincmd j <CR>", opts)
 
 keymap("n", "<esc><esc>", "<cmd>:noh<return>", opts)
 
+--folds
+keymap("n", "z{", "zfi{", opts)
+keymap("n", "z(", "zfi(", opts)
+
 -- Tab navigation
 -- keymap("n", "<A-1>", "1gt", opts)
 -- keymap("n", "<A-2>", "2gt", opts)

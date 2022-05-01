@@ -9,3 +9,4 @@ inode/directory 	file.desktop
 .webp							img.desktop
 .mp3							mpv.desktop
 .wav							mpv.desktop
+.pka							packettracer.desktop

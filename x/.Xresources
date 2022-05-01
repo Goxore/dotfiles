@@ -10,25 +10,25 @@ xterm*eightBitInput: false
 ! #include ".cache/wal/colors.Xresources"
 
 ! start flavours
-! Base16 OneDark
-! Scheme: Lalit Magant (http://github.com/tilal6991)
+! Base16 Gruvbox dark, medium
+! Scheme: Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
 
-#define base00 #282c34
-#define base01 #353b45
-#define base02 #3e4451
-#define base03 #545862
-#define base04 #565c64
-#define base05 #abb2bf
-#define base06 #b6bdca
-#define base07 #c8ccd4
-#define base08 #e06c75
-#define base09 #d19a66
-#define base0A #e5c07b
-#define base0B #98c379
-#define base0C #56b6c2
-#define base0D #61afef
-#define base0E #c678dd
-#define base0F #be5046
+#define base00 #282828
+#define base01 #3c3836
+#define base02 #504945
+#define base03 #665c54
+#define base04 #bdae93
+#define base05 #d5c4a1
+#define base06 #ebdbb2
+#define base07 #fbf1c7
+#define base08 #fb4934
+#define base09 #fe8019
+#define base0A #fabd2f
+#define base0B #b8bb26
+#define base0C #8ec07c
+#define base0D #83a598
+#define base0E #d3869b
+#define base0F #d65d0e
 
 *foreground:   base05
 #ifdef background_opacity

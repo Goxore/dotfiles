@@ -2,8 +2,10 @@ xset r rate 210 40 &
 wal -R &
 xmodmap $HOME/.xmodmaprc &
 sxhkd &
+mopidy &
 greenclip daemon &
 picom &
 setxkbmap -model pc105 -layout us,ru,ua -option grp:alt_shift_toggle &
 nm-applet &
 xfce4-power-manager &
+udiskie &

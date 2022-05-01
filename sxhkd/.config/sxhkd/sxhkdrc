@@ -24,6 +24,18 @@ super + v
 super + shift + c
 	rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'
 
+super + u
+	rofi-rbw
+
+super + Delete
+	$SCRIPTS/holdwork.sh
+
+super + Insert
+	$SCRIPTS/continuework.sh
+
+super + ctrl + e
+  $SCRIPTS/emoji.sh
+
 #music
 super + plus
 	mpc volume +5
@@ -42,14 +54,6 @@ super + bracketright
 
 super + bracketleft
 	mpc prev
-
-super + u
-	rofi-rbw
-super + Delete
-	$SCRIPTS/holdwork.sh
-
-super + Insert
-	$SCRIPTS/continuework.sh
 
 #Programs
 super + alt + b

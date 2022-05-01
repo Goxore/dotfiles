@@ -12,8 +12,17 @@ require('bufferline').setup {
     -- diagnostics = "coc"
   -- }
    options = {
-      offsets = { { filetype = "NvimTree", text = "File Explorer", padding = 1 } },
+      offsets = {
+        {
+          filetype = "NvimTree",
+          text = "File Explorer",
+          padding = 0
+        }
+      },
+      numbers = "ordinal",
       buffer_close_icon = "",
+      -- indicator_icon = '▎',
+      indicator_icon = '',
       modified_icon = "",
       close_icon = "",
       show_close_icon = false,
@@ -26,7 +35,7 @@ require('bufferline').setup {
       enforce_regular_tabs = false,
       view = "multiwindow",
       show_buffer_close_icons = false,
-      separator_style = "thin",
+      separator_style = {'', ''},
       always_show_bufferline = false,
       diagnostics = false,
       custom_filter = function(buf_number)

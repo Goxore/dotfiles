@@ -26,7 +26,13 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
-vim.cmd [[autocmd! CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })]]
+vim.cmd [[
+autocmd! CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
+sign define DiagnosticSignError text=▌ texthl=DiagnosticSignError linehl= numhl=
+sign define DiagnosticSignWarn text=▌ texthl=DiagnosticSignWarn linehl= numhl=
+sign define DiagnosticSignInfo text=▌ texthl=DiagnosticSignInfo linehl= numhl=
+sign define DiagnosticSignHint text=▌ texthl=DiagnosticSignHint linehl= numhl=
+]]
 
 -- local servers = { 'tsserver' }
 -- for _, lsp in pairs(servers) do
@@ -93,6 +99,7 @@ lsp_installer.on_server_ready(function(server)
         require("rust-tools").setup(rust_opts)
         keymap('n', '<space>t', '<cmd>RustHoverActions<CR>', opts)
         keymap('n', '<space>f', '<cmd>!cargo fmt<CR>', opts)
+        keymap('n', '<space>ca', '<cmd>vim.lsp.buf.code_action()<CR>', opts)
         server:attach_buffers()
     else
         server:setup(servopts)

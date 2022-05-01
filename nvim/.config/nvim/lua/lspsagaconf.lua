@@ -1,6 +1,6 @@
--- local saga = require 'lspsaga'
--- local opts = { noremap = true, silent = true }
--- local keymap = vim.api.nvim_set_keymap
+local saga = require 'lspsaga'
+local opts = { noremap = true, silent = true }
+local keymap = vim.api.nvim_set_keymap
 
 -- add your config value here
 -- default value
@@ -42,7 +42,7 @@
 --   ...
 -- }
 
--- saga.init_lsp_saga()
+saga.init_lsp_saga()
 
 -- keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
 

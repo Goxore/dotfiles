@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=PacketTracer
+Exec=/usr/local/bin/packettracer %u

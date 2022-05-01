@@ -28,7 +28,7 @@ end
 theme.font          = "Hack Nerd Font 16"
 theme.taglist_font  = "Hack Nerd Font 20"
 theme.wibar_bg = darker(xrdb.color0, 5)
-theme.lighter = darker(xrdb.color0, -3)
+theme.lighter = darker(xrdb.color0, -5)
 theme.darker = darker(xrdb.color0, 2)
 theme.dark20 = darker(xrdb.color0, 20)
 theme.dark15 = darker(xrdb.color0, 15)

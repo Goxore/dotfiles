@@ -1,5 +1,7 @@
 local status_ok, toggleterm = pcall(require, "toggleterm")
 
+local colors = require("colors")
+
 local keymap = vim.api.nvim_set_keymap
 
 if not status_ok then
@@ -7,10 +9,22 @@ if not status_ok then
 end
 
 require("toggleterm").setup{
-   -- direction = "float",
-   direction = "horizontal",
-   shade_terminals = false,
-   persist_size = false,
+  -- direction = "float",
+  direction = "horizontal",
+  shade_terminals = false,
+  persist_size = false,
+  highlights = {
+    Normal = {
+      guibg = colors.darker(colors.bgcolor, 10)
+    },
+    NormalFloat = {
+      link = 'Normal'
+    },
+    FloatBorder = {
+      guifg = colors.darker(colors.bgcolor, 10),
+      guibg = colors.darker(colors.bgcolor, 10)
+    },
+  },
 }
 
 function _G.set_terminal_keymaps()

@@ -2,7 +2,9 @@ local cmd = vim.cmd
 
 local fg = require("core").fg
 local bg = require("core").bg
+local style = require("core").style
 
+local M = {}
 
 local function darker(color_value, darker_n)
     local result = "#"
@@ -26,6 +28,7 @@ local yellow ="#fadb2f"
 local pink   ="#d3869b"
 local orange ="#fe8019"
 
+
 -- if not vim.s.gui00 then
 --    print()
 -- end
@@ -47,7 +50,10 @@ end
 
 vim.cmd [[
 set laststatus=3
-set fillchars+=vert:\│
+" set fillchars=fold:\ ,vert:\│,eob:\ ,msgsep:‾
+" set fillchars=fold:\ ,vert:\▎,eob:\ ,msgsep:‾
+set fillchars=fold:\ ,vert:\ ,eob:\ ,msgsep:\ 
+
 ]]
 
 vim.api.nvim_create_user_command(
@@ -87,6 +93,8 @@ fg("AlphaButtons", green)
 fg("AlphaButtonsShortcut", bgcolor)
 bg("AlphaButtonsShortcut", blue)
 
+bg("BufferLineFill", darker(bgcolor, 20))
+
 fg("Search", fgcolor)
 bg("Search", darker(bgcolor, -20))
 
@@ -95,9 +103,25 @@ fg("DiagnosticHint", darker(fgcolor, -5))
 fg("DiagnosticError", darker(red, -5))
 fg("DiagnosticInfo", darker(blue, -5))
 
+style("String", "italic")
+style("Comment", "italic")
+style("Function", "bold")
+
 require("lsp-colors").setup({
   Error = red,
   Warning = yellow,
   Information = darker(fgcolor, 5),
   Hint = fgcolor
 })
+
+M.bgcolor = bgcolor
+M.fgcolor = fgcolor
+M.red     = red
+M.blue    = blue
+M.green   = green
+M.yellow  = yellow
+M.pink    = pink
+M.orange  = orange
+M.darker  = darker
+
+return M

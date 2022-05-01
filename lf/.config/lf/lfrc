@@ -195,8 +195,10 @@ map gh cd
 map gD cd ~/Downloads
 map gc cd ~/.config
 map gd cd ~/dotfiles
-map gm cd ~/Music
+map gM cd ~/Music
 map g/ cd /
 map gp cd ~/Projects
 map gs cd ~/scripts
+map gS cd ~/.local/share
+map gm cd /run/media
 map gu cd ~/uni

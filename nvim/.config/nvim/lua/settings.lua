@@ -27,6 +27,7 @@ o.updatetime = 300
 o.termguicolors = true
 o.mouse = "a"
 o.splitbelow = true
+o.splitright = true
 o.scrolloff = 5
 o.signcolumn = "yes"
 -- o.langmap = [[ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>]]
@@ -42,6 +43,7 @@ vnoremap < <gv
 vnoremap > >gv
 set clipboard=unnamedplus
 nnoremap gx <CMD>execute '!xdg-open ' .. shellescape(expand('<cfile>'), v:true)<CR>
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 ]]
 
 -- g.coc_snippet_next = '<tab>'

@@ -91,7 +91,7 @@ M.concat1 = wibox.widget
       -- Makecircle(M.tempval, 80),
       layout = wibox.layout.flex.horizontal
     },
-    bg = '#323232', -- basic
+    bg = theme.lighter, -- basic
     -- shape_border_width = 1, shape_border_color = '#4C566A', -- outline
     shape = function(cr, width, height) 
         gears.shape.rounded_rect(cr, width, height, 4) 
@@ -125,7 +125,7 @@ M.concat6 = wibox.widget
       prwidget,
       layout = wibox.layout.flex.horizontal
     },
-    bg = '#323232', -- basic
+    bg = theme.lighter, -- basic
     -- shape_border_width = 1, shape_border_color = '#4C566A', -- outline
     shape = function(cr, width, height) 
         gears.shape.rounded_rect(cr, width, height, 4) 
@@ -184,7 +184,7 @@ M.concat3 = wibox.widget
       },
       layout = wibox.layout.flex.vertical
     },
-    bg = '#323232', -- basic
+    bg = theme.lighter, -- basic
     -- shape_border_width = 1, shape_border_color = '#4C566A', -- outline
     shape = function(cr, width, height)
         gears.shape.rounded_rect(cr, width, height, 4)
@@ -206,7 +206,7 @@ M.concat4 = wibox.widget
       widget = wibox.container.margin,
       top = 20
     },
-    bg = '#323232', -- basic
+    bg = theme.lighter, -- basic
     shape = function(cr, width, height)
         gears.shape.rounded_rect(cr, width, height, 4)
     end,
