@@ -1,24 +1,33 @@
 # Goxore's linux dotfiles
 
+![oned](img/oned.png)
+
+![ever](img/ever.png)
+
+![gruv](img/grub.png)
 
 ## Installation
 
-Clone the repo to your home folder/any other folder you want. You can apply any config files directly from the repo folder using [GNU Stow](https://www.gnu.org/software/stow/)
+Clone the repo anywhere you like, you can apply any config files directly from the repo folder using [GNU Stow](https://www.gnu.org/software/stow/).
 
 example:
 ```bash
-stow i3
+stow lf
 ```
 
 Before doing it, you might want to rename/move your dotfiles so you don't mess up anything.
 
-
-This will create a symlink from the repo folder to your ~/.config/i3/config so that i3 can actually use it.
+This will create a symlink from the repo folder to your ~/.config directory.
 
 ## Usage
 
-Most of the scripts from /myscripts are <s>stolen</s> borrowed from other people's dotfiles, so feel free to take anything you like.
+Some of the scripts from /scripts are <s>stolen</s> borrowed from other people's dotfiles, feel free to take anything you like.
 
-Without additional editing scripts will not work unless installed using symlink, because all apps will look for ~/myscripts
+Most of my config files look for ~/scripts directory for scripts.
 
-wallpaper.jpg
+## colorscheme
+
+I'm using Base16 and [flavours](https://github.com/Misterio77/flavours), so make sure to create symlinks for
+flavours and local to have dynamic colorschemes for most programs.
+
+[more info](https://www.yuriimeln.xyz/posts/easyricebase16) on how to make a beautiful rice.

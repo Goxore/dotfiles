@@ -89,9 +89,17 @@ end = "# end flavours"
 file= "~/.config/wal/colorscheme.json"
 template="pywal"
 rewrite = true
-hook="wal -s --theme ~/.config/wal/colorscheme.json"
+hook="wal -s --theme ~/.config/wal/colorscheme.json && wal-telegram"
 
 [[items]]
 file= "~/.config/rofi/themes/base16.rasi"
 template="1rofi"
 rewrite = true
+
+[[item]]
+file = "~/.config/beautifuldiscord/style.css"
+template = "styles"
+subtemplate = "css-variables"
+rewrite = false
+start= "/* Start flavours */"
+end = "/* End flavours */"

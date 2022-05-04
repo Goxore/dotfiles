@@ -12,7 +12,7 @@ super + shift + x
 super + a
 	bash $SCRIPTS/fastaccess.sh
 
-super + shift + e
+super + e
 	bash $SCRIPTS/editconfig.sh
 
 super + s
@@ -64,3 +64,6 @@ super + alt + t
 
 super + alt + w
   $TERMINAL -e bash -c "sleep 0.1 && nvim $HOME/vimwiki/index.wiki"
+
+super + alt + p
+  bitwarden-desktop

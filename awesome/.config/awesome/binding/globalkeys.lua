@@ -23,7 +23,7 @@ local calculator_scratchpad = bling.module.scratchpad {
     command = "alacritty -e qalc",           -- How to spawn the scratchpad
     rule = { instance = "qalc" },                     -- The rule that the scratchpad will be searched by
     sticky = true,                                    -- Whether the scratchpad should be sticky
-    autoclose = true,                                 -- Whether it should hide itself when losing focus
+    autoclose = false,                                 -- Whether it should hide itself when losing focus
     floating = true,                                  -- Whether it should be floating (MUST BE TRUE FOR ANIMATIONS)
     geometry = {x=360, y=90, height=450, width=600}, -- The geometry in a floating state
     reapply = true,                                   -- Whether all those properties should be reapplied on every new opening of the scratchpad (MUST BE TRUE FOR ANIMATIONS)
@@ -34,7 +34,7 @@ local music_scratchpad = bling.module.scratchpad {
     command = "alacritty -e ncmpcpp",           -- How to spawn the scratchpad
     rule = { instance = "music" },                     -- The rule that the scratchpad will be searched by
     sticky = true,                                    -- Whether the scratchpad should be sticky
-    autoclose = true,                                 -- Whether it should hide itself when losing focus
+    autoclose = false,                                 -- Whether it should hide itself when losing focus
     floating = true,                                  -- Whether it should be floating (MUST BE TRUE FOR ANIMATIONS)
     geometry = {x=360, y=90, height=850, width=1100}, -- The geometry in a floating state
     reapply = true,                                   -- Whether all those properties should be reapplied on every new opening of the scratchpad (MUST BE TRUE FOR ANIMATIONS)
@@ -134,7 +134,7 @@ function _M.get()
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
 
-    awful.key({ modkey, "Shift" }, "r", awesome.restart,
+    awful.key({ modkey, "Ctrl" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
 
     awful.key({ modkey, "Shift"   }, "x", awesome.quit,
