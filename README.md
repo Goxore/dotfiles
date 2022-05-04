@@ -4,7 +4,7 @@
 
 ![ever](img/ever.png)
 
-![gruv](img/grub.png)
+![gruv](img/gruv.png)
 
 ## Installation
 
