@@ -1,6 +1,8 @@
 [ -z "$aurhelper" ] && aurhelper="yay"
 [ -z "$progsfile" ] && progsfile="https://raw.githubusercontent.com/Goxore/dotfiles/main/installation/programs.csv"
 
+name=$(dialog --inputbox "Please enter a name for the user account." 10 60 3>&1 1>&2 2>&3 3>&1) || exit 1
+
 installpkg(){ pacman --noconfirm --needed -S "$1" >/dev/null 2>&1 ;}
 
 error() { printf "%s\n" "$1" >&2; exit 1; }
@@ -48,3 +50,5 @@ pipinstall() { \
 }
 
 installationloop
+
+clear
