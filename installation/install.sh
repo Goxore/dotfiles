@@ -47,3 +47,4 @@ pipinstall() { \
 	yes | pip install "$1"
 }
 
+installationloop

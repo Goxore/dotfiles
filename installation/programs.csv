@@ -37,6 +37,7 @@
 ,bat,"Improved cat command."
 ,exa,"Better ls command"
 ,zsh,"Z-shell."
+,neofetch,"Fetch tool."
 ,lxappearance,"Look and feel selector."
 A,simple-mtpfs,"Phone mounting."
 A,zsh-fast-syntax-highlighting-git,"Syntax highlighting in the shell."
