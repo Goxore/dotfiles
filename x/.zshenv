@@ -4,8 +4,8 @@ export VIDEO="mpv"
 export IMAGE="sxiv"
 export OPENER="xdg-open"
 export SCRIPTS="$HOME/scripts"
-export TELOXIDE_TOKEN=570468850:AAEH2dDuNR5v7L16FTm3m-eWmUl1-EYcRpA
 export GTK_THEME=FlatColor
+export FZF_DEFAULT_OPTS="--color=16"
 
 # export LF_ICONS="\
 # tw=:\
