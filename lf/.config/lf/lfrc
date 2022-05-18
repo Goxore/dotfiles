@@ -6,7 +6,7 @@ set drawbox true
 set icons true
 set ignorecase true
 
-cmd dragon-out %dragon-drag-and-drop -a -x $fx
+cmd dragon-out %dragon-drag-and-drop -a -x "$fx"
 cmd dragon-multiple %dragon-drag-and-drop -a $fx
 cmd dragon-copy %dragoncopy
 cmd dragon-in %dragonmove

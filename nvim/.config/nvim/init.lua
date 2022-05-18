@@ -18,7 +18,31 @@ require('alphaconf')
 require('colors')
 require('treesitterconf')
 require('latex')
+require('other')
 -- require('lspsagaconf')
 
 require('Comment').setup()
-vim.cmd "set laststatus=3"
+-- vim.cmd "set laststatus=3"
+
+if vim.api.nvim_eval('exists("g:started_by_firenvim")') == 1 then
+  vim.cmd [[set laststatus=0
+  let g:timer_started = v:false
+  function! My_Write(timer) abort
+    let g:timer_started = v:false
+    write
+  endfunction
+
+  function! Delay_My_Write() abort
+    if g:timer_started
+      return
+    end
+    let g:timer_started = v:true
+    call timer_start(1000, 'My_Write')
+  endfunction
+
+  au TextChanged * ++nested call Delay_My_Write()
+  au TextChangedI * ++nested call Delay_My_Write()
+  ]]
+else
+  vim.cmd "set laststatus=3"
+end

@@ -10,25 +10,25 @@ xterm*eightBitInput: false
 ! #include ".cache/wal/colors.Xresources"
 
 ! start flavours
-! Base16 OneDark
-! Scheme: Lalit Magant (http://github.com/tilal6991)
+! Base16 Tokyonight
+! Scheme: Folke Lemaitre (https://github.com/folke)
 
-#define base00 #282c34
-#define base01 #353b45
-#define base02 #3e4451
-#define base03 #545862
-#define base04 #565c64
-#define base05 #abb2bf
-#define base06 #b6bdca
-#define base07 #c8ccd4
-#define base08 #e06c75
-#define base09 #d19a66
-#define base0A #e5c07b
-#define base0B #98c379
-#define base0C #56b6c2
-#define base0D #61afef
-#define base0E #c678dd
-#define base0F #be5046
+#define base00 #24283b
+#define base01 #1f2335
+#define base02 #292e42
+#define base03 #565f89
+#define base04 #a9b1d6
+#define base05 #c0caf5
+#define base06 #c0caf5
+#define base07 #c0caf5
+#define base08 #f7768e
+#define base09 #ff9e64
+#define base0A #e0af68
+#define base0B #9ece6a
+#define base0C #1abc9c
+#define base0D #41a6b5
+#define base0E #bb9af7
+#define base0F #ff007c
 
 *foreground:   base05
 #ifdef background_opacity

@@ -15,8 +15,8 @@ super + a
 super + e
 	bash $SCRIPTS/editconfig.sh
 
-super + s
-	bash $SCRIPTS/sb -r
+# super + s
+# 	bash $SCRIPTS/sb -r
 
 super + v
 	bash $SCRIPTS/mictoggle.sh
@@ -58,6 +58,9 @@ super + bracketleft
 #Programs
 super + alt + b
 	$BROWSER
+
+super + ctrl + b
+	blueberry
 
 super + alt + t
   telegram-desktop

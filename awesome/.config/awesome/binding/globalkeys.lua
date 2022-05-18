@@ -25,7 +25,7 @@ local calculator_scratchpad = bling.module.scratchpad {
     sticky = true,                                    -- Whether the scratchpad should be sticky
     autoclose = false,                                 -- Whether it should hide itself when losing focus
     floating = true,                                  -- Whether it should be floating (MUST BE TRUE FOR ANIMATIONS)
-    geometry = {x=360, y=90, height=450, width=600}, -- The geometry in a floating state
+    geometry = {x=590, y=330, height=500, width=700}, -- The geometry in a floating state
     reapply = true,                                   -- Whether all those properties should be reapplied on every new opening of the scratchpad (MUST BE TRUE FOR ANIMATIONS)
     dont_focus_before_close  = true,                 -- When set to true, the scratchpad will be closed by the toggle function regardless of whether its focused or not. When set to false, the toggle function will first bring the scratchpad into focus and only close it on a second call
 }
@@ -37,6 +37,18 @@ local music_scratchpad = bling.module.scratchpad {
     autoclose = false,                                 -- Whether it should hide itself when losing focus
     floating = true,                                  -- Whether it should be floating (MUST BE TRUE FOR ANIMATIONS)
     geometry = {x=360, y=90, height=850, width=1100}, -- The geometry in a floating state
+    reapply = true,                                   -- Whether all those properties should be reapplied on every new opening of the scratchpad (MUST BE TRUE FOR ANIMATIONS)
+    dont_focus_before_close  = true,                 -- When set to true, the scratchpad will be closed by the toggle function regardless of whether its focused or not. When set to false, the toggle function will first bring the scratchpad into focus and only close it on a second call
+}
+
+
+local sound_scratchpad = bling.module.scratchpad {
+    command = "alacritty -e pulsemixer",           -- How to spawn the scratchpad
+    rule = { instance = "sound" },                     -- The rule that the scratchpad will be searched by
+    sticky = true,                                    -- Whether the scratchpad should be sticky
+    autoclose = false,                                 -- Whether it should hide itself when losing focus
+    floating = true,                                  -- Whether it should be floating (MUST BE TRUE FOR ANIMATIONS)
+    geometry = {x=590, y=330, height=500, width=700}, -- The geometry in a floating state
     reapply = true,                                   -- Whether all those properties should be reapplied on every new opening of the scratchpad (MUST BE TRUE FOR ANIMATIONS)
     dont_focus_before_close  = true,                 -- When set to true, the scratchpad will be closed by the toggle function regardless of whether its focused or not. When set to false, the toggle function will first bring the scratchpad into focus and only close it on a second call
 }
@@ -79,6 +91,10 @@ function _M.get()
         awful.key({"Mod4"}, "m", function()
           music_scratchpad:toggle()   -- toggles the scratchpads visibility
         end, {description = "toggle music scratchpad", group = "scratchpads"}),
+
+        awful.key({"Mod4"}, "s", function()
+          sound_scratchpad:toggle()   -- toggles the scratchpads visibility
+        end, {description = "toggle sound scratchpad", group = "scratchpads"}),
 
     -- awful.key({ modkey,           }, "j",
     --     function ()

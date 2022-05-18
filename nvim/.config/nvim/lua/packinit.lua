@@ -158,6 +158,11 @@ return require('packer').startup(function(use)
 
   use ('folke/lsp-colors.nvim')
 
+  use {
+      'glacambre/firenvim',
+      run = function() vim.fn['firenvim#install'](0) end 
+  }
+
   if packer_bootstrap then
     require('packer').sync()
   end

@@ -1,3 +1,8 @@
+#!/bin/bash
+# Dotfile programs installation script
+# Heavily inspired by Luke Smiths LARBS
+# must be used with sudo/doas
+
 [ -z "$aurhelper" ] && aurhelper="yay"
 [ -z "$progsfile" ] && progsfile="https://raw.githubusercontent.com/Goxore/dotfiles/main/installation/programs.csv"
 
@@ -43,10 +48,19 @@ aurinstall() { \
 	sudo -u "$name" $aurhelper -S --noconfirm "$1" >/dev/null 2>&1
 }
 
+optinstall(){
+  items=$(dialog --stdout --no-items --checklist "Choose optional packages to install:" 60 70 3 "Cheese" on "Tomato Sauce" off "Anchovies" off)
+}
+
 pipinstall() { \
 	dialog --title "Installation" --infobox "Installing the Python package \`$1\` ($n of $total). $1 $2" 5 70
 	[ -x "$(command -v "pip")" ] || installpkg python-pip >/dev/null 2>&1
 	yes | pip install "$1"
+}
+
+createneededfolders()
+{
+  mkdir ~/.config/nvim
 }
 
 installationloop
