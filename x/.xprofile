@@ -9,3 +9,4 @@ setxkbmap -model pc105 -layout us,ru,ua -option grp:alt_shift_toggle &
 nm-applet &
 xfce4-power-manager &
 udiskie &
+$HOME/scripts/restoreautorice

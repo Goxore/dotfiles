@@ -41,6 +41,7 @@
 ,neofetch,"Fetch tool."
 ,lxappearance,"Look and feel selector."
 ,mopidy,"Music player daemon"
+,rofi,"Launcher program"
 A,mopidy-mpd,"Mopidy mpd support"
 A,mopidy-youtube,"Mopidy youtube plugin"
 A,simple-mtpfs,"Phone mounting."
