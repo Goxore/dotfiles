@@ -1,0 +1,19 @@
+# Base16 everforest
+scheme: "everforest"
+author: "-"
+base00: "2f383e" # ----
+base01: "374247" # ---
+base02: "404c51" # --
+base03: "4a555b" # -
+base04: "525c62" # +
+base05: "d3c6aa" # ++
+base06: "5c6a72" # +++
+base07: "d3c6aa" # ++++
+base08: "e67e80" # red
+base09: "e69875" # orange
+base0A: "dbbc7f" # yellow
+base0B: "a7c080" # green
+base0C: "83c092" # aqua
+base0D: "7fbbb3" # blue
+base0E: "d699b6" # purple
+base0F: "b57559" # brown

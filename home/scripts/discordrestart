@@ -1,0 +1,7 @@
+#!/bin/sh
+
+killall DiscordCanary
+sleep 1
+killall DiscordCanary
+sleep 1
+discord-canary

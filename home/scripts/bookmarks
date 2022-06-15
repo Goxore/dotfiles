@@ -1,0 +1,3 @@
+#!/bin/sh
+select=$(awk '{print $1}' $SCRIPTS/bookmarklist | rofi -dmenu)
+$BROWSER $select

@@ -1,3 +1,0 @@
-#!/bin/bash
-input=$(xclip -o -sel c)
-$BROWSER "https://proxitok.herokuapp.com/@placeholder/video/$input"
