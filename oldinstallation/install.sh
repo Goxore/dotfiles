@@ -3,8 +3,12 @@
 # Heavily inspired by Luke Smiths LARBS
 # must be used with sudo/doas
 
-progsfile="programs"
-progsoptfile="programsopt"
+progsfile="programs.csv"
+optprogsfile="optprograms.csv"
+
+[ -z "$aurhelper" ] && aurhelper="yay"
+[ -z "$progsfile" ] && progsfile="https://raw.githubusercontent.com/Goxore/dotfiles/main/installation/programs.csv"
+[ -z "$optprogsfile" ] && optprogsfile="https://raw.githubusercontent.com/Goxore/dotfiles/main/installation/optprograms.csv"
 
 name=$(dialog --inputbox "Please enter your username." 10 60 3>&1 1>&2 2>&3 3>&1) || exit 1
 
@@ -13,33 +17,20 @@ installpkg(){ pacman --noconfirm --needed -S "$1" >/dev/null 2>&1 ;}
 error() { printf "%s\n" "$1" >&2; exit 1; }
 
 installationloop() { \
-  awk '{print $2, "off"}' programsopt > /tmp/progsoptlist
-  progsoptlist=$(cat /tmp/progsoptlist)
-  optlisttotal=$(wc -l < /tmp/progsoptlist)
-  optlist=$(echo $progsoptlist | xargs)
-  opttoinstall=$(dialog --stdout --no-items --checklist "Choose optional packages to install:" 60 80 100 $(echo $optlist))
-
-  opttogrep=$(echo $opttoinstall | sed 's/ /\\\|/g')
-  optfinal=$(grep "$opttogrep" programsopt)
-
-  cat "$progsfile" > /tmp/progs
-  echo "$optfinal" >> /tmp/progs
-
-	total=$(wc -l < /tmp/progs)
+	([ -f "$progsfile" ] && cp "$progsfile" /tmp/progs.csv) || curl -Ls "$progsfile" | sed '/^#/d' > /tmp/progs.csv
+  
+	total=$(wc -l < /tmp/progs.csv)
 	aurinstalled=$(pacman -Qqm)
-
-  cat /tmp/progs | while read -r type program comment;
-  do
+	while IFS=, read -r tag program comment; do
 		n=$((n+1))
 		echo "$comment" | grep -q "^\".*\"$" && comment="$(echo "$comment" | sed "s/\(^\"\|\"$\)//g")"
-		case "$type" in
+		case "$tag" in
 			"A") aurinstall "$program" "$comment" ;;
 			"G") gitmakeinstall "$program" "$comment" ;;
 			"P") pipinstall "$program" "$comment" ;;
-			"p") maininstall "$program" "$comment" ;;
+			*) maininstall "$program" "$comment" ;;
 		esac
-  done
-}
+	done < /tmp/progs.csv ;}
 
 maininstall() {
 	dialog --title "Installation" --infobox "Installing \`$1\` ($n of $total). $1 $2" 5 70
@@ -74,11 +65,11 @@ pipinstall() { \
 
 createneededfolders()
 {
-  mkdir -p ~/.config/nvim
-  mkdir -p ~/Wallpapers
+  mkdir ~/.config/nvim
+  mkdir ~/Wallpapers
 }
 
 installationloop
 createneededfolders
 
-#clear
+clear
