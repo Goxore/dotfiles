@@ -75,15 +75,16 @@ template = "zathura"
 [[item]]
 file= "~/.config/nvim/vim_colors/default.vim"
 template = "1vim"
-start= "\" start flavours"
-end = "\" end flavours"
+rewrite = true
+#start= "\" start flavours"
+#end = "\" end flavours"
 
-[[item]]
-file= "~/.config/dunst/dunstrc"
-template = "1dunst"
-subtemplate = "default"
-start= "# start flavours"
-end = "# end flavours"
+# [[item]]
+# file= "~/.config/dunst/dunstrc"
+# template = "1dunst"
+# subtemplate = "default"
+# start= "# start flavours"
+# end = "# end flavours"
 
 [[items]]
 file= "~/.config/wal/colorscheme.json"

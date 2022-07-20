@@ -22,6 +22,82 @@ function _M.get()
     awful.key({ modkey, "Shift" }, "f",  awful.client.floating.toggle                     ,
               {description = "toggle floating", group = "client"}),
 
+
+    awful.key({ modkey, "Control" }, "Up", function (c)
+      if c.floating then
+        c:relative_move( 0, 0, 0, -10)
+      else
+        awful.client.incwfact(0.015)
+      end
+    end,
+    {description = "Floating Resize Vertical -", group = "client"}),
+
+    awful.key({ modkey, "Control" }, "Down", function (c)
+      if c.floating then
+        c:relative_move( 0, 0, 0,  10)
+      else
+        awful.client.incwfact(-0.015)
+      end
+    end,
+    {description = "Floating Resize Vertical +", group = "client"}),
+
+    awful.key({ modkey, "Control" }, "Left", function (c)
+      if c.floating then
+        c:relative_move( 0, 0, -10, 0)
+      else
+        awful.tag.incmwfact(-0.015)
+      end
+    end,
+    {description = "Floating Resize Horizontal -", group = "client"}),
+
+    awful.key({ modkey, "Control" }, "Right", function (c)
+      if c.floating then
+        c:relative_move( 0, 0,  10, 0)
+      else
+        awful.tag.incmwfact(0.015)
+      end
+    end,
+    {description = "Floating Resize Horizontal +", group = "client"}),
+
+
+    awful.key({ modkey, "Shift" }, "Up", function (c)
+      if c.floating then
+        c:relative_move( 0, -15, 0, 0)
+      else
+        awful.client.swap.bydirection("up")
+      end
+    end,
+    {description = "floating move vertical -", group = "client"}),
+
+    awful.key({ modkey, "Shift" }, "Down", function (c)
+      if c.floating then
+        c:relative_move( 0, 15, 0,  0)
+      else
+        awful.client.swap.bydirection("down")
+      end
+    end,
+    {description = "floating move vertical +", group = "client"}),
+
+    awful.key({ modkey, "Shift" }, "Left", function (c)
+      if c.floating then
+        c:relative_move( -15, 0, 0, 0)
+      else
+        awful.client.swap.bydirection("left")
+      end
+    end,
+    {description = "floating move horizontal -", group = "client"}),
+
+    awful.key({ modkey, "Shift" }, "Right", function (c)
+      if c.floating then
+        c:relative_move( 15, 0, 0, 0)
+      else
+        awful.client.swap.bydirection("right")
+      end
+    end,
+    {description = "floating move horizontal +", group = "client"}),
+
+
+
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
               {description = "move to master", group = "client"}),
     awful.key({ modkey,           }, "o",      function (c) c:move_to_screen()               end,

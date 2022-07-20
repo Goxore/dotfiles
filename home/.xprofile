@@ -4,9 +4,11 @@ xmodmap $HOME/.xmodmaprc &
 sxhkd &
 mopidy &
 greenclip daemon &
-picom &
 setxkbmap -model pc105 -layout us,ru,ua -option grp:alt_shift_toggle &
 nm-applet &
+picom --experimental-backends &
 xfce4-power-manager &
 udiskie &
-$HOME/scripts/restoreautorice
+optimus-manager-qt &
+lxsession &
+$HOME/scripts/restoreautorice &

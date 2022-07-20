@@ -25,8 +25,8 @@ local function darker(color_value, darker_n)
     return result
 end
 
-theme.font          = "Hack Nerd Font 16"
-theme.taglist_font  = "Hack Nerd Font 20"
+theme.font          = "Hack Nerd Font 13"
+theme.taglist_font  = "Hack Nerd Font 18"
 theme.wibar_bg = darker(xrdb.color0, 5)
 theme.lighter = darker(xrdb.color0, -5)
 theme.darker = darker(xrdb.color0, 2)

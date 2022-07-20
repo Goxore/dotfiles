@@ -117,14 +117,6 @@ function _M.get()
     -- Layout manipulation
 
 
-    awful.key({ modkey, "Shift"   }, "Left", function () awful.client.swap.bydirection("left")    end,
-              {description = "swap with left", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "Right", function () awful.client.swap.bydirection("right")    end,
-              {description = "swap with right", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "Up", function () awful.client.swap.bydirection("up")    end,
-              {description = "swap with up", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "Down", function () awful.client.swap.bydirection("down")    end,
-              {description = "swap with down", group = "client"}),
 
     -- awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
     --           {description = "swap with next client by index", group = "client"}),
@@ -158,17 +150,20 @@ function _M.get()
 
     --   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
     -- Layout manipulation
-    awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
+    awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.015)          end,
               {description = "increase master width factor", group = "layout"}),
-    awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)          end,
+    awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.015)          end,
               {description = "decrease master width factor", group = "layout"}),
+
     awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1, nil, true) end,
               {description = "increase the number of master clients", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1, nil, true) end,
+
               {description = "decrease the number of master clients", group = "layout"}),
     awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol( 1, nil, true)    end,
               {description = "increase the number of columns", group = "layout"}),
     awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1, nil, true)    end,
+
               {description = "decrease the number of columns", group = "layout"}),
     awful.key({ modkey,           }, "space", function () awful.layout.inc( 1)                end,
               {description = "select next", group = "layout"}),
@@ -207,34 +202,88 @@ function _M.get()
     -- Resize
     --awful.key({ modkey, "Control" }, "Left",  function () awful.client.moveresize( 20,  20, -40, -40) end),
     --awful.key({ modkey, "Control" }, "Right", function () awful.client.moveresize(-20, -20,  40,  40) end),
-    awful.key({ modkey, "Control" }, "Down",  
-              function () awful.client.moveresize( 0, 0, 0, -20) end),
-    awful.key({ modkey, "Control" }, "Up",    
-              function () awful.client.moveresize( 0, 0, 0,  20) end),
-    awful.key({ modkey, "Control" }, "Left",  
-              function () awful.client.moveresize( 0, 0, -20, 0) end),
-    awful.key({ modkey, "Control" }, "Right", 
-              function () awful.client.moveresize( 0, 0,  20, 0) end),
+    -- awful.key({ modkey, "Control" }, "Down",  
+    --           function () awful.client.moveresize( 0, 0, 0, -20) end),
+    -- awful.key({ modkey, "Control" }, "Up",    
+    --           function () awful.client.moveresize( 0, 0, 0,  20) end),
+    -- awful.key({ modkey, "Control" }, "Left",  
+    --           function () awful.client.moveresize( 0, 0, -20, 0) end),
+    --
+    -- awful.key({ modkey, "Control" }, "Right", 
+    --           function ()
+    --             -- if awful.client.floating then
+    --               awful.client.moveresize( 0, 0,  20, 0) 
+    --             -- else
+    --             --   awful.tag.incmwfact( 0.015)
+    --             -- end
+    --           end),
+    --
+    -- awful.key({ }, "XF86MonBrightnessUp", function () os.execute("xbacklight -inc 10") end,
+    --   {description = "+10%", group = "hotkeys"}),
+    -- awful.key({ }, "XF86MonBrightnessDown", function () os.execute("xbacklight -dec 10") end,
+    --   {description = "-10%", group = "hotkeys"}),
 
-    awful.key({ }, "XF86MonBrightnessUp", function () os.execute("xbacklight -inc 10") end,
-      {description = "+10%", group = "hotkeys"}),
-    awful.key({ }, "XF86MonBrightnessDown", function () os.execute("xbacklight -dec 10") end,
-      {description = "-10%", group = "hotkeys"}),
+    -- awful.key({ modkey, "Control" }, "Up", function (c)
+    --   if awful.client.focus.floating then
+    --     awful.client.focus.moveresize( 0, 0, 0, -10)
+    --   else
+    --     awful.client.incwfact(0.025)
+    --   end
+    -- end,
+    -- {description = "Floating Resize Vertical -", group = "client"}),
+    --
+    -- awful.key({ modkey, "Control" }, "Down", function (c)
+    --   if awful.client.focus.floating then
+    --     awful.client.focus.moveresize( 0, 0, 0,  10)
+    --   else
+    --     awful.client.incwfact(-0.025)
+    --   end
+    -- end,
+    -- {description = "Floating Resize Vertical +", group = "client"}),
+    --
+    -- awful.key({ modkey, "Control" }, "Left", function (c)
+    --   if awful.client.focus.floating then
+    --     awful.client.focus.moveresize( 0, 0, -10, 0)
+    --   else
+    --     awful.tag.incmwfact(-0.025)
+    --   end
+    -- end,
+    -- {description = "Floating Resize Horizontal -", group = "client"}),
+    --
+    -- awful.key({ modkey, "Control" }, "Right", function (c)
+    --   if awful.client.focus.floating then
+    --     awful.client.focus.moveresize( 0, 0,  10, 0)
+    --   else
+    --     awful.tag.incmwfact(0.025)
+    --   end
+    -- end,
+    -- {description = "Floating Resize Horizontal +", group = "client"}),
+
+
+
+    -- Move
+    -- awful.key({ modkey, "Shift"   }, "Down",
+    --           function () awful.client.moveresize(  0,  20,   0,   0) end),
+    -- awful.key({ modkey, "Shift"   }, "Up", 
+    --           function () awful.client.moveresize(  0, -20,   0,   0) end),
+    -- awful.key({ modkey, "Shift"   }, "Left",
+    --           function () awful.client.moveresize(-20,   0,   0,   0) end),
+    -- awful.key({ modkey, "Shift"   }, "Right",
+    --           function () awful.client.moveresize( 20,   0,   0,   0) end),
+    --
+    -- awful.key({ modkey, "Shift"   }, "Left", function () awful.client.swap.bydirection("left")    end,
+    --           {description = "swap with left", group = "client"}),
+    -- awful.key({ modkey, "Shift"   }, "Right", function () awful.client.swap.bydirection("right")    end,
+    --           {description = "swap with right", group = "client"}),
+    -- awful.key({ modkey, "Shift"   }, "Up", function () awful.client.swap.bydirection("up")    end,
+    --           {description = "swap with up", group = "client"}),
+    -- awful.key({ modkey, "Shift"   }, "Down", function () awful.client.swap.bydirection("down")    end,
+    --           {description = "swap with down", group = "client"}),
 
     -- Left panel
     awful.key({"Mod4"}, "Tab", function()
       bp.bigpanel.visible = not bp.bigpanel.visible
-    end, {description = "left panel", group = "Widgets"}),
-
-    -- Move
-    awful.key({ modkey, "Shift"   }, "Down",  
-              function () awful.client.moveresize(  0,  20,   0,   0) end),
-    awful.key({ modkey, "Shift"   }, "Up",    
-              function () awful.client.moveresize(  0, -20,   0,   0) end),
-    awful.key({ modkey, "Shift"   }, "Left",  
-              function () awful.client.moveresize(-20,   0,   0,   0) end),
-    awful.key({ modkey, "Shift"   }, "Right", 
-              function () awful.client.moveresize( 20,   0,   0,   0) end)
+    end, {description = "left panel", group = "Widgets"})
 
     --   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
     -- Menubar

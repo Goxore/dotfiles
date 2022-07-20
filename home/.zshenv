@@ -6,6 +6,7 @@ export OPENER="xdg-open"
 export SCRIPTS="$HOME/scripts"
 export GTK_THEME=FlatColor
 export FZF_DEFAULT_OPTS="--color=16"
+export WALLPAPER="$HOME/Wallpapers/$(cat $HOME/.cache/lastwallpaper)"
 
 # export LF_ICONS="\
 # tw=:\
@@ -627,3 +628,4 @@ Vagrantfile=:\
 *.xlsx=:\
 *.wiki=:\
 "
+. "$HOME/.cargo/env"
