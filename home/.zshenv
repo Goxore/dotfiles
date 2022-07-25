@@ -1,11 +1,16 @@
 export TERMINAL="alacritty"
-export BROWSER="brave"
+export BROWSER="firefox"
 export VIDEO="mpv"
 export IMAGE="sxiv"
 export OPENER="xdg-open"
 export SCRIPTS="$HOME/scripts"
 export GTK_THEME=FlatColor
 export FZF_DEFAULT_OPTS="--color=16"
+
+export mono_cmd=/usr/bin/mono
+export bin_dir=/usr/bin
+
+[ -f "$HOME/.cache/lastwallpaper" ] && \
 export WALLPAPER="$HOME/Wallpapers/$(cat $HOME/.cache/lastwallpaper)"
 
 # export LF_ICONS="\

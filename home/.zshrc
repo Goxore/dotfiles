@@ -1,6 +1,7 @@
 #ZSHRC
 
 # to switch shell - sudo chsh $USER -s /bin/zsh
+command -v xrdb &> /dev/null
 xrdb ~/.Xresources
 
 # vi mode
@@ -138,7 +139,10 @@ source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.
 
 #autosuggestions
 
+command -v xrdb &> /dev/null
 bgcolor=$(xrdb -get color0)
+
+command -v xrdb &> /dev/null
 autohg=$(xrdb -get color19)
 
 [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh ] && \
@@ -167,3 +171,5 @@ source ~/aliasrc.sh
 # Funny haskell stuff
 [ -f "/home/yurii/.ghcup/env" ] && \
 source "/home/yurii/.ghcup/env"
+
+

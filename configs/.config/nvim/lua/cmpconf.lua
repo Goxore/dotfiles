@@ -81,8 +81,8 @@ cmp.setup({
 
   },
   sources = cmp.config.sources({
-    { name = 'luasnip' }, -- For luasnip users.
     { name = 'nvim_lsp' },
+    { name = 'luasnip' }, -- For luasnip users.
     -- { name = 'latex_symbols' }, -- LaTeX.
     { name = 'buffer', keyword_length = 5},
   })

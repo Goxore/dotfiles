@@ -17,6 +17,7 @@ require('alphaconf')
 require('colors')
 require('treesitterconf')
 require('latex')
+require('autoformat')
 require('other')
 -- require('lspsagaconf')
 

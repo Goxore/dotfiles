@@ -163,6 +163,10 @@ return require('packer').startup(function(use)
       run = function() vim.fn['firenvim#install'](0) end 
   }
 
+  use ("vim-autoformat/vim-autoformat")
+
+  -- use "omnisharp/omnisharp-vim"
+
   if packer_bootstrap then
     require('packer').sync()
   end

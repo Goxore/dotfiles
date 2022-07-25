@@ -133,32 +133,32 @@ require("main.signals")
 -- end)
 
 -- Unity repaint fix
-last_focus = nil
-unity_force_repaint = true
-client.connect_signal('focus', function(c)
-    if not c then return end -- that can happen :/
- 
-    -- This is needed to have Unity on one screen and some utility panels on another
-    -- without constantly repainting whenever the user switches back and forth
-    if not unity_force_repaint and last_focus and last_focus.valid and last_focus.tag == c.tag and awful.rules.match(last_focus, { class = "Unity" }) then
-        last_focus = c
-        return
-    end
-    last_focus = c
-    unity_force_repaint = false
- 
-    if not awful.rules.match(c, { class = "Unity" }) then return end
-    if awful.rules.match(c, { rule_any = {type = { "dialog", "popup", "popup_menu" }}}) then return end -- Ignore these types of windows
-    if awful.rules.match(c, { name = "Select" }) then return end
- 
-    -- The workaround
-    -- note: gears.timer.delayed_call doesn't not seem to work for this
-   c.maximized = false
-   gears.timer.start_new(1/60, function() -- 0 doesn't always work in every case
-        c.maximized = true
-    end)
-end)
- 
-tag.connect_signal('property::selected', function ()
-    unity_force_repaint = true
-end)
+-- last_focus = nil
+-- unity_force_repaint = true
+-- client.connect_signal('focus', function(c)
+--     if not c then return end -- that can happen :/
+--  
+--     -- This is needed to have Unity on one screen and some utility panels on another
+--     -- without constantly repainting whenever the user switches back and forth
+--     if not unity_force_repaint and last_focus and last_focus.valid and last_focus.tag == c.tag and awful.rules.match(last_focus, { class = "Unity" }) then
+--         last_focus = c
+--         return
+--     end
+--     last_focus = c
+--     unity_force_repaint = false
+--  
+--     if not awful.rules.match(c, { class = "Unity" }) then return end
+--     if awful.rules.match(c, { rule_any = {type = { "dialog", "popup", "popup_menu" }}}) then return end -- Ignore these types of windows
+--     if awful.rules.match(c, { name = "Select" }) then return end
+--  
+--     -- The workaround
+--     -- note: gears.timer.delayed_call doesn't not seem to work for this
+--    c.maximized = false
+--    gears.timer.start_new(1/60, function() -- 0 doesn't always work in every case
+--         c.maximized = true
+--     end)
+-- end)
+--  
+-- tag.connect_signal('property::selected', function ()
+--     unity_force_repaint = true
+-- end)
