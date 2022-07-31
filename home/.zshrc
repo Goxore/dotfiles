@@ -73,6 +73,7 @@ alias v="nvim"
 alias hst="history 1 | cut -c 8- | sort | uniq | fzf | tr -d '\n' | xclip -selection c"
 alias pimg="xclip -se c -t image/png -o > out.png"
 alias :q="exit"
+alias vv="neovide"
 
 command -v gxrfetch &> /dev/null && \
 alias l="exa --icons -a --group-directories-first"

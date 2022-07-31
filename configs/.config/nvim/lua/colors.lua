@@ -50,9 +50,9 @@ end
 
 vim.cmd [[
 set laststatus=3
-" set fillchars=fold:\ ,vert:\│,eob:\ ,msgsep:‾
+set fillchars=fold:\ ,vert:\│,eob:\ ,msgsep:‾
 " set fillchars=fold:\ ,vert:\▎,eob:\ ,msgsep:‾
-set fillchars=fold:\ ,vert:\ ,eob:\ ,msgsep:\ 
+" set fillchars=fold:\ ,vert:\ ,eob:\ ,msgsep:\ 
 
 ]]
 
@@ -85,8 +85,12 @@ fg("CmpItemKindUnit", pink)
 bg("SignColumn", "transparent")
 bg("WinSeparator", "transparent")
 
-fg("WinSeparator", darker(bgcolor, -20))
-bg("NvimTreeNormal", darker(bgcolor, 10))
+fg("WinSeparator", darker(bgcolor, -10))
+
+-- nvimTree
+bg("NvimTreeNormal", darker(bgcolor, -5))
+bg("NvimTreeWinSeparator", darker(bgcolor, -5))
+fg("NvimTreeWinSeparator", darker(bgcolor, -5))
 
 fg("AlphaHeader", yellow)
 fg("AlphaButtons", green)

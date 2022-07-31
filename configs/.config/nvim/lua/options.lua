@@ -1,10 +1,6 @@
 -- aliases
-local cmd = vim.cmd
-local fn = vim.fn
 local g = vim.g
-local map = vim.api.nvim_set_keymap
 local o = vim.opt
-local api = vim.api
 
 -- options
 o.swapfile = true
@@ -17,7 +13,7 @@ o.ignorecase = true
 o.scrolloff = 12
 o.relativenumber = true
 o.wrap = false
--- o.clipboard = "unnamedplus"
+o.clipboard = "unnamedplus"
 o.encoding = "utf-8"
 o.hidden = true
 o.tabstop = 4
@@ -30,20 +26,17 @@ o.splitbelow = true
 o.splitright = true
 o.scrolloff = 5
 o.signcolumn = "yes"
--- o.langmap = [[ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>]]
+g.OmniSharp_server_use_mono = 1
 -- g.laststatus = 3
 
---o.invspell spelllang = ru_ru,en_us,uk_ua
---o.nospell = true
+-- vim.lsp.set_log_level("debug")
 
+-- cmds
 vim.cmd [[
 set nobackup
 set nowritebackup
 vnoremap < <gv
 vnoremap > >gv
-set clipboard=unnamedplus
 nnoremap gx <CMD>execute '!xdg-open ' .. shellescape(expand('<cfile>'), v:true)<CR>
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 ]]
-
--- g.coc_snippet_next = '<tab>'

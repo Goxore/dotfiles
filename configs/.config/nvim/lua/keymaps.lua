@@ -6,13 +6,6 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Modes
---   normal_mode = "n",
---   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
---   term_mode = "t",
---   command_mode = "c",
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -31,7 +24,7 @@ keymap("n", "<esc><esc>", "<cmd>:noh<return>", opts)
 keymap("n", "z{", "zfi{", opts)
 keymap("n", "z(", "zfi(", opts)
 
--- Tab navigation
+-- Tab navigation without bufferline
 -- keymap("n", "<A-1>", "1gt", opts)
 -- keymap("n", "<A-2>", "2gt", opts)
 -- keymap("n", "<A-3>", "3gt", opts)
@@ -43,7 +36,6 @@ keymap("n", "z(", "zfi(", opts)
 -- keymap("n", "<A-9>", "9gt", opts)
 
 -- Buffers
-
 keymap("n", "<A-1>", "<cmd>BufferLineGoToBuffer 1<CR>", opts)
 keymap("n", "<A-2>", "<cmd>BufferLineGoToBuffer 2<CR>", opts)
 keymap("n", "<A-3>", "<cmd>BufferLineGoToBuffer 3<CR>", opts)
@@ -66,18 +58,15 @@ keymap("n", "<A-Down>", ":resize +2<CR>", opts)
 
 -- Nvim Tree
 keymap("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
---keymap("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
-vim.cmd([[tnoremap <silent> <C-n> <C-\><C-n>:NvimTreeToggle<CR>]])
+keymap("t", "<C-n>", [[ <C-\><C-n>:NvimTreeToggle<CR>]], opts)
 keymap("n", "<leader>r", ":NvimTreeRefresh<CR>", opts)
 keymap("n", "<leader>N", ":NvimTreeFindFile<CR>", opts)
 
--- keymap("n", "<leader>t", ":ToggleTerm<CR>", opts)
--- keymap("t", "<leader>t", ":ToggleTerm<CR>", opts)
-
 -- ToggleTerm
-keymap('t', '<esc>', [[<C-\><C-n>]], opts)
-keymap('t', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
-keymap('t', '<C-j>', [[<C-\><C-n><C-W>j]], opts)
-keymap('t', '<C-k>', [[<C-\><C-n><C-W>k]], opts)
+keymap("t", "<esc>", [[<C-\><C-n>]], opts)
+keymap("t", "<C-h>", [[<C-\><C-n><C-W>h]], opts)
+keymap("t", "<C-j>", [[<C-\><C-n><C-W>j]], opts)
+keymap("t", "<C-k>", [[<C-\><C-n><C-W>k]], opts)
 
-keymap('n', "<leader><leader>s", "<cmd>source ~/.config/nvim/lua/luasnipconf.lua<CR>", opts)
+-- snippet
+keymap("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/lua/luasnipconf.lua<CR>", opts)

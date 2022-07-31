@@ -9,10 +9,13 @@ if not status_ok then
 end
 
 require("toggleterm").setup{
-  -- direction = "float",
-  direction = "horizontal",
+  direction = "float",
+  -- direction = "horizontal",
   shade_terminals = false,
   persist_size = false,
+  float_opts = {
+    border = 'curved'
+  },
   highlights = {
     Normal = {
       guibg = colors.darker(colors.bgcolor, 10)
@@ -20,10 +23,10 @@ require("toggleterm").setup{
     NormalFloat = {
       link = 'Normal'
     },
-    FloatBorder = {
-      guifg = colors.darker(colors.bgcolor, 10),
-      guibg = colors.darker(colors.bgcolor, 10)
-    },
+    -- FloatBorder = {
+    --   guifg = colors.darker(colors.bgcolor, 10),
+    --   guibg = colors.darker(colors.bgcolor, 10)
+    -- },
   },
 }
 
