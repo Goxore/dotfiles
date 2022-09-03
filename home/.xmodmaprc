@@ -1,1 +1,5 @@
 keycode 135 = Super_R
+remove Lock = Caps_Lock
+! keysym Escape = Caps_Lock
+keysym Caps_Lock = Escape
+add Lock = Caps_Lock

@@ -3,7 +3,7 @@ local beautiful = require("beautiful")
 local gears = require("gears")
 local naughty = require("naughty")
 
-local theme = require("themes.xresources.theme")
+local theme = require("themes.mytheme.theme")
 
 local wibox = require("wibox")
 

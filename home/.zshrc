@@ -62,7 +62,7 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 alias open='xdg-open'
 alias dopen='devour xdg-open'
 alias devopen='devour xdg-open'
-alias lf='lfrun'
+alias lf='$HOME/scripts/other/lfrun'
 alias dragout='dragon-drop -a -x'
 alias dout='dragon-drop -a -x'
 alias din='dragonmove'
@@ -71,13 +71,21 @@ alias wiki="nvim $HOME/vimwiki/index.wiki"
 alias vw="nvim $HOME/vimwiki/index.wiki"
 alias v="nvim"
 alias hst="history 1 | cut -c 8- | sort | uniq | fzf | tr -d '\n' | xclip -selection c"
-alias pimg="xclip -se c -t image/png -o > out.png"
+# alias pimg="xclip -se c -t image/png -o > out.png"
 alias :q="exit"
 alias vv="neovide"
 
+if command -v devour &> /dev/null
+then
+    alias mpv="devour mpv"
+    alias sxiv="devour sxiv"
+    alias zathura="devour zathura"
+fi
+
 command -v gxrfetch &> /dev/null && \
 alias l="exa --icons -a --group-directories-first"
-#extractor ex <file>
+
+# functions --------
 ex ()
 {
   if [ -f $1 ] ; then
@@ -101,6 +109,14 @@ ex ()
   else
     echo "'$1' is not a valid file"
   fi
+}
+
+pimg ()
+{
+    echo $1
+    output="out.png"
+    [ ! -z "$1" ] && output="$1.png"
+    xclip -se c -t image/png -o > "$output"
 }
 
 #Prompt customization--------------------
@@ -166,11 +182,13 @@ bindkey -M vicmd 'y' vi-yank-xclip
 eval "$(starship init zsh)"
 
 
-[ -f ~/aliasrc.sh ] && \
-source ~/aliasrc.sh
+[ -f ~/.localrc.sh ] && \
+source ~/.localrc.sh
 
 # Funny haskell stuff
 [ -f "/home/yurii/.ghcup/env" ] && \
 source "/home/yurii/.ghcup/env"
 
-
+# down up to j k
+bindkey "^j" down-line-or-history
+bindkey "^k" up-line-or-history

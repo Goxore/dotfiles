@@ -1,0 +1,17 @@
+#!/bin/sh
+[ -z "$LAUNCHER" ] && LAUNCHER="rofi -dmenu"
+
+cd $HOME/Music
+
+input=$(xclip -o -sel c)
+
+downloader="youtube-dl"
+command -v yt-dlp && downloader="yt-dlp"
+
+name=$($LAUNCHER -p "Name of track (optional)")
+
+[ -z "$name" ] && name="%(title)s"
+
+$downloader -x --audio-quality 0 --extract-audio --audio-format mp3 --prefer-ffmpeg $input -o "$name.mp3"
+
+notify-send "Your download is finished"

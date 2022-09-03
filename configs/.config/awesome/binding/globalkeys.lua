@@ -6,7 +6,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- Menubar library
 local menubar = require("menubar")
 
-local bling = require("bling")
+-- local bling = require("bling")
 -- Resource Configuration
 local modkey = RC.vars.modkey
 local terminal = RC.vars.terminal
@@ -19,39 +19,39 @@ local _M = {}
 -- https://awesomewm.org/wiki/Global_Keybindings
 
 
-local calculator_scratchpad = bling.module.scratchpad {
-    command = "alacritty -e qalc",           -- How to spawn the scratchpad
-    rule = { instance = "qalc" },                     -- The rule that the scratchpad will be searched by
-    sticky = true,                                    -- Whether the scratchpad should be sticky
-    autoclose = false,                                 -- Whether it should hide itself when losing focus
-    floating = true,                                  -- Whether it should be floating (MUST BE TRUE FOR ANIMATIONS)
-    geometry = {x=590, y=330, height=500, width=700}, -- The geometry in a floating state
-    reapply = true,                                   -- Whether all those properties should be reapplied on every new opening of the scratchpad (MUST BE TRUE FOR ANIMATIONS)
-    dont_focus_before_close  = true,                 -- When set to true, the scratchpad will be closed by the toggle function regardless of whether its focused or not. When set to false, the toggle function will first bring the scratchpad into focus and only close it on a second call
-}
-
-local music_scratchpad = bling.module.scratchpad {
-    command = "alacritty -e ncmpcpp",           -- How to spawn the scratchpad
-    rule = { instance = "music" },                     -- The rule that the scratchpad will be searched by
-    sticky = true,                                    -- Whether the scratchpad should be sticky
-    autoclose = false,                                 -- Whether it should hide itself when losing focus
-    floating = true,                                  -- Whether it should be floating (MUST BE TRUE FOR ANIMATIONS)
-    geometry = {x=360, y=90, height=850, width=1100}, -- The geometry in a floating state
-    reapply = true,                                   -- Whether all those properties should be reapplied on every new opening of the scratchpad (MUST BE TRUE FOR ANIMATIONS)
-    dont_focus_before_close  = true,                 -- When set to true, the scratchpad will be closed by the toggle function regardless of whether its focused or not. When set to false, the toggle function will first bring the scratchpad into focus and only close it on a second call
-}
-
-
-local sound_scratchpad = bling.module.scratchpad {
-    command = "alacritty -e pulsemixer",           -- How to spawn the scratchpad
-    rule = { instance = "sound" },                     -- The rule that the scratchpad will be searched by
-    sticky = true,                                    -- Whether the scratchpad should be sticky
-    autoclose = false,                                 -- Whether it should hide itself when losing focus
-    floating = true,                                  -- Whether it should be floating (MUST BE TRUE FOR ANIMATIONS)
-    geometry = {x=590, y=330, height=500, width=700}, -- The geometry in a floating state
-    reapply = true,                                   -- Whether all those properties should be reapplied on every new opening of the scratchpad (MUST BE TRUE FOR ANIMATIONS)
-    dont_focus_before_close  = true,                 -- When set to true, the scratchpad will be closed by the toggle function regardless of whether its focused or not. When set to false, the toggle function will first bring the scratchpad into focus and only close it on a second call
-}
+-- local calculator_scratchpad = bling.module.scratchpad {
+--     command = "alacritty -e qalc",           -- How to spawn the scratchpad
+--     rule = { instance = "qalc" },                     -- The rule that the scratchpad will be searched by
+--     sticky = true,                                    -- Whether the scratchpad should be sticky
+--     autoclose = false,                                 -- Whether it should hide itself when losing focus
+--     floating = true,                                  -- Whether it should be floating (MUST BE TRUE FOR ANIMATIONS)
+--     geometry = {x=590, y=330, height=500, width=700}, -- The geometry in a floating state
+--     reapply = true,                                   -- Whether all those properties should be reapplied on every new opening of the scratchpad (MUST BE TRUE FOR ANIMATIONS)
+--     dont_focus_before_close  = true,                 -- When set to true, the scratchpad will be closed by the toggle function regardless of whether its focused or not. When set to false, the toggle function will first bring the scratchpad into focus and only close it on a second call
+-- }
+--
+-- local music_scratchpad = bling.module.scratchpad {
+--     command = "alacritty -e ncmpcpp",           -- How to spawn the scratchpad
+--     rule = { instance = "music" },                     -- The rule that the scratchpad will be searched by
+--     sticky = true,                                    -- Whether the scratchpad should be sticky
+--     autoclose = false,                                 -- Whether it should hide itself when losing focus
+--     floating = true,                                  -- Whether it should be floating (MUST BE TRUE FOR ANIMATIONS)
+--     geometry = {x=360, y=90, height=850, width=1100}, -- The geometry in a floating state
+--     reapply = true,                                   -- Whether all those properties should be reapplied on every new opening of the scratchpad (MUST BE TRUE FOR ANIMATIONS)
+--     dont_focus_before_close  = true,                 -- When set to true, the scratchpad will be closed by the toggle function regardless of whether its focused or not. When set to false, the toggle function will first bring the scratchpad into focus and only close it on a second call
+-- }
+--
+--
+-- local sound_scratchpad = bling.module.scratchpad {
+--     command = "alacritty -e pulsemixer",           -- How to spawn the scratchpad
+--     rule = { instance = "sound" },                     -- The rule that the scratchpad will be searched by
+--     sticky = true,                                    -- Whether the scratchpad should be sticky
+--     autoclose = false,                                 -- Whether it should hide itself when losing focus
+--     floating = true,                                  -- Whether it should be floating (MUST BE TRUE FOR ANIMATIONS)
+--     geometry = {x=590, y=330, height=500, width=700}, -- The geometry in a floating state
+--     reapply = true,                                   -- Whether all those properties should be reapplied on every new opening of the scratchpad (MUST BE TRUE FOR ANIMATIONS)
+--     dont_focus_before_close  = true,                 -- When set to true, the scratchpad will be closed by the toggle function regardless of whether its focused or not. When set to false, the toggle function will first bring the scratchpad into focus and only close it on a second call
+-- }
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
 function _M.get()
@@ -84,6 +84,22 @@ function _M.get()
           awful.client.focus.bydirection("down")
         end, {description = "Focus left", group = "client"}),
 
+        awful.key({"Mod4"}, "h", function()
+          awful.client.focus.bydirection("left")
+        end, {description = "Focus left", group = "client"}),
+
+        awful.key({"Mod4"}, "l", function()
+          awful.client.focus.bydirection("right")
+        end, {description = "Focus left", group = "client"}),
+
+        awful.key({"Mod4"}, "k", function()
+          awful.client.focus.bydirection("up")
+        end, {description = "Focus left", group = "client"}),
+
+        awful.key({"Mod4"}, "j", function()
+          awful.client.focus.bydirection("down")
+        end, {description = "Focus left", group = "client"}),
+
         awful.key({"Mod4"}, "c", function()
           calculator_scratchpad:toggle()   -- toggles the scratchpads visibility
         end, {description = "toggle calculator scratchpad", group = "scratchpads"}),
@@ -95,6 +111,10 @@ function _M.get()
         awful.key({"Mod4"}, "s", function()
           sound_scratchpad:toggle()   -- toggles the scratchpads visibility
         end, {description = "toggle sound scratchpad", group = "scratchpads"}),
+
+        awful.key({modkey}, "n", function()
+          awful.screen.focus_relative(1)
+        end, {description = "move to next screen", group = "screens"}),
 
     -- awful.key({ modkey,           }, "j",
     --     function ()
@@ -139,32 +159,32 @@ function _M.get()
 
     --   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
     -- Standard program
-    awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
-              {description = "open a terminal", group = "launcher"}),
-
-    awful.key({ modkey, "Ctrl" }, "r", awesome.restart,
-              {description = "reload awesome", group = "awesome"}),
-
-    awful.key({ modkey, "Shift"   }, "x", awesome.quit,
-              {description = "quit awesome", group = "awesome"}),
+    -- awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
+    --           {description = "open a terminal", group = "launcher"}),
+    --
+    -- awful.key({ modkey, "Ctrl" }, "r", awesome.restart,
+    --           {description = "reload awesome", group = "awesome"}),
+    --
+    -- awful.key({ modkey, "Shift"   }, "x", awesome.quit,
+    --           {description = "quit awesome", group = "awesome"}),
 
     --   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
     -- Layout manipulation
-    awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.015)          end,
-              {description = "increase master width factor", group = "layout"}),
-    awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.015)          end,
-              {description = "decrease master width factor", group = "layout"}),
+    -- awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.015)          end,
+    --           {description = "increase master width factor", group = "layout"}),
+    -- awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.015)          end,
+    --           {description = "decrease master width factor", group = "layout"}),
+    --
+    -- awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1, nil, true) end,
+    --           {description = "increase the number of master clients", group = "layout"}),
+    -- awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1, nil, true) end,
+    --           {description = "decrease the number of master clients", group = "layout"}),
+    --         
+    -- awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol( 1, nil, true)    end,
+    --           {description = "increase the number of columns", group = "layout"}),
+    -- awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1, nil, true)    end,
+    --           {description = "decrease the number of columns", group = "layout"}),
 
-    awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1, nil, true) end,
-              {description = "increase the number of master clients", group = "layout"}),
-    awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1, nil, true) end,
-
-              {description = "decrease the number of master clients", group = "layout"}),
-    awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol( 1, nil, true)    end,
-              {description = "increase the number of columns", group = "layout"}),
-    awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1, nil, true)    end,
-
-              {description = "decrease the number of columns", group = "layout"}),
     awful.key({ modkey,           }, "space", function () awful.layout.inc( 1)                end,
               {description = "select next", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,

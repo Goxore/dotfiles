@@ -54,40 +54,40 @@ colors:
     cyan:    '0x8ec07c'
     white:   '0xebdbb2'
 # Start flavours
-# Base16 Tokyonight - alacritty color config
-# Folke Lemaitre (https://github.com/folke)
+# Base16 OneDark - alacritty color config
+# Lalit Magant (http://github.com/tilal6991)
 colors:
   # Default colors
   primary:
-    background: '0x24283b'
-    foreground: '0xc0caf5'
+    background: '0x282c34'
+    foreground: '0xabb2bf'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x24283b'
-    cursor: '0xc0caf5'
+    text: '0x282c34'
+    cursor: '0xabb2bf'
 
   # Normal colors
   normal:
-    black:   '0x24283b'
-    red:     '0xf7768e'
-    green:   '0x9ece6a'
-    yellow:  '0xe0af68'
-    blue:    '0x41a6b5'
-    magenta: '0xbb9af7'
-    cyan:    '0x1abc9c'
-    white:   '0xc0caf5'
+    black:   '0x282c34'
+    red:     '0xe06c75'
+    green:   '0x98c379'
+    yellow:  '0xe5c07b'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0xabb2bf'
 
   # Bright colors
   bright:
-    black:   '0x565f89'
-    red:     '0xff9e64'
-    green:   '0x1f2335'
-    yellow:  '0x292e42'
-    blue:    '0xa9b1d6'
-    magenta: '0xc0caf5'
-    cyan:    '0xff007c'
-    white:   '0xc0caf5'
+    black:   '0x545862'
+    red:     '0xd19a66'
+    green:   '0x353b45'
+    yellow:  '0x3e4451'
+    blue:    '0x565c64'
+    magenta: '0xb6bdca'
+    cyan:    '0xbe5046'
+    white:   '0xc8ccd4'
 
 draw_bold_text_with_bright_colors: false
 # End flavours

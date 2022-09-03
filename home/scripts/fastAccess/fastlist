@@ -1,0 +1,5 @@
+Restart discord        : $HOME/scripts/other/discordrestart
+Download song by link  : $HOME/scripts/general/ytmusichelper
+Edit rice              : $HOME/scripts/rice/autorice
+Open link libretiktok  : $HOME/scripts/fun/libretiktokopen
+Reload sxhkd           : $HOME/scripts/other/sxhkdreload.sh

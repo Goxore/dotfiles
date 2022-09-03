@@ -6,23 +6,24 @@ super + d
   rofi -show drun -show-icons
 
 super + shift + x 
-  rofi -show power-menu -modi power-menu:~/.local/bin/rofi-power-menu
+  rofi -show power-menu -modi power-menu:/usr/bin/rofi-power-menu
 
 # scripts
 super + a
-	bash $SCRIPTS/fastaccess.sh
+	bash $SCRIPTS/fastAccess/fastaccess.sh
 
 super + e
-	bash $SCRIPTS/editconfig.sh
-
-# super + s
-# 	bash $SCRIPTS/sb -r
+    $TERMINAL -e $HOME/scripts/general/editconfig.sh
+	# bash $SCRIPTS/editconfig.sh
 
 super + v
 	bash $SCRIPTS/mictoggle.sh
 
 super + shift + c
 	rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'
+
+super + shift + k
+    $SCRIPTS/launcher/killprocess.sh
 
 super + u
 	rofi-rbw
@@ -54,6 +55,13 @@ super + bracketright
 
 super + bracketleft
 	mpc prev
+
+XF86AudioPlay
+    xdotool click 1
+	#mpc toggle
+
+XF86AudioNext
+	mpc next
 
 #Programs
 super + alt + b

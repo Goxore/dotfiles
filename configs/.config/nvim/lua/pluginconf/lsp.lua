@@ -30,7 +30,7 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
--- changing lsp diagnostic icons 
+-- changing lsp diagnostic icons
 vim.cmd [[
 autocmd! CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 sign define DiagnosticSignError text=▌ texthl=DiagnosticSignError linehl= numhl=
@@ -60,6 +60,39 @@ lsp_installer.on_server_ready(function(server)
             filetypes = { "cs", "vb" },
             -- init_options = {},
             root_dir = require'lspconfig'.util.root_pattern("*.csproj","*.sln"),
+            on_attach=on_attach,
+            capabilities=capabilities,
+        }
+    elseif server.name == "sumneko_lua" then
+        server:setup {
+            settings = {
+                Lua = {
+                    runtime = {
+                        version = 'LuaJIT',
+                        path = {
+                            '?/init.lua',
+                            '?.lua'
+                        }
+                    },
+                    workspace = {
+                        library = {
+                            '/usr/share/nvim/runtime/lua',
+                            '/usr/share/nvim/runtime/lua/lsp',
+                            '/usr/share/awesome/lib'
+                        }
+                    },
+                    completion = {
+                        enable = true,
+                    },
+                    diagnostics = {
+                        enable = true,
+                        globals = { 'vim', 'awesome', 'client', 'root' }
+                    },
+                    telemetry = {
+                        enable = false
+                    }
+                }
+            },
             on_attach=on_attach,
             capabilities=capabilities,
         }

@@ -1,0 +1,31 @@
+#!/bin/env bash
+
+# SYNOPSIS
+#
+# createlab template
+# it's that easy!
+
+template="$1"
+
+TEACHER=$(yq -r '.teacher' < settings.yaml)
+SUBJECT=$(yq -r '.subject' < settings.yaml)
+
+echo $TEACHER
+echo $SUBJECT
+
+read -p "Number: " NUMBER
+read -p "Title: " TITLE
+
+echo $NUMBER
+echo $TITLE
+
+cat $template > lab.tex
+
+changetemplate(){
+   [ ! -z "$2" ] && sed -i s/{{"$1"}}/"$2"/ lab.tex
+}
+
+changetemplate TEACHER $TEACHER
+changetemplate SUBJECT $SUBJECT
+changetemplate NUMBER $NUMBER
+changetemplate TITLE $TITLE

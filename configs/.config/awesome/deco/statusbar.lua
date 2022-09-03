@@ -1,7 +1,7 @@
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
-local theme = require("themes.xresources.theme")
+local theme = require("themes.mytheme.theme")
 
 -- Wibox handling library
 local wibox = require("wibox")

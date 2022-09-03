@@ -1,5 +1,0 @@
-#!/bin/env bash
-[ ! -f $HOME/.cache/lastwallpaper ] && exit
-wal=$(cat $HOME/.cache/lastwallpaper)
-[ "$wal" == "default" ] && exit
-feh --bg-fill $HOME/Wallpapers/$wal

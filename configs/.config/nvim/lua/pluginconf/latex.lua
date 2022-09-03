@@ -21,6 +21,8 @@ function! g:LatexPasteImageLatex(relpath)
    "execute "normal! ve\<C-g>"
 endfunction
 
+let g:livepreview_engine = 'lualatex -shell-escape -interaction=nonstopmode'
+
 autocmd FileType markdown let g:PasteImageFunction = 'g:MarkdownPasteImage'
 autocmd FileType tex let g:PasteImageFunction = 'g:LatexPasteImageLatex'
 autocmd FileType markdown,tex nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>

@@ -12,3 +12,13 @@ udiskie &
 optimus-manager-qt &
 lxsession &
 $HOME/scripts/restoreautorice &
+
+xrandr --dpi 96
+setxkbmap -option caps:escape
+xmodmap -e "keycode 94 = Shift_L"
+
+# xmodmap -e "keycode 108 = Mode_switch"
+# xmodmap -e "keycode 43 = h H Left Left"
+# xmodmap -e "keycode 44 = j J Down Down"
+# xmodmap -e "keycode 45 = k K Up Up"
+# xmodmap -e "keycode 46 = l L Right Right"

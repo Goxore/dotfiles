@@ -1,0 +1,9 @@
+#!/bin/sh
+discordName=""
+pidof discord-canary && discordName=discord-canary
+pidof Discord && discordName=Discord
+killall $discordName
+sleep 1
+killall $discordName
+sleep 1
+$discordName

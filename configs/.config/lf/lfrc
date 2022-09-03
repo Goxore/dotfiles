@@ -1,3 +1,5 @@
+#!/bin/bash
+
 set previewer ~/.config/lf/preview
 set cleaner ~/.config/lf/cleaner
 set preview true
@@ -15,14 +17,11 @@ cmd dragon-in %dragonmove
 cmd open ${{
     case $(file --mime-type "$f" -bL) in
         text/*|application/json) $EDITOR "$f";;
+        application/pdf) devour zathura "$f";;
+        application/vnd.openxmlformats-officedocument.wordprocessingml.document) devour onlyoffice-desktopeditors "$f";;
+        image/*) devour sxiv "$f";;
+        video/*) devour mpv "$f";;
         *) xdg-open "$f" ;;
-    esac
-}}
-
-cmd devopen ${{
-    case $(file --mime-type "$f" -bL) in
-        text/*|application/json) $EDITOR "$f";;
-        *)devour xdg-open "$f" ;;
     esac
 }}
 
@@ -166,7 +165,6 @@ map p paste
 map dd cut
 map y copy
 map <enter> open
-map g<enter> devopen
 map c mkfile
 map mr sudomkfile
 map md mkdir
