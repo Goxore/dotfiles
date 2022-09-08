@@ -8,6 +8,45 @@ if not snip_status_ok then
   return
 end
 
+local nvim_autopairs_status_ok, cmp_autopairs = pcall(require, "nvim-autopairs.completion.cmp")
+if nvim_autopairs_status_ok then
+    local handlers = require('nvim-autopairs.completion.handlers')
+
+    cmp.event:on(
+      'confirm_done',
+      cmp_autopairs.on_confirm_done({
+        filetypes = {
+          -- "*" is a alias to all filetypes
+          ["*"] = {
+            ["("] = {
+              kind = {
+                cmp.lsp.CompletionItemKind.Function,
+                cmp.lsp.CompletionItemKind.Method,
+              },
+              handler = handlers["*"]
+            }
+          },
+          lua = {
+            ["("] = {
+              kind = {
+                cmp.lsp.CompletionItemKind.Function,
+                cmp.lsp.CompletionItemKind.Method
+              },
+              ---@param char string
+              ---@param item item completion
+              ---@param bufnr buffer number
+              handler = function(char, item, bufnr)
+                -- Your handler function. Inpect with print(vim.inspect{char, item, bufnr})
+              end
+            }
+          },
+          -- Disable for tex
+          tex = false
+        }
+      })
+    )
+end
+
 require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()

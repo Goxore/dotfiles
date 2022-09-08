@@ -54,9 +54,9 @@ lsp_installer.on_server_ready(function(server)
 
     if server.name == "omnisharp" then
         server:setup {
-            use_mono = true,
+            -- use_mono = true,
             -- cmd = {"mono", "/home/yurii/.local/share/nvim/lsp_servers/omnisharp/omnisharp-mono/OmniSharp.exe", "--languageserver" , "--hostPID", tostring(vim.fn.getpid()) },
-            cmd = {"mono", "/home/yurii/.local/share/nvim/lsp_servers/omnisharp/omnisharp-mono/OmniSharp.exe", "--languageserver" , "--hostPID", tostring(vim.fn.getpid()) },
+            -- cmd = {"mono", "/home/yurii/.local/share/nvim/lsp_servers/omnisharp/omnisharp-mono/OmniSharp.exe", "--languageserver" , "--hostPID", tostring(vim.fn.getpid()) },
             filetypes = { "cs", "vb" },
             -- init_options = {},
             root_dir = require'lspconfig'.util.root_pattern("*.csproj","*.sln"),

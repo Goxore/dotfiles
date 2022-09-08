@@ -8,6 +8,7 @@ require('keymaps')
 
 -- plugins and settings
 require('plugins')
+require('pluginconf.nvim-autopairs')
 require('pluginconf.alphaconf')
 require('pluginconf.bufferline')
 require('pluginconf.latex')

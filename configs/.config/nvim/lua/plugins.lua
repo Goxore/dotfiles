@@ -3,39 +3,39 @@ local fn = vim.fn
 -- Automatically install packer
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
-	PACKER_BOOTSTRAP = fn.system({
-		"git",
-		"clone",
-		"--depth",
-		"1",
-		"https://github.com/wbthomason/packer.nvim",
-		install_path,
-	})
-	print("Installing packer close and reopen Neovim...")
-	vim.cmd([[packadd packer.nvim]])
+    PACKER_BOOTSTRAP = fn.system({
+        "git",
+        "clone",
+        "--depth",
+        "1",
+        "https://github.com/wbthomason/packer.nvim",
+        install_path,
+    })
+    print("Installing packer close and reopen Neovim...")
+    vim.cmd([[packadd packer.nvim]])
 end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
+augroup packer_user_config
+autocmd!
+autocmd BufWritePost plugins.lua source <afile> | PackerSync
+augroup end
 ]])
 
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
-	return
+    return
 end
 
 -- Have packer use a popup window
 packer.init({
-	display = {
-		open_fn = function()
-			return require("packer.util").float({ border = "rounded" })
-		end,
-	},
+    display = {
+        open_fn = function()
+            return require("packer.util").float({ border = "rounded" })
+        end,
+    },
 })
 
 return require('packer').startup(function(use)
@@ -63,9 +63,38 @@ return require('packer').startup(function(use)
     -- null-ls
     use ("jose-elias-alvarez/null-ls.nvim")
 
+    -- autopairs
+    use ("windwp/nvim-autopairs")
 
+    use {
+        'rmagatti/goto-preview',
+        config = function()
+            require('goto-preview').setup {}
+        end
+    }
 
-    use("Raimondi/delimitMate")
+    use {
+        "ahmedkhalf/lsp-rooter.nvim",
+        config = function()
+            require("lsp-rooter").setup {}
+        end
+    }
+
+    use {
+        'simrat39/symbols-outline.nvim',
+        config = function()
+            require("symbols-outline").setup {}
+        end
+    }
+
+    use {
+        'karb94/neoscroll.nvim',
+        config = function ()
+            require('neoscroll').setup()
+        end
+    }
+
+    use("rcarriga/nvim-notify")
 
     use("lifepillar/vim-gruvbox8")
 
@@ -120,47 +149,47 @@ return require('packer').startup(function(use)
     use ("neovim/nvim-lspconfig")
 
     -- use({
-    --     "hrsh7th/nvim-cmp",
-    --     requires = {
-    --         { "kdheepak/cmp-latex-symbols" },
-    --         { "l3mon4d3/luasnip" }
-    --     },
-    --     sources = {
-    --         { name = "latex_symbols" },
-    --     },
-    -- })
-    --
-    -- use ("rafamadriz/friendly-snippets")
-    -- use ("saadparwaiz1/cmp_luasnip")
-    -- use ("hrsh7th/cmp-nvim-lsp")
-    -- use ("hrsh7th/cmp-nvim-lua")
-    -- use ("hrsh7th/cmp-buffer")
-    -- use ("hrsh7th/cmp-path")
-    -- use ("hrsh7th/cmp-cmdline")
-    use ("williamboman/nvim-lsp-installer")
+        --     "hrsh7th/nvim-cmp",
+        --     requires = {
+            --         { "kdheepak/cmp-latex-symbols" },
+            --         { "l3mon4d3/luasnip" }
+            --     },
+            --     sources = {
+                --         { name = "latex_symbols" },
+                --     },
+                -- })
+                --
+                -- use ("rafamadriz/friendly-snippets")
+                -- use ("saadparwaiz1/cmp_luasnip")
+                -- use ("hrsh7th/cmp-nvim-lsp")
+                -- use ("hrsh7th/cmp-nvim-lua")
+                -- use ("hrsh7th/cmp-buffer")
+                -- use ("hrsh7th/cmp-path")
+                -- use ("hrsh7th/cmp-cmdline")
+                use ("williamboman/nvim-lsp-installer")
 
-    use("https://github.com/elkowar/yuck.vim")
+                use("https://github.com/elkowar/yuck.vim")
 
-    use 'lewis6991/impatient.nvim'
+                use 'lewis6991/impatient.nvim'
 
-    use ("ray-x/lsp_signature.nvim")
-    use ("glepnir/lspsaga.nvim")
+                use ("ray-x/lsp_signature.nvim")
+                use ("glepnir/lspsaga.nvim")
 
-    use ("mfussenegger/nvim-dap")
+                use ("mfussenegger/nvim-dap")
 
-    use ("simrat39/rust-tools.nvim")
-    use ("shurizzle/inlay-hints.nvim")
+                use ("simrat39/rust-tools.nvim")
+                use ("shurizzle/inlay-hints.nvim")
 
-    use ('folke/lsp-colors.nvim')
+                use ('folke/lsp-colors.nvim')
 
-    use {
-        'glacambre/firenvim',
-        run = function() vim.fn['firenvim#install'](0) end
-    }
+                use {
+                    'glacambre/firenvim',
+                    run = function() vim.fn['firenvim#install'](0) end
+                }
 
-    use ("vim-autoformat/vim-autoformat")
+                use ("vim-autoformat/vim-autoformat")
 
-	if PACKER_BOOTSTRAP then
-		require("packer").sync()
-	end
-end)
+                if PACKER_BOOTSTRAP then
+                    require("packer").sync()
+                end
+            end)

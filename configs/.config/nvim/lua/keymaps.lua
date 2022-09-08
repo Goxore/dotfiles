@@ -70,3 +70,9 @@ keymap("t", "<C-k>", [[<C-\><C-n><C-W>k]], opts)
 
 -- snippet
 keymap("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/lua/luasnipconf.lua<CR>", opts)
+
+-- preview
+
+keymap("n", "gpd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", opts)
+keymap("n", "gpi", "<cmd>lua require('goto-preview').goto_preview_implementationn()<CR>", opts)
+
