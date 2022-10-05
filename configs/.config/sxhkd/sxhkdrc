@@ -9,20 +9,20 @@ super + shift + x
   rofi -show power-menu -modi power-menu:/usr/bin/rofi-power-menu
 
 # scripts
-super + a
-	bash $SCRIPTS/fastAccess/fastaccess.sh
+# super + a
+	# bash $SCRIPTS/fastAccess/fastaccess.sh
 
-super + e
-    $TERMINAL -e $HOME/scripts/general/editconfig.sh
-	# bash $SCRIPTS/editconfig.sh
+# super + e
+#     $TERMINAL -e $HOME/scripts/general/editconfig.sh
+# 	# bash $SCRIPTS/editconfig.sh
 
 super + v
-	bash $SCRIPTS/mictoggle.sh
+	bash -c 'amixer -D pulse sset Capture toggle && amixer get Capture | grep "\[off\]" && notify-send "MIC switched OFF" || notify-send "MIC switched ON"'
 
 super + shift + c
 	rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'
 
-super + shift + k
+super + shift + q
     $SCRIPTS/launcher/killprocess.sh
 
 super + u
@@ -78,3 +78,71 @@ super + alt + w
 
 super + alt + p
   bitwarden-desktop
+
+# Program key chords 
+super + s; f 
+    firefox
+
+super + s; d 
+    Discord
+
+super + s; m 
+    alacritty -e "ncmpcpp"
+
+super + s; c 
+    alacritty -e "qalc"
+
+super + s; e
+    $TERMINAL -e $HOME/scripts/general/editconfig.sh
+
+super + s; a
+	bash $SCRIPTS/fastAccess/fastaccess.sh
+
+
+# BSPWM
+
+# super + {h,j,k,l}
+# 	bspc node -f {west,south,north,east}
+#
+# super + ctrl + {1-9}
+#     bspc node -o 0.{1-9}
+#
+# super + {_,shift + }{1-9,0}
+#     bspc {desktop -f,node -d} '^{1-9,10}'
+#
+# super + Return
+#    $TERMINAL
+#
+# super + q 
+#    bspc node -k
+#
+# super + shift + f 
+#    bspc node -t '~floating'
+#
+# super + t
+#    bspc node -t '~tiled'
+#
+# super + f
+#    bspc node -t '~fullscreen'
+#
+# super + ctrl + s 
+#    bspc node -g sticky
+#
+# ctrl + super + {Left,Down,Up,Right}
+#    $SCRIPTS/bspwm/resize.sh {left,down,up,right}
+#
+# ctrl + super + {h,j,k,l}
+#    $SCRIPTS/bspwm/resize.sh {left,down,up,right}
+#
+# super + shift + {Left,h,Down,j,Up,k,Right,l}
+# 	if capsenabled; then step=100; else step=20; fi; \
+# 	[ -z "$(bspc query -N -n .focused.floating)" ] && {\
+# 		bspc node -s west  || bspc node -v -$step 0, \
+# 		bspc node -s west  || bspc node -v -$step 0, \
+# 		bspc node -s south || bspc node -v 0 $step,  \
+# 		bspc node -s south || bspc node -v 0 $step,  \
+# 		bspc node -s north || bspc node -v 0 -$step, \
+# 		bspc node -s north || bspc node -v 0 -$step, \
+# 		bspc node -s east  || bspc node -v $step  0, \
+# 		bspc node -s east  || bspc node -v $step  0  \
+# 	}

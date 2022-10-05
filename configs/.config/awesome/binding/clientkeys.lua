@@ -1,6 +1,7 @@
 -- Standard Awesome library
 local gears = require("gears")
 local awful = require("awful")
+local theme = require("themes.mytheme.theme")
 -- Custom Local Library
 -- local titlebar = require("anybox.titlebar")
 
@@ -176,9 +177,18 @@ function _M.get()
               {description = "move to master", group = "client"}),
     awful.key({ modkey,           }, "o",      function (c) c:move_to_screen()               end,
               {description = "move to screen", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "t",      function (c) c.ontop  = not c.ontop            end,
+    awful.key({ modkey, "Control"   }, "t",      function (c) c.ontop  = not c.ontop            end,
               {description = "toggle keep on top", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "s",      function (c) c.sticky = not c.sticky           end,
+    awful.key({ modkey, "Control"   }, "g",      function (c) c.maximized  = not c.maximized            end,
+              {description = "toggle maximized", group = "client"}),
+    awful.key({ modkey, "Control"   }, "s",      function (c)
+        c.sticky = not c.sticky
+        if c.sticky then
+            c.border_color = theme.border_focus_sticky
+        else
+            c.border_color = theme.border_focus
+        end
+    end,
               {description = "toggle sticky", group = "client"})
 
 

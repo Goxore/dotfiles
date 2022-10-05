@@ -49,16 +49,24 @@ awful.screen.connect_for_each_screen(function(s)
     awful.button({ }, 5, function () awful.layout.inc(-1) end)
   ))
 
-  s.micval = awful.widget.watch('bash -c "/home/yurii/scripts/micscript.sh"')
+  s.micval = awful.widget.watch('bash -c "/home/yurii/scripts/os/micscript.sh"')
   s.mic = wf.makewidget(s.micval,theme.red, "",0,0, 0, -15)
 
-  s.batval = awful.widget.watch('bash -c "/home/yurii/scripts/battery.sh"', 15)
+  s.batval = awful.widget.watch('bash -c "/home/yurii/scripts/os/battery.sh"', 15)
   s.bat = wf.makewidget(s.batval,theme.green, "",0,0, 0, -15)
+
+  -- s.batobj = wf.widget{
+  --   icon = "a"
+  -- }
+  --
+  -- s.bat = s.batobj:createWidget()
+
 
   s.keybval = awful.widget.keyboardlayout
   s.keylay = wf.makewidget(s.keybval,theme.magenta, "",2,2, -7, 15)
 
-  s.tempval = awful.widget.watch('bash -c "/home/yurii/scripts/cputemp.sh"', 5)
+  s.tempval = awful.widget.watch('bash -c "/home/yurii/scripts/os/cputemp.sh"', 5)
+  -- s.temp = wf.makewidget(s.tempval,theme.blue, "", 0,0,0, -15)
   s.temp = wf.makewidget(s.tempval,theme.blue, "", 0,0,0, -15)
 
   s.hours = wibox.widget{
@@ -97,7 +105,7 @@ awful.screen.connect_for_each_screen(function(s)
     valign = "center",
     halign = "center"
   }
-  
+
   s.taglistcontainer = wibox.widget{
     s.mytaglist,
     top = 10,

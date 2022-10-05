@@ -22,7 +22,7 @@ awful.screen.connect_for_each_screen(function(s)
 
   s.temperature = wibox.widget {
     -- widget = awful.widget.watch('sensors | grep Package | awk "{print $4}"', 5),
-    widget = awful.widget.watch('bash -c "/home/yurii/scripts/cputemp.sh"', 5),
+    widget = awful.widget.watch('bash -c "/home/yurii/scripts/os/cputemp.sh"', 5),
     valign = "center",
     halign = "center"
   }
