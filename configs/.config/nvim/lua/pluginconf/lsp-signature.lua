@@ -1,5 +1,5 @@
-local cmp_status_ok, cmp = pcall(require, "lsp_signature")
-if not cmp_status_ok then
+local lsp_signature_status_ok, lsp_signature = pcall(require, "lsp_signature")
+if not lsp_signature_status_ok then
   return
 end
 
@@ -20,7 +20,7 @@ local cfg = {
   max_height = 12, -- max height of signature floating_window
   max_width = 80, -- max_width of signature floating_window
   wrap = true, -- allow doc/signature text wrap inside floating_window, useful if your lsp return doc/sig is too long
-  
+
   floating_window = true, -- show hint in a floating window, set to false for virtual text only mode
 
   floating_window_above_cur_line = true, -- try to place the floating above the current line when possible Note:
@@ -59,4 +59,4 @@ local cfg = {
   move_cursor_key = nil, -- imap, use nvim_set_current_win to move cursor between current win and floating
 }  -- add you config here
 
-require "lsp_signature".setup(cfg)
+lsp_signature.setup(cfg)

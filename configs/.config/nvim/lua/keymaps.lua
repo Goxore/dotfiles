@@ -8,10 +8,10 @@ vim.g.maplocalleader = " "
 
 
 -- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+keymap("n", "<A-h>", "<C-w>h", opts)
+keymap("n", "<A-j>", "<C-w>j", opts)
+keymap("n", "<A-k>", "<C-w>k", opts)
+keymap("n", "<A-l>", "<C-w>l", opts)
 
 keymap("n", "<C-Left>",  "<cmd>wincmd h <CR>", opts)
 keymap("n", "<C-Right>", "<cmd>wincmd l <CR>", opts)
@@ -50,10 +50,10 @@ keymap("n", "<A-9>", "<cmd>BufferLineGoToBuffer 9<CR>", opts)
 keymap("n", "<C-w>", "<cmd>bd<CR>", opts)
 
 -- Resize windows
-keymap("n", "<A-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<A-Right>", ":vertical resize +2<CR>", opts)
-keymap("n", "<A-Up>", ":resize -2<CR>", opts)
-keymap("n", "<A-Down>", ":resize +2<CR>", opts)
+keymap("n", "<A-C-h>", ":vertical resize -2<CR>", opts)
+keymap("n", "<A-C-l>", ":vertical resize +2<CR>", opts)
+keymap("n", "<A-C-k>", ":resize -2<CR>", opts)
+keymap("n", "<A-C-j>", ":resize +2<CR>", opts)
 
 
 -- Nvim Tree
@@ -72,7 +72,17 @@ keymap("t", "<C-k>", [[<C-\><C-n><C-W>k]], opts)
 keymap("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/lua/luasnipconf.lua<CR>", opts)
 
 -- preview
-
 keymap("n", "gpd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", opts)
 keymap("n", "gpi", "<cmd>lua require('goto-preview').goto_preview_implementationn()<CR>", opts)
 
+-- git signs
+keymap("n", "]c", "<cmd>Gitsigns next_hunk<CR>", opts)
+keymap("n", "[c", "<cmd>Gitsigns prev_hunk<CR>", opts)
+keymap("n", "ghp", "<cmd>Gitsigns preview_hunk<CR>", opts)
+keymap("n", "ghu", "<cmd>Gitsigns reset_hunk<CR>", opts)
+keymap("n", "ghb", "<cmd>Gitsigns blame_line<CR>", opts)
+keymap("n", "vih", "<cmd>Gitsigns select_hunk<CR>", opts)
+
+keymap("n", "<F2>", "<cmd>Lspsaga rename<CR>", opts)
+keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
+keymap("n", "<leader>a", "<cmd>Lspsaga code_action<CR>", opts)

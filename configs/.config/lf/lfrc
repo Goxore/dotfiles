@@ -150,6 +150,7 @@ map c
 
 # Open in editor
 map ee $$EDITOR "$f"
+map E $devour neovide --nofork --multigrid "$f"
 
 # Archives
 map az zip

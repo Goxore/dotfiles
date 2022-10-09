@@ -23,9 +23,19 @@ require('pluginconf.lualine')
 require('pluginconf.nvim-tree')
 require('pluginconf.toggleterm')
 require('pluginconf.null-ls')
+require('pluginconf.gitsigns')
+require('pluginconf.lsp-signature')
+require('pluginconf.lspsaga')
 
 -- sourcing color scheme adjustments
 require('colors')
 
 -- needs fixing
 require('Comment').setup()
+
+vim.cmd [[
+    function! SynGroup()
+        let l:s = synID(line('.'), col('.'), 1)
+        echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
+    endfunc
+]]

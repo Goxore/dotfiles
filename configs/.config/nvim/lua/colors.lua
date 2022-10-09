@@ -2,6 +2,7 @@ local cmd = vim.cmd
 
 local fg = require("core").fg
 local bg = require("core").bg
+local hi = require("core").hi
 local style = require("core").style
 
 local M = {}
@@ -106,6 +107,10 @@ fg("DiagnosticWarn", darker(orange, 5))
 fg("DiagnosticHint", darker(fgcolor, -5))
 fg("DiagnosticError", darker(red, -5))
 fg("DiagnosticInfo", darker(blue, -5))
+
+hi('GitSignsAdd   ', green, bgcolor)
+hi('GitSignsChange', blue, bgcolor)
+hi('GitSignsDelete', red, bgcolor)
 
 style("String", "italic")
 style("Comment", "italic")
