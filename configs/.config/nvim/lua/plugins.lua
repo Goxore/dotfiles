@@ -44,7 +44,7 @@ return require('packer').startup(function(use)
 
     -- main dependencies
     use("nvim-lua/plenary.nvim")
-    use({"nvim-lua/popup.nvim"})
+    use({ "nvim-lua/popup.nvim" })
 
 
     -- luasnip
@@ -52,20 +52,21 @@ return require('packer').startup(function(use)
 
     -- cmp
     use("hrsh7th/nvim-cmp")
-    use ("rafamadriz/friendly-snippets")
-    use ("saadparwaiz1/cmp_luasnip")
-    use ("hrsh7th/cmp-nvim-lsp")
-    use ("hrsh7th/cmp-nvim-lua")
-    use ("hrsh7th/cmp-buffer")
-    use ("hrsh7th/cmp-path")
-    use ("hrsh7th/cmp-cmdline")
+    use("rafamadriz/friendly-snippets")
+    use("saadparwaiz1/cmp_luasnip")
+    use("hrsh7th/cmp-nvim-lsp")
+    use("hrsh7th/cmp-nvim-lua")
+    use("hrsh7th/cmp-buffer")
+    use("hrsh7th/cmp-path")
+    use("hrsh7th/cmp-cmdline")
 
     -- null-ls
-    use ("jose-elias-alvarez/null-ls.nvim")
+    use("jose-elias-alvarez/null-ls.nvim")
 
     -- autopairs
-    use ("windwp/nvim-autopairs")
+    use("windwp/nvim-autopairs")
 
+    -- peek definition
     use {
         'rmagatti/goto-preview',
         config = function()
@@ -73,6 +74,7 @@ return require('packer').startup(function(use)
         end
     }
 
+    -- CDs into root folder of the project
     use {
         "ahmedkhalf/lsp-rooter.nvim",
         config = function()
@@ -80,6 +82,7 @@ return require('packer').startup(function(use)
         end
     }
 
+    -- Symbols
     use {
         'simrat39/symbols-outline.nvim',
         config = function()
@@ -88,35 +91,46 @@ return require('packer').startup(function(use)
     }
 
     -- nice git signs
-    use ("lewis6991/gitsigns.nvim")
+    use("lewis6991/gitsigns.nvim")
 
-
+    -- notifications
     use("rcarriga/nvim-notify")
 
+    -- oh yes!
     use("lifepillar/vim-gruvbox8")
+    use("tomasiser/vim-code-dark")
+    use("folke/tokyonight.nvim")
 
+    -- lua line
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
-    use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
+    -- bufferline
+    use { 'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons' }
 
+    -- icons
     use("ryanoasis/vim-devicons")
 
+    -- Telescope
     use("nvim-telescope/telescope.nvim")
 
-    use("mattn/emmet-vim")
+    -- sticky context
+    use 'nvim-treesitter/nvim-treesitter-context'
 
+    -- LaTeX
     use("lervag/vimtex")
     use("xuhdev/vim-latex-live-preview")
-
-    use("vimwiki/vimwiki")
-
-    use("tpope/vim-fugitive")
-
     use("ferrine/md-img-paste.vim")
 
+    -- Vim viki
+    use("vimwiki/vimwiki")
+
+    -- more git
+    use("tpope/vim-fugitive")
+
+    -- comments
     use {
         'numToStr/Comment.nvim',
         config = function()
@@ -124,76 +138,79 @@ return require('packer').startup(function(use)
         end
     }
 
-
+    -- menu
     use {
         'goolord/alpha-nvim',
-        config = function ()
-            require'alpha'.setup(require'alpha.themes.dashboard'.config)
+        config = function()
+            require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
         end
     }
 
+    -- file manager
     use {
         'kyazdani42/nvim-tree.lua',
         requires = {
         },
-        config = function() require'nvim-tree'.setup {} end
+        config = function() require 'nvim-tree'.setup {} end
     }
 
+    -- Toggle terminal
     use("akinsho/toggleterm.nvim")
 
+    -- Treesitter
     use("nvim-treesitter/nvim-treesitter")
 
-    use ("neovim/nvim-lspconfig")
+    -- Lsp
+    use("neovim/nvim-lspconfig")
 
+    -- Lsp additional features
     use("glepnir/lspsaga.nvim")
 
-    use({
-      'weilbith/nvim-code-action-menu',
-      cmd = 'CodeActionMenu',
-    })
-
-    -- use({
-        --     "hrsh7th/nvim-cmp",
-        --     requires = {
-            --         { "kdheepak/cmp-latex-symbols" },
-            --         { "l3mon4d3/luasnip" }
-            --     },
-            --     sources = {
-                --         { name = "latex_symbols" },
-                --     },
-                -- })
-                --
-                -- use ("rafamadriz/friendly-snippets")
-                -- use ("saadparwaiz1/cmp_luasnip")
-                -- use ("hrsh7th/cmp-nvim-lsp")
-                -- use ("hrsh7th/cmp-nvim-lua")
-                -- use ("hrsh7th/cmp-buffer")
-                -- use ("hrsh7th/cmp-path")
-                -- use ("hrsh7th/cmp-cmdline")
-                use ("williamboman/nvim-lsp-installer")
-
-                use("https://github.com/elkowar/yuck.vim")
-
-                use 'lewis6991/impatient.nvim'
-
-                use ("ray-x/lsp_signature.nvim")
-                use ("glepnir/lspsaga.nvim")
-
-                use ("mfussenegger/nvim-dap")
-
-                use ("simrat39/rust-tools.nvim")
-                use ("shurizzle/inlay-hints.nvim")
-
-                use ('folke/lsp-colors.nvim')
-
-                use {
-                    'glacambre/firenvim',
-                    run = function() vim.fn['firenvim#install'](0) end
+    -- generate documentation
+    use{
+        "danymat/neogen",
+        config = function ()
+            require("neogen").setup{
+                enabled = true,
+                languages = {
+                    cs = {
+                        template = {
+                            annotation_convention = "xmldoc"
+                        }
+                    }
                 }
+            }
+        end
+    }
 
-                use ("vim-autoformat/vim-autoformat")
+    -- lsp installer
+    use("williamboman/nvim-lsp-installer")
 
-                if PACKER_BOOTSTRAP then
-                    require("packer").sync()
-                end
-            end)
+    -- syntax oy .yuck
+    use("elkowar/yuck.vim")
+
+    -- lazy loading that i don't really use although probably should
+    use('lewis6991/impatient.nvim')
+
+    -- lsp signatures
+    use("ray-x/lsp_signature.nvim")
+
+    -- lsp and debugging
+    use("mfussenegger/nvim-dap")
+
+    -- rust language server improvements
+    use("simrat39/rust-tools.nvim")
+
+    -- inlay hints that somewhat work sometimes
+    use("shurizzle/inlay-hints.nvim")
+
+    -- lsp colors
+    use('folke/lsp-colors.nvim')
+
+    -- vim autoformatter
+    use("vim-autoformat/vim-autoformat")
+
+    if PACKER_BOOTSTRAP then
+        require("packer").sync()
+    end
+end)

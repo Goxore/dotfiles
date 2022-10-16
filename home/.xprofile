@@ -12,6 +12,7 @@ udiskie &
 optimus-manager-qt &
 lxsession &
 $HOME/scripts/restoreautorice &
+easyeffects --gapplication-service &
 
 xrandr --dpi 96
 setxkbmap -option caps:escape

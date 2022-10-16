@@ -73,8 +73,10 @@ file= "~/.config/zathura/zathurarc"
 template = "zathura"
 
 [[item]]
-file= "~/.config/nvim/vim_colors/default.vim"
+# file= "~/.config/nvim/vim_colors/default.vim"
+file= "~/.config/nvim/lua/systemcolors.lua"
 template = "1vim"
+subtemplate = "lua"
 rewrite = true
 #start= "\" start flavours"
 #end = "\" end flavours"
