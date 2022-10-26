@@ -6,17 +6,6 @@ local style = require("core").style
 
 local M = {}
 
-local function darker(color_value, darker_n)
-    local result = "#"
-    for s in color_value:gmatch("[a-fA-F0-9][a-fA-F0-9]") do
-        local bg_numeric_value = tonumber("0x"..s) - darker_n
-        if bg_numeric_value < 0 then bg_numeric_value = 0 end
-        if bg_numeric_value > 255 then bg_numeric_value = 255 end
-        result = result .. string.format("%2.2x", bg_numeric_value)
-    end
-    return result
-end
-
 local b00 = '#'..syscolors.base00
 local b01 = '#'..syscolors.base01
 local b02 = '#'..syscolors.base02

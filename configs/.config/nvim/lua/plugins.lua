@@ -149,9 +149,6 @@ return require('packer').startup(function(use)
     -- file manager
     use {
         'kyazdani42/nvim-tree.lua',
-        requires = {
-        },
-        config = function() require 'nvim-tree'.setup {} end
     }
 
     -- Toggle terminal

@@ -113,7 +113,7 @@ lsp_installer.on_server_ready(function(server)
         local rust_opts = {
             tools = {
                 autoSetHints = true,
-                hover_with_actions = true,
+                -- hover_with_actions = true,
                 executor = require("rust-tools/executors").termopen,
                 runnables = {
                     use_telescope = true
