@@ -5,66 +5,68 @@ local theme = require("themes.mytheme.theme")
 
 local M = {}
 
-M.nicewidget = {
-    value = '00',
-    icon = 'n',
-    color = theme.green,
-    icon_top = 0,
-    icon_bottom = 0,
-    icon_left = 0,
-    icon_right = 0,
-    val_top = 0,
-    val_bottom = 0,
-    val_right = 0,
+
+M.barwidgetopts = {
+    value_module = {
+        margin_top = 0,
+        margin_bot = 0,
+        margin_left = 0,
+        margin_right = 0,
+        value_widget = wibox.widget
+    },
+    icon_module = {
+        margin_top = 0,
+        margin_bot = 0,
+        margin_left = 0,
+        margin_right = 0,
+        icon = 'i'
+    },
+    color = theme.red
 }
 
-function M.nicewidget:createWidget()
-
-  local widget = wibox.widget{
-    {
-      {
+M.barwidget = function(barwidgetopts)
+    local result = wibox.widget {
         {
-          {
-            widget = self.value,
-            align = "center",
-          },
-          top    = self.val_top,
-          bottom = self.val_bottom,
-          left   = self.val_left,
-          right  = self.val_right,
-          align = "center",
-          widget = wibox.container.margin
+            {
+                {
+                    {
+                        widget = barwidgetopts.value_module.value_widget,
+                        align = "center",
+                    },
+                    top = barwidgetopts.value_module.margin_top,
+                    bottom = barwidgetopts.value_module.margin_bot,
+                    left = barwidgetopts.value_module.margin_left,
+                    right = barwidgetopts.value_module.margin_right,
+                    align = "center",
+                    widget = wibox.container.margin
+                },
+                {
+                    {
+                        align = "center",
+                        text = barwidgetopts.icon_module.icon,
+                        widget = wibox.widget.textbox,
+                    },
+                    top = barwidgetopts.icon_module.margin_top,
+                    bottom = barwidgetopts.icon_module.margin_bot,
+                    left = barwidgetopts.icon_module.margin_left,
+                    right = barwidgetopts.icon_module.margin_right,
+                    widget = wibox.container.margin
+                },
+                layout = wibox.layout.fixed.vertical,
+            },
+            bg = theme.lighter,
+            fg = barwidgetopts.color,
+            shape = function(cr, width, height)
+                gears.shape.rounded_rect(cr, width, height, 4)
+            end,
+            widget = wibox.container.background
         },
-        {
-          {
-            align = "center",
-            text = self.icon,
-            widget = wibox.widget.textbox,
-            -- font = "Hack Nerd Font 25"
-          },
-          top    = self.icon_top,
-          bottom = self.icon_bottom,
-          left   = self.icon_left,
-          right  = self.icon_right,
-          widget = wibox.container.margin
-        },
-        layout = wibox.layout.fixed.vertical,
-      },
-      bg = theme.lighter, -- basic
-      fg = self.color,
-      -- shape_border_width = 1, shape_border_color = '#4C566A', -- outline
-      shape = function(cr, width, height)
-          gears.shape.rounded_rect(cr, width, height, 4)
-      end,
-      widget = wibox.container.background
-    },
-    top = 0, bottom = 10, left = 8, right = 8,
-    widget = wibox.container.margin,
-  }
+        top = 0, bottom = 10, left = 8, right = 8,
+        widget = wibox.container.margin,
+    }
 
-  return widget
+    return result
 end
-
 
 M.makewidget = function (value, fgcolor , icon, textleftmargin, textrightmargin, iconleftmargin, textbotmargin)
   local returned = {}
@@ -166,7 +168,6 @@ M.makewidget2 = function (value, value2,fgcolor, icon, textleftmargin,textrightm
 
   return returned.widget
 end
-
 
 M.makewidgetdouble = function (value, value2, fgcolor, textleftmargin,textrightmargin,iconleftmargin, textbotmargin)
   local returned = {}

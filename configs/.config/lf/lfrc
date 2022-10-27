@@ -57,32 +57,20 @@ cmd bulk-rename ${{
 
 cmd mkdir ${{
   printf "Directory Name: "
-  read ans
-  mkdir -p $ans
-}}
-
-cmd mkfile ${{
-  printf "File Name: "
-  read ans
-  $EDITOR $ans
+  read var
+  mkdir -p $var
 }}
 
 cmd chmod ${{
   printf "Mode Bits: "
-  read ans
+  read var
 
   for file in "$fx"
   do
-    chmod $ans $file
+    chmod $var $file
   done
 
   lf -remote 'send reload'
-}}
-
-cmd sudomkfile ${{
-  printf "File Name: "
-  read ans
-  sudo $EDITOR $ans
 }}
 
 
@@ -135,13 +123,24 @@ cmd trash ${{
   done
 }}
 
+cmd mkdirfile ${{
+    printf "File name: "
+    read var
+    lastchar=$(echo "$var" | rev | cut -c 1 | rev)
+    if [ "$lastchar" = "/" ]; then 
+        mkdir -p "$var"
+    else
+        path="$(echo "$var" | rev | cut -d'/' -f 2- | rev)"
+        mkdir -p "$path"
+        touch "$path/$(echo "$var" | rev | cut -d'/' -f 1 | rev)"
+    fi
+
+}}
+
 cmd stripspace %stripspace "$f"
 
 # Unassigning default
-map "'"
 map '"'
-map m
-map n
 map o
 map d
 map e
@@ -165,11 +164,9 @@ map D delete
 map p paste
 map dd cut
 map y copy
+map ` mark-load
 map <enter> open
-map c mkfile
-map mr sudomkfile
-map md mkdir
-map ms $mkscript
+map c mkdirfile
 map ch chmod
 map a rename
 map A bulk-rename

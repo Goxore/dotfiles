@@ -2,19 +2,11 @@
 Print
   maim -s --format=png /dev/stdout | xclip -selection clipboard -t image/png -i
 
-super + d
+super + s
   rofi -show drun -show-icons
 
 super + shift + x 
   rofi -show power-menu -modi power-menu:/usr/bin/rofi-power-menu
-
-# scripts
-# super + a
-	# bash $SCRIPTS/fastAccess/fastaccess.sh
-
-# super + e
-#     $TERMINAL -e $HOME/scripts/general/editconfig.sh
-# 	# bash $SCRIPTS/editconfig.sh
 
 super + v
 	bash -c 'amixer -D pulse sset Capture toggle && amixer get Capture | grep "\[off\]" && notify-send "MIC switched OFF" || notify-send "MIC switched ON"'
@@ -26,6 +18,9 @@ super + shift + q
     $SCRIPTS/launcher/killprocess.sh
 
 super + u
+	rofi-rbw
+
+super + b
 	rofi-rbw
 
 super + Delete
@@ -73,31 +68,39 @@ super + ctrl + b
 super + alt + t
   telegram-desktop
 
-super + alt + w
-  $TERMINAL -e bash -c "sleep 0.1 && nvim $HOME/vimwiki/index.wiki"
-
 super + alt + p
   bitwarden-desktop
 
 # Program key chords 
-super + s; f 
+super + d; {_,super} + f
     firefox
 
-super + s; d 
+super + d; {_,super} + w
+    $TERMINAL -e bash -c "sleep 0.1 && nvim $HOME/vimwiki/index.wiki"
+
+super + d; {_,super} + D
     Discord
 
-super + s; m 
+super + d; {_,super} + t
+    telegram-desktop
+
+super + d; {_,super} + m 
     alacritty -e "ncmpcpp"
 
-super + s; c 
+super + d; {_,super} + c 
     alacritty -e "qalc"
 
-super + s; e
+super + d; {_,super} + e
     $TERMINAL -e $HOME/scripts/general/editconfig.sh
 
-super + s; a
+super + d; {_,super} + s
+    $TERMINAL -e pulsemixer
+
+super + d; {_,super} + d
 	bash $SCRIPTS/fastAccess/fastaccess.sh
 
+super + d; {_,super} + b
+    $SCRIPTS/launcher/rofi-bluetooth.sh
 
 # BSPWM
 
