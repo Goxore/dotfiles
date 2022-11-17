@@ -9,7 +9,7 @@ super + shift + x
   rofi -show power-menu -modi power-menu:/usr/bin/rofi-power-menu
 
 super + v
-	bash -c 'amixer -D pulse sset Capture toggle && amixer get Capture | grep "\[off\]" && notify-send "MIC switched OFF" || notify-send "MIC switched ON"'
+	bash -c 'amixer -D pulse sset Capture toggle && amixer get Capture | grep "\[off\]" && (dunstctl close && notify-send "MIC switched OFF") || (dunstctl close && notify-send "MIC switched ON")'
 
 super + shift + c
 	rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'
@@ -30,33 +30,50 @@ super + Insert
 	$SCRIPTS/continuework.sh
 
 super + ctrl + e
-  $SCRIPTS/emoji.sh
+  $SCRIPTS/other/emoji/emoji.sh arg
 
 #music
-super + plus
-	mpc volume +5
-
-super + equal
-	mpc volume +5
-
-super + minus
-	mpc volume -5
+# super + plus
+# 	mpc volume +5
+#
+# super + equal
+# 	mpc volume +5
+#
+# super + minus
+# 	mpc volume -5
+#
+# super + p
+# 	mpc toggle
+#
+# super + bracketright
+# 	mpc next
+#
+# super + bracketleft
+# 	mpc prev
+#
+# XF86AudioPlay
+# 	mpc toggle
+#     # xdotool click 1
+#
+# XF86AudioNext
+# 	mpc next
+#
+#YTMusic
 
 super + p
-	mpc toggle
-
-super + bracketright
-	mpc next
-
-super + bracketleft
-	mpc prev
+    $SCRIPTS/api/ytmusicpost.sh pause
 
 XF86AudioPlay
-	mpc toggle
-    # xdotool click 1
+    $SCRIPTS/api/ytmusicpost.sh pause
+
+super + bracketright
+    $SCRIPTS/api/ytmusicpost.sh next
+
+super + bracketlefbracketleft
+    $SCRIPTS/api/ytmusicpost.sh previous
 
 XF86AudioNext
-	mpc next
+    $SCRIPTS/api/ytmusicpost.sh next
 
 #Programs
 super + alt + b
@@ -76,7 +93,7 @@ super + d; {_,super} + f
     firefox
 
 super + d; {_,super} + w
-    $TERMINAL -e bash -c "sleep 0.1 && nvim $HOME/vimwiki/index.wiki"
+    $TERMINAL -e bash -c "sleep 0.1 && nvim $HOME/vimwiki/index.md"
 
 super + d; {_,super} + D
     Discord
@@ -86,6 +103,7 @@ super + d; {_,super} + t
 
 super + d; {_,super} + m 
     alacritty -e "ncmpcpp"
+    # alacritty -e "ncmpcpp"
 
 super + d; {_,super} + c 
     alacritty -e "qalc"
@@ -101,6 +119,9 @@ super + d; {_,super} + d
 
 super + d; {_,super} + b
     $SCRIPTS/launcher/rofi-bluetooth.sh
+
+super + d; {_,super} + l
+    sudo sh -c 'sysctl -w abi.vsyscall32=0' && sudo sysctl -w abi.vsyscall32=0 && lutris
 
 # BSPWM
 
