@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 rand=$RANDOM
 name="clipboard-$rand.png"
 xclip -se c -t image/png -o > "/tmp/$name"

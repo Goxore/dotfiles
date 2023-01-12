@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 awesome-client 'awful=require("awful");
   awful.spawn("sxiv \"'$1'\"", {

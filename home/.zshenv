@@ -5,7 +5,7 @@ export VIDEO="mpv"
 export IMAGE="sxiv"
 export OPENER="xdg-open"
 export SCRIPTS="$HOME/scripts"
-export GTK_THEME=FlatColor
+# export GTK_THEME=FlatColor
 export LAUNCHER="rofi -dmenu"
 export FZF_DEFAULT_OPTS="--color=16"
 
@@ -17,6 +17,17 @@ export GTK_USE_PORTAL=1
 [ -f "$HOME/.cache/lastwallpaper" ] && \
 export WALLPAPER="$HOME/Wallpapers/$(cat $HOME/.cache/lastwallpaper)"
 
+# Less colors
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+export vimcolorscheme="gruvbox"
+
+# export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
 
 export LF_COLORS="
 ln=01;36:\

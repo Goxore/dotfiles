@@ -61,6 +61,7 @@ awful.rules.rules = main.rules(
 )
 
 require("main.signals")
+require("binding.scratchpads")
 
 -- awful.screen.connect_for_each_screen(function(s) -- that way the wallpaper is applied to every screen
 --     bling.module.tiled_wallpaper("x", s, {       -- call the actual function ("x" is the string that will be tiled)

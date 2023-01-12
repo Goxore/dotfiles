@@ -71,9 +71,9 @@ alias wiki="nvim $HOME/vimwiki/index.md"
 alias vw="nvim $HOME/vimwiki/index.md"
 alias v="nvim"
 alias hst="history 1 | cut -c 8- | sort | uniq | fzf | tr -d '\n' | xclip -selection c"
-# alias pimg="xclip -se c -t image/png -o > out.png"
 alias :q="exit"
 alias vv="neovide"
+alias fcd='cd "$(find . -type d -print | fzf)"'
 
 if command -v devour &> /dev/null
 then
@@ -160,11 +160,11 @@ command -v xrdb &> /dev/null
 bgcolor=$(xrdb -get color0)
 
 command -v xrdb &> /dev/null
-autohg=$(xrdb -get color19)
+autofg=$(xrdb -get color19)
 
 [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh ] && \
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=$autohg,bg=$bgcolor"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=$autofg,bg=$bgcolor"
 bindkey '^ ' autosuggest-accept
 
 # source /usr/share/zsh/plugins/manual/zsh-autocomplete/zsh-autocomplete.plugin.zsh

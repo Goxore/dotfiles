@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 delta=${2:-"30"}
 
 case $1 in

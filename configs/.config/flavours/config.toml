@@ -123,6 +123,16 @@ rewrite = true
 hook = "gsettings set org.gnome.desktop.interface gtk-theme FlatColor"
 
 [[item]]
+file = "~/.config/gtk-4.0/gtk.css"
+template = "1gtk4"
+rewrite = true
+
+[[item]]
+file = "~/.config/youtubemusiccss/theme.css"
+template = "1ytmusic"
+rewrite = true
+
+[[item]]
 file = "~/.config/qutebrowser/config.py"
 template = "qutebrowser"
 rewrite = false

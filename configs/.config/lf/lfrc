@@ -165,6 +165,7 @@ map p paste
 map dd cut
 map y copy
 map ` mark-load
+map \' mark-load
 map <enter> open
 map c mkdirfile
 map ch chmod

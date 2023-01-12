@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 is_tiled() {
 bspc query -T -n | grep -q '"state":"tiled"'

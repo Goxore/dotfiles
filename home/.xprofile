@@ -12,7 +12,9 @@ udiskie &
 optimus-manager-qt &
 lxsession &
 $HOME/scripts/restoreautorice &
-easyeffects --gapplication-service &
+# easyeffects --gapplication-service &
+noisetorch -i &
+feh --bg-fill $WALLPAPER
 
 xrandr --dpi 96
 setxkbmap -option caps:escape

@@ -23,7 +23,7 @@ function _M.get ()
   local tags = {}
 
   local tagpairs = {
-    names  = { " ", " ", " ", " ", " ", " ", " ", " ", " ", " "},
+    names  = { " ", " ", " ", " ", " ", " ", " ", " ", " ", " "},
 
     layout = {
       RC.layouts[1], RC.layouts[1], RC.layouts[1],

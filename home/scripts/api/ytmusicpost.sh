@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 [ "$1" = "pause" ] && \
 curl -X POST -d '{"command": "track-pause"}' http://localhost:9863/query

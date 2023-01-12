@@ -4,3 +4,4 @@ Edit rice                  : $HOME/scripts/rice/autorice2.sh
 Open link libretiktok      : $HOME/scripts/fun/libretiktokopen
 Reload sxhkd               : $HOME/scripts/other/sxhkdreload.sh
 Open screenshot clipboard  : $HOME/scripts/other/openscreenshot.sh
+Send video from clipboard  : $HOME/scripts/other/sendvideo.sh

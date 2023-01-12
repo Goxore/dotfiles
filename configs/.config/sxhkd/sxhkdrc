@@ -12,16 +12,10 @@ super + v
 	bash -c 'amixer -D pulse sset Capture toggle && amixer get Capture | grep "\[off\]" && (dunstctl close && notify-send "MIC switched OFF") || (dunstctl close && notify-send "MIC switched ON")'
 
 super + shift + c
-	rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'
+	rofi -no-show-icons -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'
 
 super + shift + q
     $SCRIPTS/launcher/killprocess.sh
-
-super + u
-	rofi-rbw
-
-super + b
-	rofi-rbw
 
 super + Delete
 	$SCRIPTS/holdwork.sh
@@ -31,6 +25,9 @@ super + Insert
 
 super + ctrl + e
   $SCRIPTS/other/emoji/emoji.sh arg
+
+super + y
+    bash -c "xdotool type @a && xdotool key KP_Enter"
 
 #music
 # super + plus
@@ -60,17 +57,17 @@ super + ctrl + e
 #
 #YTMusic
 
-super + p
-    $SCRIPTS/api/ytmusicpost.sh pause
-
-XF86AudioPlay
-    $SCRIPTS/api/ytmusicpost.sh pause
-
-super + bracketright
-    $SCRIPTS/api/ytmusicpost.sh next
-
-super + bracketlefbracketleft
-    $SCRIPTS/api/ytmusicpost.sh previous
+# super + p
+#     $SCRIPTS/api/ytmusicpost.sh pause
+#
+# XF86AudioPlay
+#     $SCRIPTS/api/ytmusicpost.sh pause
+#
+# super + bracketright
+#     $SCRIPTS/api/ytmusicpost.sh next
+#
+# super + bracketlefbracketleft
+#     $SCRIPTS/api/ytmusicpost.sh previous
 
 XF86AudioNext
     $SCRIPTS/api/ytmusicpost.sh next
@@ -92,17 +89,14 @@ super + alt + p
 super + d; {_,super} + f
     firefox
 
-super + d; {_,super} + w
-    $TERMINAL -e bash -c "sleep 0.1 && nvim $HOME/vimwiki/index.md"
-
 super + d; {_,super} + D
     Discord
 
 super + d; {_,super} + t
     telegram-desktop
 
-super + d; {_,super} + m 
-    alacritty -e "ncmpcpp"
+super + d; {_,super} + m
+    flatpak run app.ytmdesktop.ytmdesktop
     # alacritty -e "ncmpcpp"
 
 super + d; {_,super} + c 
@@ -122,6 +116,9 @@ super + d; {_,super} + b
 
 super + d; {_,super} + l
     sudo sh -c 'sysctl -w abi.vsyscall32=0' && sudo sysctl -w abi.vsyscall32=0 && lutris
+
+super + d; {_,super} + w
+    awesome-client 'require("binding.scratchpads").toggleWiki()'
 
 # BSPWM
 
